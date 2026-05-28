@@ -1,5 +1,5 @@
 /*
- * WALL-E ForeSTI Scrapbook — Unified Design System
+ * WALL-E Digital Scrapbook — Unified Design System
  * Module: The Future of Technology (2026)
  * Version: 1.0
  *
@@ -426,7 +426,7 @@ a:hover { text-decoration: underline; }
 .progress-bar-fill.red    { background: var(--accent-red); }
 .progress-bar-fill.green  { background: var(--accent-grn); }
 
-/* ─── Section Footer (replaces old "FORESTI DIVISION" footer) ── */
+/* ─── Section Footer (replaces old footer) ── */
 .sb-section-footer {
   margin-top: 64px;
   padding-top: 32px;
