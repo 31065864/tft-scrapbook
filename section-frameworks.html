@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 05: Technology Futures Frameworks — WALL·E Scrapbook</title>
+  <link rel="stylesheet" href="scrapbook.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    .hero-band {
+      background: linear-gradient(145deg, #1e293b 0%, #020617 60%);
+      border-bottom: 1px solid #334155;
+      padding: 64px 0 48px;
+    }
+    .sub-section-label {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 0.5625rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #3b82f6;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .split-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .split-layout.reverse { direction: rtl; }
+    .split-layout.reverse > * { direction: ltr; }
+    @media (max-width: 768px) {
+      .split-layout { grid-template-columns: 1fr; }
+      .split-layout.reverse { direction: ltr; }
+    }
+
+    /* Framework number badge */
+    .fw-num {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(59,130,246,0.08);
+      line-height: 1;
+      margin-bottom: -16px;
+    }
+
+    /* Maslow pyramid (CSS) */
+    .maslow-pyramid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      margin-top: 8px;
+    }
+    .maslow-tier {
+      border-radius: 4px;
+      padding: 10px 16px;
+      text-align: center;
+      position: relative;
+    }
+    .maslow-tier-label {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .maslow-tier-sub {
+      font-size: 0.65rem;
+      color: #64748b;
+      margin-top: 2px;
+    }
+    .maslow-tier-walle {
+      font-size: 0.6rem;
+      font-style: italic;
+      margin-top: 3px;
+    }
+
+    /* K-Wave band */
+    .kwave-timeline {
+      position: relative;
+      height: 120px;
+      margin: 16px 0;
+    }
+    .kwave-band {
+      position: absolute;
+      bottom: 0;
+      border-radius: 4px 4px 0 0;
+    }
+    .kwave-label {
+      position: absolute;
+      top: 0;
+      font-size: 0.58rem;
+      font-family: 'Syncopate', Georgia, serif;
+      letter-spacing: 0.06em;
+      text-align: center;
+      color: #64748b;
+    }
+
+    /* Chart containers */
+    .chart-wrap {
+      position: relative;
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .chart-wrap canvas {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="sb-nav" role="navigation" aria-label="Scrapbook sections">
+    <div class="sb-nav-inner">
+      <span class="sb-nav-logo">WALL·E Scrapbook</span>
+      <a href="index.html">Cover</a>
+      <a href="section-background.html">Background</a>
+      <a href="section-technology-focus.html">Technology</a>
+      <a href="section-science-innovation.html">Science &amp; Innovation</a>
+      <a href="section-predictions.html">Predictions</a>
+      <a href="section-frameworks.html" class="active">Frameworks</a>
+      <a href="section-tse.html">Society &amp; Environment</a>
+      <a href="section-driving-forces.html">Driving Forces</a>
+      <a href="section-references.html">References</a>
+    </div>
+  </nav>
+
+  <!-- Section header -->
+  <header class="hero-band" role="banner">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <span class="section-num">Section 05</span>
+          <span class="badge blue">Technology Futures Frameworks</span>
+          <span class="badge orange">~1,200 Words</span>
+        </div>
+        <h1 class="t-h1">Technology Futures Frameworks</h1>
+        <p class="t-body t-muted mt-16" style="max-width:680px;">
+          Five frameworks from the module — Amara's Law, the Gartner Hype Cycle,
+          Kondratiev Waves, the Technology S-Curve, and Maslow's Hierarchy of Needs
+          — each applied in full to the WALL-E unit class and the BnL innovation system.
+        </p>
+        <div class="section-header divider-line"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════
+         5.1 AMARA'S LAW
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-amara">
+      <div class="container">
+        <span class="sub-section-label">5.1</span>
+        <div class="fw-num" aria-hidden="true">01</div>
+        <h2 class="t-h2" id="h-amara" style="margin-bottom:24px;">Amara's Law</h2>
+
+        <div class="split-layout">
+          <div class="space-y-24">
+            <p class="t-body">
+              Attributed to futurist Roy Amara, this law states that "we tend to overestimate
+              the effect of a technology in the short run and underestimate the effect in the
+              long run" (as cited in Quirke, 2023). Amara's Law is grounded in the
+              human cognitive tendency toward linear projection — we extrapolate current
+              momentum rather than modelling compounding, threshold, or discontinuous change.
+              The result is a systematic pattern of early hype followed by disappointment,
+              then eventual transformative impact that few anticipated.
+            </p>
+            <p class="t-body">
+              Applied to the WALL-E unit class, Amara's Law generates a striking tripartite
+              reading. In the <strong>short run</strong>, BnL almost certainly over-hyped the
+              fleet's initial capability — the public expectation was a five-year cleanup
+              programme, which the technology demonstrably could not deliver. The
+              <strong>medium run</strong> brought the "Trough of Disillusionment" (the planet
+              remained toxic; the fleet failed); humanity evacuated. But the
+              <strong>long run</strong> — 700 years of uninterrupted autonomous operation —
+              produced an effect that no designer or policy-maker of 2105 could have
+              anticipated: the complete transformation of Earth's surface topography by a
+              single machine class. This is Amara's Law at its most extreme: a technology
+              effect so under-anticipated that it was not even recognised as a risk.
+            </p>
+            <div class="callout">
+              <strong>Amara's Law insight:</strong> The 700-year timeline is not a failure
+              of the technology — it is a failure of the foresight system that designed
+              the governance architecture. Policy was written for the short-run capability;
+              no one extended Amara's curve to the long-run consequence.
+            </div>
+          </div>
+
+          <!-- Amara visual: Three-phase expectation curve -->
+          <div class="space-y-16">
+            <div class="chart-wrap" aria-label="Amara's Law applied to WALL-E unit class: expectation vs reality timeline">
+              <p class="t-label t-muted" style="font-size:0.65rem; margin-bottom:8px; letter-spacing:0.06em; text-transform:uppercase;">AMARA'S LAW — WALL·E UNIT CLASS</p>
+              <canvas id="amaraChart" height="200"></canvas>
+              <p class="t-caption t-muted" style="font-size:0.62rem; margin-top:10px;">Expectation vs. actual impact across the 700-year operational timeline. Adapted from Amara (as cited in Quirke, 2023).</p>
+            </div>
+            <div class="card blue" style="padding:16px;">
+              <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; text-align:center;">
+                <div>
+                  <div class="t-label" style="color:#f87171; font-size:0.6rem; margin-bottom:4px;">SHORT RUN</div>
+                  <div class="t-small" style="color:#94a3b8; font-size:0.65rem;">Hyped 5-year cleanup. Failed within decades. Fleet abandoned.</div>
+                </div>
+                <div style="border-left:1px solid #1e293b; border-right:1px solid #1e293b; padding:0 8px;">
+                  <div class="t-label" style="color:#fbbf24; font-size:0.6rem; margin-bottom:4px;">MEDIUM RUN</div>
+                  <div class="t-small" style="color:#94a3b8; font-size:0.65rem;">700-year stasis. No human oversight. No successor system.</div>
+                </div>
+                <div>
+                  <div class="t-label" style="color:#34d399; font-size:0.6rem; margin-bottom:4px;">LONG RUN</div>
+                  <div class="t-small" style="color:#94a3b8; font-size:0.65rem;">Planetary surface remade. Effect exceeds all projection. Governance gap exposed.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         5.2 GARTNER HYPE CYCLE
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-gartner">
+      <div class="container">
+        <span class="sub-section-label">5.2</span>
+        <div class="fw-num" aria-hidden="true">02</div>
+        <h2 class="t-h2" id="h-gartner" style="margin-bottom:24px;">The Gartner Hype Cycle</h2>
+
+        <div class="split-layout reverse">
+          <!-- Visual first (right side due to reverse) -->
+          <div class="space-y-16">
+            <div class="chart-wrap" aria-label="Gartner Hype Cycle with WALL-E technology plotted across five phases">
+              <p class="t-label t-muted" style="font-size:0.65rem; margin-bottom:8px; letter-spacing:0.06em; text-transform:uppercase;">GARTNER HYPE CYCLE — WALL·E UNIT CLASS</p>
+              <canvas id="gartnerChart" height="220"></canvas>
+              <p class="t-caption t-muted" style="font-size:0.62rem; margin-top:10px;">WALL-E's technology trajectory mapped against the five Hype Cycle phases. Note: in BnL's scenario, the Slope of Enlightenment is never reached — represented by the dashed recovery path. Gartner (2024).</p>
+            </div>
+
+            <div class="img-wrap filmstrip taped">
+  <img src="images/axiom-atrium.jpg" alt="The Axiom's vast commercial atrium filled with hover-chair passengers amid neon advertising and automated service infrastructure" loading="lazy">
+  <div class="img-caption"><strong>Fig. 5.1</strong> The Trough of Disillusionment materialised — the Axiom's consumer concourse. Technology promised civilisational uplift; the delivered outcome is comfortable, permanent regression from human agency.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+          </div>
+
+          <!-- Text -->
+          <div class="space-y-24">
+            <p class="t-body">
+              The Gartner Hype Cycle (Gartner, 2024) models the maturity trajectory of any
+              emerging technology across five phases: the <strong>Technology Trigger</strong>
+              (the innovation event that generates initial attention); the <strong>Peak of
+              Inflated Expectations</strong> (irrational optimism, media amplification);
+              the <strong>Trough of Disillusionment</strong> (reality check, early adopter
+              failures); the <strong>Slope of Enlightenment</strong> (iterative improvement,
+              best-practice emergence); and the <strong>Plateau of Productivity</strong>
+              (mainstream adoption, stable value realisation).
+            </p>
+            <p class="t-body">
+              The WALL-E unit class traverses the first three phases with disturbing clarity.
+              The <strong>Technology Trigger</strong> is BnL's deployment of autonomous
+              robotic compactors — a genuine engineering breakthrough. The
+              <strong>Peak of Inflated Expectations</strong> is "Operation Cleanup": the
+              global rollout of millions of units, backed by BnL's promise of a 5-year
+              planetary restoration. The <strong>Trough of Disillusionment</strong> is the
+              silent catastrophe — the planet remains toxic, the fleet fails unit by unit,
+              and humanity enters a 700-year stasis aboard the Axiom rather than returning
+              to iterate and improve the system.
+            </p>
+            <p class="t-body">
+              What <em>WALL·E</em> uniquely dramatises is a Hype Cycle that never reaches
+              its Slope of Enlightenment. In the Gartner model, enlightenment requires
+              human actors to learn from failure, invest in second-generation solutions,
+              and adjust the deployment architecture. BnL eliminated the institutions capable
+              of doing this. The Trough of Disillusionment became permanent — until EVE's
+              discovery of the seedling creates the conditions for a belated Slope of
+              Enlightenment 700 years late (Gartner, 2024; Stanton, 2008).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         5.3 KONDRATIEV WAVES
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-kondratiev">
+      <div class="container">
+        <span class="sub-section-label">5.3</span>
+        <div class="fw-num" aria-hidden="true">03</div>
+        <h2 class="t-h2" id="h-kondratiev" style="margin-bottom:24px;">Kondratiev Waves</h2>
+
+        <div class="split-layout">
+          <div class="space-y-24">
+            <p class="t-body">
+              Nikolai Kondratiev (1935) identified recurring long-wave cycles of approximately
+              40–60 years in capitalist economies, each driven by a cluster of transformative
+              technologies and corresponding institutional reorganisation. Later extended by
+              Schumpeter (1939) and Perez (2002), Kondratiev Waves (K-Waves) describe
+              the rhythm of techno-economic paradigm shifts: steam (K1), railways (K2),
+              steel and electricity (K3), oil and automotive (K4), information and
+              communications (K5), and the emerging biotechnology and AI wave (K6).
+              Each wave generates a surge of innovation, an institutional maturity phase,
+              and a creative-destruction trough before the next technological cluster emerges.
+            </p>
+            <p class="t-body">
+              WALL-E's focal technology — autonomous robotics, solar energy integration,
+              and machine learning — sits squarely within the <strong>K6 wave</strong>
+              (approximately 2020–2080 in most academic projections). The film's 22nd-century
+              setting implies a completed K6 and at least partial progression through K7
+              (likely defined by full autonomous systems, synthetic biology, and circular
+              economy infrastructure). BnL's vertical monopoly, however, structurally
+              prevents the normal K-Wave mechanism from operating: each new wave requires
+              competing institutions, venture capital, and academic research to identify and
+              exploit the next technological cluster. By absorbing all of these functions,
+              BnL created a K-Wave that could not transition — locking global civilisation
+              into a terminal phase of K6 automation without the creative destruction
+              necessary to generate K7.
+            </p>
+            <div class="callout">
+              <strong>K-Wave insight:</strong> The film's 700-year stasis is not merely
+              dramatic licence — it is the logical consequence of a monopolistic innovation
+              system that suppresses the creative destruction (Schumpeter, 1939) necessary
+              for the next wave to emerge. BnL did not just destroy Earth; it destroyed
+              the K-Wave cycle itself.
+            </div>
+          </div>
+
+          <!-- K-Wave visual -->
+          <div class="space-y-16">
+            <div class="chart-wrap" aria-label="Kondratiev wave cycles from K1 to K6, with WALL-E technology positioned in K6">
+              <p class="t-label t-muted" style="font-size:0.65rem; margin-bottom:8px; letter-spacing:0.06em; text-transform:uppercase;">KONDRATIEV WAVES — K1 TO K6+ (WALL·E)</p>
+              <canvas id="kwaveChart" height="220"></canvas>
+              <p class="t-caption t-muted" style="font-size:0.62rem; margin-top:10px;">WALL-E's technology cluster (autonomous robotics + AI + solar) positions in K6. BnL's monopoly prevents K7 from emerging — producing a 700-year plateau instead of a new wave. Kondratiev (1935); Perez (2002).</p>
+            </div>
+            <div class="card orange" style="padding:14px;">
+              <table style="width:100%; font-size:0.65rem; border-collapse:collapse;">
+                <thead>
+                  <tr style="border-bottom:1px solid #334155;">
+                    <th style="text-align:left; padding:4px 8px; color:#fb923c; font-family:'Syncopate',serif; font-size:0.55rem; letter-spacing:0.06em;">WAVE</th>
+                    <th style="text-align:left; padding:4px 8px; color:#fb923c; font-family:'Syncopate',serif; font-size:0.55rem; letter-spacing:0.06em;">DRIVER</th>
+                    <th style="text-align:left; padding:4px 8px; color:#fb923c; font-family:'Syncopate',serif; font-size:0.55rem; letter-spacing:0.06em;">WALL·E LINK</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom:1px solid #1e293b;"><td style="padding:4px 8px; color:#64748b;">K4</td><td style="padding:4px 8px; color:#94a3b8;">Oil &amp; automotive</td><td style="padding:4px 8px; color:#94a3b8;">Linear economy that generated the waste crisis</td></tr>
+                  <tr style="border-bottom:1px solid #1e293b;"><td style="padding:4px 8px; color:#64748b;">K5</td><td style="padding:4px 8px; color:#94a3b8;">ICT &amp; internet</td><td style="padding:4px 8px; color:#94a3b8;">BnL's logistics and Axiom HUD infrastructure</td></tr>
+                  <tr style="border-bottom:1px solid #1e293b;"><td style="padding:4px 8px; color:#fbbf24; font-weight:600;">K6 ★</td><td style="padding:4px 8px; color:#fbbf24;">AI &amp; robotics</td><td style="padding:4px 8px; color:#fbbf24;">WALL-E fleet — BnL monopoly prevents K7</td></tr>
+                  <tr><td style="padding:4px 8px; color:#34d399;">K7?</td><td style="padding:4px 8px; color:#34d399;">Bio &amp; circular</td><td style="padding:4px 8px; color:#34d399;">End-credits restoration — belated K7 emergence</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         5.4 TECHNOLOGY S-CURVE
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-scurve">
+      <div class="container">
+        <span class="sub-section-label">5.4</span>
+        <div class="fw-num" aria-hidden="true">04</div>
+        <h2 class="t-h2" id="h-scurve" style="margin-bottom:24px;">The Technology S-Curve</h2>
+
+        <div class="split-layout reverse">
+          <div class="space-y-16">
+            <div class="chart-wrap" aria-label="Technology S-Curve showing WALL-E unit class progressing from emergence through rapid growth to a 700-year pathological plateau">
+              <p class="t-label t-muted" style="font-size:0.65rem; margin-bottom:8px; letter-spacing:0.06em; text-transform:uppercase;">TECHNOLOGY S-CURVE — WALL·E UNIT CLASS</p>
+              <canvas id="scurveChart" height="220"></canvas>
+              <p class="t-caption t-muted" style="font-size:0.62rem; margin-top:10px;">The WALL-E class reaches technical maturity and then enters a pathological plateau — no successor S-curve emerges because BnL has eliminated the knowledge infrastructure required to generate one. Rogers (2003); Utterback (1994); Zaman (2022, 2023).</p>
+            </div>
+
+            <div class="img-wrap filmstrip taped">
+  <img src="images/trash-towers-close.jpg" alt="Towering columns of compacted trash cubes rising above the abandoned cityscape — the physical output of 700 years of uninterrupted compaction" loading="lazy">
+  <div class="img-caption"><strong>Fig. 5.2</strong> The S-Curve Plateau monumental — 700 years of mature technology operating without innovation, without a successor, and without a governance mechanism to halt it. The plateau rendered in cubic metres.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+          </div>
+
+          <div class="space-y-24">
+            <p class="t-body">
+              The Technology S-Curve, formalised through Rogers' (2003) Diffusion of
+              Innovations and Utterback's (1994) product–process innovation model, describes
+              the characteristic sigmoid lifecycle of any technology. Zaman (2022) further
+              develops this as an <strong>episodic evolution framework</strong>, identifying
+              four phases driven by technology advancement, revealed user requirements,
+              emerging externalities, and complementary technology availability: a slow
+              <strong>emergence phase</strong> (R&amp;D investment, limited adoption);
+              a steep <strong>rapid growth phase</strong> (scaling, diffusion, cost reduction);
+              a flattening <strong>maturity phase</strong> (diminishing returns on investment,
+              incremental improvement); and either a <strong>decline phase</strong> (superseded
+              by the next S-curve) or a <strong>pathological plateau</strong> (maturity
+              sustained indefinitely when no successor emerges). Zaman (2023) further
+              distinguishes between S-curves that terminate through technological substitution
+              versus those that plateau due to systemic lock-in — precisely the dynamic
+              WALL-E's 700-year operational lifespan exemplifies.
+            </p>
+            <p class="t-body">
+              The WALL-E unit class passes through the first three phases at an accelerated
+              rate under BnL's production capacity. The rapid growth phase is the global
+              deployment of millions of units across Earth's surface — one of the largest
+              technology rollouts implied in any science fiction narrative. Technical
+              maturity is reached quickly; the units perform their compaction function
+              efficiently and reliably. But in a functioning innovation ecosystem, maturity
+              on one S-curve triggers investment in the <em>next</em> S-curve — the successor
+              technology. BnL, focused entirely on the Axiom system, invested nothing in
+              a WALL-E successor. The maturity phase became a pathological 700-year
+              plateau — the longest sustained S-curve tail in any speculative narrative.
+            </p>
+            <p class="t-body">
+              Andersen and Andersen's (2014) Innovation System Foresight framework
+              identifies this as the canonical failure mode of closed innovation systems:
+              without the knowledge spillovers and competitive pressures of a functioning
+              ecosystem, the successor S-curve is never funded. The film's resolution
+              — humans returning to Earth, beginning agrarian restoration — represents
+              the first emergence of a new S-curve: the start of a circular-economy
+              technology cluster that WALL-E's existence has paradoxically made necessary.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         5.5 MASLOW'S HIERARCHY OF NEEDS
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-maslow">
+      <div class="container">
+        <span class="sub-section-label">5.5</span>
+        <div class="fw-num" aria-hidden="true">05</div>
+        <h2 class="t-h2" id="h-maslow" style="margin-bottom:24px;">Maslow's Hierarchy of Needs</h2>
+
+        <div class="split-layout">
+          <div class="space-y-24">
+            <p class="t-body">
+              Maslow's (1943) Hierarchy of Needs proposes a five-tier motivational model:
+              <strong>Physiological</strong> needs (food, shelter, survival) form the
+              foundation; <strong>Safety</strong> (security, stability) follows; then
+              <strong>Love and Belonging</strong> (social connection); <strong>Esteem</strong>
+              (dignity, achievement, recognition); and finally <strong>Self-Actualisation</strong>
+              (realising one's full potential). Maslow argued that higher-order needs cannot
+              be meaningfully pursued until lower-order needs are met. Applied to technology
+              design, the hierarchy asks: what human need does this technology address —
+              and does its design enable or suppress the fulfilment of higher-order needs?
+            </p>
+            <p class="t-body">
+              The WALL-E unit class was designed to address the most fundamental level:
+              <strong>Physiological</strong> survival — restoring the environment to a
+              state capable of supporting human biological life. It was, in Maslow's terms,
+              a Tier 1 technology. The catastrophic irony of the film is that BnL's
+              response to the technology's failure — the Axiom — addressed Tier 2 (Safety:
+              physical survival in a controlled environment) while systematically destroying
+              Tiers 3, 4, and 5. Hover-chair humans lack meaningful social bonds (no Tier 3),
+              contribute nothing and achieve nothing (no Tier 4), and exist in a state
+              of total passive dependency that is the antithesis of self-actualisation (no Tier 5).
+            </p>
+            <p class="t-body">
+              The Captain's pivotal declaration — "I don't want to survive; I want to
+              <em>live</em>" — is, in Maslow's framework, the precise moment at which a
+              human being rejects Tier 2 sufficiency and asserts the claim to Tier 5
+              self-actualisation. It is also the moment at which the innovation system is
+              restarted: the Captain's decision to return to Earth triggers the emergence of
+              the successor S-curve, the partial dissolution of BnL's monopoly, and the
+              first new K-Wave impulse in 700 years (Stanton, 2008).
+            </p>
+          </div>
+
+          <!-- Maslow pyramid visual -->
+          <div class="space-y-16">
+            <div class="maslow-pyramid" aria-label="Maslow's Hierarchy of Needs applied to WALL-E: five tiers from physiological survival to self-actualisation">
+
+              <!-- Tier 5 — Self-Actualisation (top, narrowest) -->
+              <div class="maslow-tier" style="background:#4c1d95; width:44%; min-width:180px;">
+                <div class="maslow-tier-label" style="color:#a78bfa;">Self-Actualisation</div>
+                <div class="maslow-tier-sub">Realising full potential</div>
+                <div class="maslow-tier-walle" style="color:#c4b5fd;">The Captain: "I want to LIVE" — asserts Tier 5</div>
+              </div>
+
+              <!-- Tier 4 — Esteem -->
+              <div class="maslow-tier" style="background:#1d4ed8; width:56%; min-width:220px;">
+                <div class="maslow-tier-label" style="color:#93c5fd;">Esteem</div>
+                <div class="maslow-tier-sub">Dignity, achievement, recognition</div>
+                <div class="maslow-tier-walle" style="color:#bfdbfe;">Axiom life: ✖ eliminated by passive consumption</div>
+              </div>
+
+              <!-- Tier 3 — Love/Belonging -->
+              <div class="maslow-tier" style="background:#065f46; width:68%; min-width:260px;">
+                <div class="maslow-tier-label" style="color:#6ee7b7;">Love &amp; Belonging</div>
+                <div class="maslow-tier-sub">Social connection, relationships</div>
+                <div class="maslow-tier-walle" style="color:#a7f3d0;">Hover chairs: ✖ isolation replaces connection. WALL-E ↔ EVE: ✔ restored</div>
+              </div>
+
+              <!-- Tier 2 — Safety -->
+              <div class="maslow-tier" style="background:#92400e; width:80%; min-width:300px;">
+                <div class="maslow-tier-label" style="color:#fcd34d;">Safety</div>
+                <div class="maslow-tier-sub">Security, stability, physical protection</div>
+                <div class="maslow-tier-walle" style="color:#fde68a;">Axiom: ✔ physically safe. Technologically imprisoned.</div>
+              </div>
+
+              <!-- Tier 1 — Physiological (base, widest) -->
+              <div class="maslow-tier" style="background:#7f1d1d; width:100%;">
+                <div class="maslow-tier-label" style="color:#fca5a5;">Physiological</div>
+                <div class="maslow-tier-sub">Survival: food, shelter, clean environment</div>
+                <div class="maslow-tier-walle" style="color:#fecaca;">WALL-E designed to restore this tier — mission failed for 700 years. EVE's plant = first Tier 1 restoration signal.</div>
+              </div>
+
+            </div>
+            <p class="t-caption t-muted text-center" style="font-size:0.65rem;">Maslow (1943) Hierarchy of Needs — applied to <em>WALL·E</em> (Stanton, 2008).</p>
+
+            <div class="card sticky" style="transform:rotate(-0.8deg);">
+              <div class="badge purple t-label" style="margin-bottom:10px;">Framework Synthesis</div>
+              <p class="t-small" style="color:#fbbf24; font-style:italic; line-height:1.7;">
+                "Technology that solves Tier 1 while destroying Tiers 3–5 is not a
+                success — it is a more sophisticated form of civilisational failure."
+              </p>
+              <span class="quote-attribution">— Derived from Maslow (1943); applied to <em>WALL·E</em> (Stanton, 2008)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full-width synthesis -->
+        <div class="callout green" style="margin-top:48px;">
+          <strong>Cross-Framework Synthesis:</strong> All five frameworks converge on the
+          same structural diagnosis. Amara's Law explains the timeline of under-anticipation;
+          the Gartner Hype Cycle explains the failure to iterate; Kondratiev Waves explain
+          the macro-civilisational stagnation; the S-Curve explains the absence of successor
+          technologies; and Maslow's Hierarchy explains what was lost when the technology
+          "succeeded" at its narrow objective while destroying the conditions for human
+          flourishing. <em>WALL·E</em> is not a film about robot technology — it is a film
+          about what happens when technology is allowed to answer <em>only</em> the lowest-level
+          question on Maslow's pyramid while the institutional frameworks capable of asking
+          the higher-order questions are systematically dismantled.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Charts script -->
+  <script>
+  (function() {
+    const gridColor = 'rgba(51,65,85,0.5)';
+    const textColor = '#64748b';
+    const defaultFont = { family: 'Lato, system-ui, sans-serif', size: 11 };
+    Chart.defaults.color = textColor;
+    Chart.defaults.font = defaultFont;
+
+    // ── 5.1 AMARA'S LAW ──────────────────────────────────────────
+    new Chart(document.getElementById('amaraChart'), {
+      type: 'line',
+      data: {
+        labels: ['Deploy\n(2105)', '2110', '2130', '2200', '2500', '2800', 'EVE\n(2805)'],
+        datasets: [
+          {
+            label: 'Public Expectation',
+            data: [60, 90, 40, 15, 10, 10, 30],
+            borderColor: '#f87171',
+            backgroundColor: 'rgba(248,113,113,0.08)',
+            borderWidth: 2,
+            tension: 0.4,
+            pointRadius: 4,
+            pointBackgroundColor: '#f87171',
+            fill: false
+          },
+          {
+            label: 'Actual Long-Run Impact',
+            data: [5, 6, 8, 12, 35, 65, 95],
+            borderColor: '#34d399',
+            backgroundColor: 'rgba(52,211,153,0.08)',
+            borderWidth: 2,
+            tension: 0.4,
+            borderDash: [5, 3],
+            pointRadius: 4,
+            pointBackgroundColor: '#34d399',
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top', labels: { boxWidth: 12, font: { size: 10 } } },
+          tooltip: { backgroundColor: '#1e293b', borderColor: '#334155', borderWidth: 1 }
+        },
+        scales: {
+          x: { grid: { color: gridColor }, ticks: { font: { size: 9 } } },
+          y: {
+            grid: { color: gridColor },
+            title: { display: true, text: 'Impact / Expectation Index', font: { size: 9 } },
+            min: 0, max: 100
+          }
+        }
+      }
+    });
+
+    // ── 5.2 GARTNER HYPE CYCLE ───────────────────────────────────
+    const gartnerLabels = [
+      'Tech\nTrigger', 'Early\nHype', 'Peak\nExpect.', 'Early\nDisillusion', 'Trough', 'BnL\nEvacuates', '700-Year\nStasis', 'EVE\nArrives', 'Slope of\nEnlighten.', 'Plateau\nProductivity'];
+    const gartnerData  = [20, 55, 88, 55, 18, 12, 10, 22, 52, 75];
+    new Chart(document.getElementById('gartnerChart'), {
+      type: 'line',
+      data: {
+        labels: gartnerLabels,
+        datasets: [
+          {
+            label: 'Visibility / Expectation',
+            data: gartnerData,
+            borderColor: '#3b82f6',
+            backgroundColor: 'rgba(59,130,246,0.06)',
+            borderWidth: 2.5,
+            tension: 0.45,
+            pointRadius: [3,3,6,3,6,4,4,5,4,4],
+            pointBackgroundColor: ['#3b82f6','#3b82f6','#fbbf24','#3b82f6','#f87171','#fb923c','#64748b','#34d399','#3b82f6','#3b82f6'],
+            fill: true
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: { backgroundColor: '#1e293b', borderColor: '#334155', borderWidth: 1 }
+        },
+        scales: {
+          x: { grid: { color: gridColor }, ticks: { font: { size: 8 }, maxRotation: 0 } },
+          y: {
+            grid: { color: gridColor },
+            title: { display: true, text: 'Visibility', font: { size: 9 } },
+            min: 0, max: 100
+          }
+        }
+      }
+    });
+
+    // ── 5.3 K-WAVES ──────────────────────────────────────────────
+    const kwLabels = ['1785','1830','1845','1890','1900','1945','1950','2000','2010','2070','2080','2800'];
+    const kwData   = [30, 65, 30, 70, 30, 75, 30, 80, 30, 85, 20, 20];
+    new Chart(document.getElementById('kwaveChart'), {
+      type: 'line',
+      data: {
+        labels: kwLabels,
+        datasets: [
+          {
+            label: 'K-Wave Activity',
+            data: kwData,
+            borderColor: '#fb923c',
+            backgroundColor: 'rgba(251,146,60,0.07)',
+            borderWidth: 2,
+            tension: 0.5,
+            pointRadius: 3,
+            fill: true
+          },
+          {
+            label: 'BnL Suppressed (no K7)',
+            data: [null,null,null,null,null,null,null,null,null,85,10,10],
+            borderColor: '#f87171',
+            backgroundColor: 'rgba(248,113,113,0.05)',
+            borderWidth: 2,
+            borderDash: [6,4],
+            tension: 0.4,
+            pointRadius: 3,
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top', labels: { boxWidth: 12, font: { size: 10 } } },
+          tooltip: { backgroundColor: '#1e293b', borderColor: '#334155', borderWidth: 1 }
+        },
+        scales: {
+          x: { grid: { color: gridColor }, ticks: { font: { size: 9 } } },
+          y: {
+            grid: { color: gridColor },
+            title: { display: true, text: 'Wave Intensity', font: { size: 9 } },
+            min: 0, max: 100
+          }
+        }
+      }
+    });
+
+    // ── 5.4 S-CURVE ──────────────────────────────────────────────
+    function sigmoid(x) { return 1 / (1 + Math.exp(-x)); }
+    const scX = [];
+    const scNormal = [];
+    const scPathological = [];
+    for (let i = -6; i <= 12; i += 0.5) {
+      scX.push(i < 0 ? 'R&D' : i < 2 ? 'Growth' : i < 5 ? 'Maturity' : 'Plateau');
+      const s = sigmoid(i - 2) * 90;
+      scNormal.push(i <= 5 ? s : (i <= 7 ? s - (i - 5) * 10 : null));
+      scPathological.push(i >= 5 ? Math.min(s, 75) : null);
+    }
+    const scLabels = Array.from({length: scX.length}, (_, i) => {
+      const t = -6 + i * 0.5;
+      if (t === -6) return 'Emergence';
+      if (t === -2) return 'R&D Scale';
+      if (t === 2)  return 'Deploy';
+      if (t === 5)  return 'Maturity';
+      if (t === 12) return '700-yr\nPlateau';
+      return '';
+    });
+    new Chart(document.getElementById('scurveChart'), {
+      type: 'line',
+      data: {
+        labels: scLabels,
+        datasets: [
+          {
+            label: 'Normal S-Curve (successor emerges)',
+            data: scNormal,
+            borderColor: '#3b82f6',
+            backgroundColor: 'rgba(59,130,246,0.05)',
+            borderWidth: 2,
+            tension: 0.5,
+            pointRadius: 2,
+            fill: false
+          },
+          {
+            label: 'WALL-E: Pathological Plateau',
+            data: scPathological,
+            borderColor: '#f87171',
+            backgroundColor: 'rgba(248,113,113,0.1)',
+            borderWidth: 2.5,
+            borderDash: [5,3],
+            tension: 0.3,
+            pointRadius: 2,
+            fill: true
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top', labels: { boxWidth: 12, font: { size: 10 } } },
+          tooltip: { backgroundColor: '#1e293b', borderColor: '#334155', borderWidth: 1 }
+        },
+        scales: {
+          x: { grid: { color: gridColor }, ticks: { font: { size: 8 }, maxRotation: 0 } },
+          y: {
+            grid: { color: gridColor },
+            title: { display: true, text: 'Performance / Adoption', font: { size: 9 } },
+            min: 0, max: 100
+          }
+        }
+      }
+    });
+  })();
+  </script>
+
+  <!-- Section footer -->
+  <footer class="container">
+    <div class="sb-section-footer">
+      <div class="footer-glossary">
+        <h4>Key Terms</h4>
+        <dl>
+          <dt>Amara's Law: </dt>
+          <dd>We overestimate a technology's short-run effects and underestimate its long-run effects.</dd>
+          <dt>Gartner Hype Cycle: </dt>
+          <dd>Five-phase technology maturity model: Trigger → Peak Expectations → Trough → Slope of Enlightenment → Plateau of Productivity (Gartner, 2024).</dd>
+          <dt>Kondratiev Waves: </dt>
+          <dd>40–60 year long-wave economic cycles each driven by a cluster of transformative technologies (Kondratiev, 1935; Perez, 2002).</dd>
+          <dt>Pathological Plateau: </dt>
+          <dd>The S-Curve failure mode where a mature technology is sustained indefinitely because the successor S-curve is never funded — as in the WALL-E scenario.</dd>
+          <dt>Self-Actualisation: </dt>
+          <dd>The apex of Maslow's (1943) Hierarchy — realising one's full human potential; suppressed by the Axiom's total automation.</dd>
+        </dl>
+      </div>
+      <nav class="footer-nav" aria-label="Section navigation">
+        <a href="section-predictions.html">← Predictions &amp; Experts</a>
+        <a href="section-tse.html">Society &amp; Environment →</a>
+      </nav>
+    </div>
+    <div style="padding:24px 0;">
+      </div>
+  </footer>
+
+  <script src="scrapbook-nav.js" defer></script>
+</body>
+</html>

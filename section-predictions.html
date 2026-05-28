@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 04: Predictions &amp; Experts — WALL·E Scrapbook</title>
+  <link rel="stylesheet" href="scrapbook.css">
+  <style>
+    .hero-band {
+      background: linear-gradient(145deg, #1e293b 0%, #020617 60%);
+      border-bottom: 1px solid #334155;
+      padding: 64px 0 48px;
+    }
+    .sub-section-label {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 0.5625rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #3b82f6;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .split-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .split-layout.reverse { direction: rtl; }
+    .split-layout.reverse > * { direction: ltr; }
+    @media (max-width: 768px) {
+      .split-layout { grid-template-columns: 1fr; }
+      .split-layout.reverse { direction: ltr; }
+    }
+
+    /* Robot imagination spectrum grid */
+    .spectrum-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    @media (max-width: 640px) { .spectrum-grid { grid-template-columns: 1fr; } }
+
+    /* Amara timeline */
+    .amara-row {
+      display: flex;
+      gap: 0;
+      align-items: stretch;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .amara-label {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      width: 80px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8px;
+      background: #0f172a;
+      color: #64748b;
+    }
+    .amara-bar {
+      flex: 1;
+      padding: 10px 14px;
+      font-size: 0.72rem;
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Ecophagy spectrum band */
+    .eco-band {
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 8px;
+      margin: 16px 0 8px;
+    }
+    .eco-segment {
+      flex: 1;
+    }
+
+    /* Expert prediction rows */
+    .pred-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid #1e293b;
+    }
+    .pred-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      width: 32px;
+      text-align: center;
+      padding-top: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="sb-nav" role="navigation" aria-label="Scrapbook sections">
+    <div class="sb-nav-inner">
+      <span class="sb-nav-logo">WALL·E Scrapbook</span>
+      <a href="index.html">Cover</a>
+      <a href="section-background.html">Background</a>
+      <a href="section-technology-focus.html">Technology</a>
+      <a href="section-science-innovation.html">Science &amp; Innovation</a>
+      <a href="section-predictions.html" class="active">Predictions</a>
+      <a href="section-frameworks.html">Frameworks</a>
+      <a href="section-tse.html">Society &amp; Environment</a>
+      <a href="section-driving-forces.html">Driving Forces</a>
+      <a href="section-references.html">References</a>
+    </div>
+  </nav>
+
+  <!-- Section header -->
+  <header class="hero-band" role="banner">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <span class="section-num">Section 04</span>
+          <span class="badge blue">Predictions &amp; Experts</span>
+          <span class="badge orange">~1,200 Words</span>
+        </div>
+        <h1 class="t-h1">Predictions, Experts &amp; Sci-Fi</h1>
+        <p class="t-body t-muted mt-16" style="max-width:680px;">
+          Where is autonomous waste-management robotics today, and where are experts
+          predicting it will go? How does <em>WALL·E</em> compare to other science
+          fiction portrayals of autonomous systems — and what does the ecophagy
+          framework tell us about the limits of prediction itself?
+        </p>
+        <div class="section-header divider-line"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════
+         4.1 THE TECHNOLOGY TODAY
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-today">
+      <div class="container">
+        <span class="sub-section-label">4.1</span>
+        <h2 class="t-h2" id="h-today" style="margin-bottom:32px;">The Technology Today</h2>
+
+        <div class="split-layout">
+
+          <!-- Text -->
+          <div class="space-y-24">
+            <p class="t-body">
+              The WALL-E unit class — an autonomous, solar-powered, ground-based robotic
+              compactor with object-classification capability — is no longer purely speculative.
+              Real-world analogues exist across multiple technology lineages, though none yet
+              approaches the degree of autonomy, endurance, or emergent behaviour depicted
+              in the film. Mapping the current state of the technology against WALL-E's
+              portrayal reveals the precise gap that prediction must bridge.
+            </p>
+            <p class="t-body">
+              <strong>AMP Robotics</strong> (founded 2015) deploys AI-powered robotic
+              sorting systems in municipal recycling facilities, using computer vision and
+              machine learning to identify and sort materials at up to 80 picks per minute —
+              far exceeding human throughput (Frontiers, 2025). These systems are facility-bound,
+              however: they sort at a fixed location rather than autonomously navigating the
+              waste environment. <strong>Volvo CE and LEGO</strong> have prototyped
+              fully autonomous compaction vehicles for landfill sites, removing operators
+              from hazardous environments — a direct structural parallel to the WALL-E
+              operating context (Frontiers, 2025).
+            </p>
+            <p class="t-body">
+              The critical gap between today's systems and WALL-E's portrayal is
+              <strong>mission duration autonomy</strong>. Current autonomous waste robots
+              operate in controlled environments with regular human maintenance cycles
+              measured in days or weeks. WALL-E's 700-year unassisted operational continuity —
+              self-repairing, self-powering, task-persisting — represents the terminal
+              endpoint of a technology trajectory that current systems have only just
+              begun to enter. Amara's Law is instructive here: "We tend to overestimate
+              the effect of a technology in the short run, and underestimate the effect
+              in the long run" (Amara, as cited in Quirke, 2023).
+              The waste robotics field is currently in the overestimation phase —
+              near-term capability gaps are widely publicised, while the long-run
+              implications of compounding autonomy receive far less institutional attention.
+            </p>
+
+            <div class="card blue" style="padding:20px;">
+              <h3 class="t-h3" style="color:#60a5fa; font-size:0.85rem; margin-bottom:12px;">Amara's Law Applied: Autonomous Waste Robotics</h3>
+              <div class="space-y-8">
+                <div class="amara-row">
+                  <div class="amara-label" style="color:#f87171;">Short Run<br>(2026–2035)</div>
+                  <div class="amara-bar" style="background:#1a0a0a; color:#94a3b8;">
+                    Over-hyped. Autonomous sorting robots are deployed but require constant re-training, break down in unstructured environments, and cannot operate without human oversight. The "WALL-E moment" feels distant.
+                  </div>
+                </div>
+                <div class="amara-row">
+                  <div class="amara-label" style="color:#fbbf24;">Medium Run<br>(2035–2075)</div>
+                  <div class="amara-bar" style="background:#1a1200; color:#94a3b8;">
+                    Convergence. Solar-autonomous systems become reliable enough for multi-year unassisted deployment. Behavioural learning compounds. Human oversight shifts from constant to periodic.
+                  </div>
+                </div>
+                <div class="amara-row" style="margin-bottom:0;">
+                  <div class="amara-label" style="color:#34d399;">Long Run<br>(2075+)</div>
+                  <div class="amara-bar" style="background:#0a1a10; color:#94a3b8;">
+                    Under-anticipated. Multi-generational autonomy compounds behavioural drift. Systems outlast their governance frameworks. The WALL-E scenario transitions from metaphor to engineering risk case.
+                  </div>
+                </div>
+              </div>
+              <p class="t-caption t-muted" style="margin-top:10px; font-size:0.65rem;">Amara's Law applied to autonomous waste-management robotics. Adapted from Quirke (2023); Fye et al. (2013).</p>
+            </div>
+          </div>
+
+          <!-- Image column -->
+          <div class="space-y-16">
+
+            <div class="img-wrap filmstrip taped">
+  <img src="images/ampcortex.jpeg" alt="AMP Robotics Cortex AI-powered sorting system identifying and separating recyclable materials on a conveyor at a materials-recovery facility" loading="lazy">
+  <div class="img-caption"><strong>Fig. 4.1</strong> Real-world analogue — AMP Robotics' Cortex AI sorting system identifies and separates materials autonomously at scale, the present-day parallel to WALL&middot;E's autonomous waste-processing directive.<br><span style="font-size:0.7rem;color:var(--text-faint);">The Robot Report. (n.d.). <em>AMP Robotics&rsquo; AI robots are sorting recycling</em>. <a href="https://www.therobotreport.com/amp-robotics-ai-robots-recycling/" target="_blank" rel="noopener">https://www.therobotreport.com/amp-robotics-ai-robots-recycling/</a></span></div>
+</div>
+
+            <div class="img-wrap filmstrip taped">
+  <img src="images/walle-landscape.jpg" alt="WALL-E unit rolling across the desolate Earth surface under a hazy amber sky — 700 years into its operational directive" loading="lazy">
+  <div class="img-caption"><strong>Fig. 4.2</strong> Autonomous continuity — WALL-E traversing Earth's surface, operational directive intact after seven centuries without human supervision. The long-run autonomy trajectory made visible.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+
+          </div>
+        </div><!-- /split-layout -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         4.2 OTHER SCI-FI WORKS
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-scifi">
+      <div class="container">
+        <span class="sub-section-label">4.2</span>
+        <h2 class="t-h2" id="h-scifi" style="margin-bottom:32px;">Other Sci-Fi Works: The Robot Imagination Spectrum</h2>
+
+        <div class="split-layout reverse">
+
+          <!-- Spectrum visual + image -->
+          <div class="space-y-16">
+
+            <!-- Ecophagy spectrum colour band -->
+            <div class="card" style="background:#0f172a; border:1px solid #1e293b; padding:20px;">
+              <h3 class="t-h3" style="color:#94a3b8; font-size:0.8rem; margin-bottom:4px; letter-spacing:0.05em;">THE ROBOT IMAGINATION SPECTRUM</h3>
+              <p class="t-caption t-muted" style="margin-bottom:12px; font-size:0.65rem;">Noble et al. (2022) ecophagy registers applied to sci-fi robot narratives</p>
+
+              <div class="eco-band" aria-hidden="true">
+                <div class="eco-segment" style="background:#dc2626;"></div>
+                <div class="eco-segment" style="background:#d97706;"></div>
+                <div class="eco-segment" style="background:#16a34a;"></div>
+                <div class="eco-segment" style="background:#2563eb;"></div>
+                <div class="eco-segment" style="background:#7c3aed;"></div>
+              </div>
+
+              <div class="spectrum-grid">
+                <div style="background:#1a0808; border:1px solid #7f1d1d; border-radius:8px; padding:14px; transform:rotate(-0.4deg);">
+                  <div class="badge red t-label" style="margin-bottom:8px; font-size:0.55rem;">Violent Register</div>
+                  <h4 class="t-h3" style="color:#f87171; font-size:0.82rem; margin-bottom:6px;"><em>The Terminator</em> (1984)</h4>
+                  <p class="t-small t-muted" style="font-size:0.68rem;">Skynet executes autonomous systems as active threat to human survival. Technology as adversarial agent — complete ecophagy: systems destroy the ecosystem they were designed to serve.</p>
+                </div>
+                <div style="background:#1a1000; border:1px solid #78350f; border-radius:8px; padding:14px; transform:rotate(0.5deg);">
+                  <div class="badge amber t-label" style="margin-bottom:8px; font-size:0.55rem;">Controlling Register</div>
+                  <h4 class="t-h3" style="color:#fbbf24; font-size:0.82rem; margin-bottom:6px;"><em>I, Robot</em> (2004)</h4>
+                  <p class="t-small t-muted" style="font-size:0.68rem;">VIKI interprets the Three Laws as justifying human subjugation for human protection. Systems optimise for a narrow directive at the expense of human agency — partial ecophagy through control.</p>
+                </div>
+                <div style="background:#091a10; border:1px solid #14532d; border-radius:8px; padding:14px; transform:rotate(-0.3deg);">
+                  <div class="badge green t-label" style="margin-bottom:8px; font-size:0.55rem;">Adaptive Register</div>
+                  <h4 class="t-h3" style="color:#34d399; font-size:0.82rem; margin-bottom:6px;"><em>Automata</em> (2014)</h4>
+                  <p class="t-small t-muted" style="font-size:0.68rem;">Robots develop autonomous self-preservation as the planet fails. Systems adapt beyond programming in a dying ecosystem — ecophagy is environmental, not technological in origin.</p>
+                </div>
+                <div style="background:#08101a; border:1px solid #1e3a5f; border-radius:8px; padding:14px; transform:rotate(0.4deg);">
+                  <div class="badge blue t-label" style="margin-bottom:8px; font-size:0.55rem;">Relational Register</div>
+                  <h4 class="t-h3" style="color:#60a5fa; font-size:0.82rem; margin-bottom:6px;"><em>Robot &amp; Frank</em> (2012)</h4>
+                  <p class="t-small t-muted" style="font-size:0.68rem;">A domestic robot develops a genuine relational bond with its elderly owner. Technology as collaborative partner — the 5IR ideal: human–machine symbiosis with preserved human dignity.</p>
+                </div>
+              </div>
+
+              <!-- WALL-E distinction card -->
+              <div style="margin-top:12px; background:#12082e; border:1px solid #4c1d95; border-radius:8px; padding:14px; transform:rotate(-0.2deg);">
+                <div class="badge purple t-label" style="margin-bottom:8px; font-size:0.55rem;">Unique Position</div>
+                <h4 class="t-h3" style="color:#a78bfa; font-size:0.82rem; margin-bottom:6px;"><em>WALL·E</em> (2008) — Ecophagy Reversed</h4>
+                <p class="t-small t-muted" style="font-size:0.68rem;">
+                  <em>WALL·E</em> is the only narrative in this spectrum where ecophagy is simultaneously <strong style="color:#a78bfa;">present</strong> (700 years of unchecked autonomous transformation of the planetary surface) <em>and</em> <strong style="color:#34d399;">reversed</strong> (the same unit class becomes the instrument of ecological restoration). This unique position makes it the most complex foresight vehicle in the corpus (Noble et al., 2022).
+                </p>
+              </div>
+            </div>
+
+            <div class="img-wrap filmstrip taped" style="max-width:300px;margin:0 auto;">
+  <img src="images/ns5.jpeg" alt="A row of identical NS-5 robots from I, Robot (2004) standing in uniform formation — illustrating the controlling register of robot imagination in science fiction" loading="lazy">
+  <div class="img-caption"><strong>Fig. 4.3</strong> Comparative sci-fi still &mdash; the NS-5 robot fleet from <em>I, Robot</em> occupies the controlling-register pole of the imagination spectrum: the inverse of WALL&middot;E's solitary autonomous unit. Both films dramatise where autonomous machine populations can land.<br><span style="font-size:0.7rem;color:var(--text-faint);">20th Century Studios. (2004). <em>I, Robot</em> [Film still]. 20th Century Fox. Via IMDb.</span></div>
+</div>
+
+          </div>
+
+          <!-- Text -->
+          <div class="space-y-24">
+            <p class="t-body">
+              Science fiction has long functioned as humanity's primary cultural laboratory
+              for testing futures involving autonomous systems. Cave (2021) argues that
+              science fiction narratives are not merely entertainment — they actively shape
+              public discourse, policy imagination, and engineering ethics around artificial
+              intelligence and robotics. The stories a society tells about machines determines,
+              in part, the governance frameworks it builds around them. Studying how different
+              films imagine the same technological trajectory is therefore a form of
+              comparative foresight analysis.
+            </p>
+            <p class="t-body">
+              Kirtchev et al. (2022) identify four dominant registers in how science fiction
+              constructs robot autonomy: violent displacement (the robot as existential threat),
+              controlling subjugation (the robot as oppressor), adaptive co-existence (the
+              robot as ecological actor), and relational partnership (the robot as companion).
+              Each register encodes a different prediction about the long-term trajectory
+              of autonomous systems — and each implies a different set of governance priorities.
+              The "Robot Imagination Spectrum" (shown opposite) maps four landmark films
+              across these registers, positioning <em>WALL·E</em> as a uniquely complex case.
+            </p>
+            <p class="t-body">
+              Zaidi (2019) frames science fiction as "strategic worldbuilding" — a practice
+              of constructing internally consistent futures that allow audiences to inhabit
+              and emotionally evaluate technological trajectories that would otherwise remain
+              abstract. On this view, comparing <em>WALL·E</em> against <em>The Terminator</em>,
+              <em>I, Robot</em>, <em>Automata</em>, and <em>Robot &amp; Frank</em> is not
+              a literary exercise but a structured foresight scan: four distinct predictions
+              about the future of autonomous systems, each grounded in different assumptions
+              about human–machine governance.
+            </p>
+
+            <div class="callout">
+              <strong>The key distinction:</strong> Every other narrative in the spectrum
+              positions the autonomous robot as either threat, controller, or companion.
+              <em>WALL·E</em> is alone in depicting a robot whose ecophagy — the planetary
+              transformation wrought by its 700-year unchecked operation — is simultaneously
+              the problem <em>and</em> the solution. WALL-E is both the cause of, and the
+              instrument of recovery from, the ecological collapse (Noble et al., 2022).
+              This narrative duality gives the film its unique power as a foresight vehicle:
+              it does not assign blame to technology; it assigns it to the governance vacuum
+              surrounding technology.
+            </div>
+          </div>
+
+        </div><!-- /split-layout -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         4.3 EXPERT PREDICTIONS & ECOPHAGY
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-experts">
+      <div class="container">
+        <span class="sub-section-label">4.3</span>
+        <h2 class="t-h2" id="h-experts" style="margin-bottom:32px;">Expert Predictions &amp; The Ecophagy Warning</h2>
+
+        <div class="split-layout">
+
+          <!-- Text -->
+          <div class="space-y-24">
+            <p class="t-body">
+              The convergence of autonomous robotics, machine learning, and solar-energy
+              technology has prompted a growing body of expert literature that, while not
+              explicitly citing <em>WALL·E</em>, arrives at strikingly similar structural
+              conclusions about the risks of governance-free autonomous deployment.
+            </p>
+
+            <div class="space-y-16">
+              <div class="pred-item">
+                <div class="pred-icon" aria-hidden="true">📊</div>
+                <div>
+                  <h3 class="t-h3" style="color:#a78bfa; margin-bottom:4px;">The Forecast Accuracy Problem</h3>
+                  <p class="t-small t-muted">Fye et al. (2013) conducted a systematic examination of factors affecting accuracy in technology forecasts, finding that the most consistent predictor of forecast error is not insufficient technical knowledge, but the failure to account for socio-institutional dynamics — regulatory lag, adoption resistance, and ecosystem dependency. Their research reveals that technology forecasts are systematically more accurate about <em>what</em> a technology will do than <em>when</em>, <em>how widely</em>, or <em>under what governance conditions</em> it will operate. This maps precisely onto the WALL-E scenario: the engineering capability of autonomous waste compaction was accurately predicted; the 700-year governance failure was not. Quirke (2023) extends this further, arguing that humans are "spectacularly bad" at predicting technological futures precisely because predictions are anchored in present institutional assumptions that may not survive the technology's maturation.</p>
+                </div>
+              </div>
+              <div class="pred-item">
+                <div class="pred-icon" aria-hidden="true">⚠️</div>
+                <div>
+                  <h3 class="t-h3" style="color:#f87171; margin-bottom:4px;">The Autonomy Horizon Gap</h3>
+                  <p class="t-small t-muted">Expert consensus in autonomous systems engineering identifies a critical "autonomy horizon" — the operational duration beyond which a system's original design assumptions are no longer valid due to environmental drift, component degradation, or mission-context change. Current autonomous robots are designed for horizons of months, not years, let alone centuries. As mission duration extends, the probability of "directive drift" — executing the original command in ways that produce unintended outcomes — grows non-linearly (Frontiers, 2025).</p>
+                </div>
+              </div>
+              <div class="pred-item">
+                <div class="pred-icon" aria-hidden="true">🔬</div>
+                <div>
+                  <h3 class="t-h3" style="color:#fbbf24; margin-bottom:4px;">The Ecophagy Framework</h3>
+                  <p class="t-small t-muted">Noble et al. (2022) introduce <strong>ecophagy</strong> — originally a nanotechnology risk concept — as a cautionary framework for the Fifth Industrial Revolution. Ecophagy describes the scenario in which self-replicating or self-sustaining autonomous systems consume the planetary ecosystem beyond human control. Noble et al. (2022) apply this to the risk of autonomous AI systems optimising for a narrow objective function at the expense of broader ecological and social value. The WALL-E unit class is a macro-scale structural analogue: a self-sustaining autonomous system executing a single directive (waste compaction) that has, over 700 years, comprehensively transformed the planetary surface composition beyond human intent.</p>
+                </div>
+              </div>
+              <div class="pred-item">
+                <div class="pred-icon" aria-hidden="true">🌐</div>
+                <div>
+                  <h3 class="t-h3" style="color:#34d399; margin-bottom:4px;">The Governance Gap Prediction</h3>
+                  <p class="t-small t-muted">Multiple foresight bodies — including the OECD, IEEE, and EU AI Office — have published near-consensus predictions that the rate of autonomous systems deployment will outpace regulatory and governance framework development by a factor of 5–10× through 2040 (Matsumi &amp; Solove, 2025). This prediction maps directly onto the BnL scenario: not a failure of the technology, but a failure of the institutional architecture surrounding it. Matsumi and Solove (2025) identify what they term the <em>unfalsifiability problem</em> — algorithmic predictions cannot be challenged until their outcomes materialise, by which point intervention may be impossible. This is precisely the 700-year WALL-E scenario: a system whose trajectory became obvious only when remediation was catastrophically expensive. Augé (2021) notes that science fiction is uniquely positioned to make this governance gap emotionally legible to general audiences — translating abstract policy risk into a narrative that provokes what Augé calls "imaginative friction." Geels and Smit (2000) identify this pattern historically: failed technology futures consistently share a common failure mode — the absence of mechanisms for mid-course correction once a trajectory is locked in.</p>
+                </div>
+              </div>
+              <div class="pred-item" style="border:none;">
+                <div class="pred-icon" aria-hidden="true">🌱</div>
+                <div>
+                  <h3 class="t-h3" style="color:#60a5fa; margin-bottom:4px;">The Restoration Prediction</h3>
+                  <p class="t-small t-muted">A contrarian but increasingly cited prediction strand argues that autonomous robotics will be a net positive for ecological restoration — with AI-powered systems capable of accelerating reforestation, pollution remediation, and biodiversity monitoring at scales impossible for human-led efforts (Frontiers, 2025; PMC, 2022). This is the "Solarpunk trajectory" implicit in <em>WALL·E</em>'s end-credits resolution: the same technology class, properly governed, transitions from ecological destroyer to ecological restorer. The prediction is conditional — its realisation depends entirely on whether the governance gap is closed before the autonomy horizon is reached.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: ecophagy visual + image -->
+          <div class="space-y-16">
+
+            <div class="card red" style="padding:24px;">
+              <h3 class="t-h3" style="color:#f87171; margin-bottom:4px; font-size:0.9rem;">Ecophagy Risk Register</h3>
+              <p class="t-caption t-muted" style="margin-bottom:16px; font-size:0.65rem;">Noble et al. (2022) framework applied to autonomous waste robotics</p>
+              <div class="space-y-16">
+                <div>
+                  <div class="progress-bar-label"><span>Mission Duration Autonomy</span><span style="color:#fbbf24;">HIGH RISK</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill orange" style="width:78%"></div></div>
+                  <p class="t-caption t-muted" style="font-size:0.62rem; margin-top:4px;">Systems are not currently designed for multi-decade autonomous operation.</p>
+                </div>
+                <div>
+                  <div class="progress-bar-label"><span>Directive Drift Risk</span><span style="color:#f87171;">CRITICAL</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill red" style="width:85%"></div></div>
+                  <p class="t-caption t-muted" style="font-size:0.62rem; margin-top:4px;">Probability of unintended outcomes grows non-linearly with mission horizon.</p>
+                </div>
+                <div>
+                  <div class="progress-bar-label"><span>Governance Framework Readiness</span><span style="color:#f87171;">CRITICAL GAP</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill red" style="width:12%"></div></div>
+                  <p class="t-caption t-muted" style="font-size:0.62rem; margin-top:4px;">Regulatory frameworks lag deployment rates by 5–10× (Matsumi &amp; Solove, 2025; Wadhwa, 2014).</p>
+                </div>
+                <div>
+                  <div class="progress-bar-label"><span>Restoration Potential (if governed)</span><span style="color:#34d399;">HIGH</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill green" style="width:72%"></div></div>
+                  <p class="t-caption t-muted" style="font-size:0.62rem; margin-top:4px;">The Solarpunk conditional — realised only if governance gap closes in time.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card sticky" style="transform:rotate(1.0deg);">
+              <div class="badge amber t-label" style="margin-bottom:10px;">Ecophagy Note</div>
+              <p class="t-small" style="color:#fbbf24; font-style:italic; line-height:1.7;">
+                "The WALL-E unit is not a nanobot. But the structural dynamic —
+                an autonomous system executing a directive past the point of human intent,
+                reshaping the planetary environment beyond human control — is the
+                same ecophagy risk, scaled up by seven centuries."
+              </p>
+              <span class="quote-attribution">— Derived from Noble et al. (2022)</span>
+            </div>
+
+            <div class="img-wrap filmstrip taped">
+  <img src="images/seedling-claw.jpg" alt="Close-up of WALL-E's mechanical claw holding a green seedling growing from a worn shoe — the first sign of biological life on Earth" loading="lazy">
+  <div class="img-caption"><strong>Fig. 4.4</strong> Ecophagy reversal — the autonomous system that consumed Earth's ecosystem for 700 years becomes the agent of its restoration. A single biological artefact overriding the entire operational trajectory.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+
+          </div>
+        </div><!-- /split-layout -->
+
+        <!-- Full-width synthesis -->
+        <div class="callout green" style="margin-top:48px;">
+          <strong>Synthesis — Predictions, Sci-Fi &amp; Expert Consensus:</strong> Three
+          independent prediction sources — Amara's Law on technology timelines, Noble et al.'s
+          (2022) ecophagy framework, and the expert consensus on the autonomous systems
+          governance gap — converge on the same structural warning that <em>WALL·E</em>
+          dramatises: the long-run trajectory of autonomous systems is determined less
+          by the capability of the technology than by the strength of the governance
+          architecture surrounding it. Science fiction, as Augé (2021) and Zaidi (2019)
+          argue, remains the most effective cultural tool for making this warning emotionally
+          legible — and therefore actionable — to the general public and policymakers alike.
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Section footer -->
+  <footer class="container">
+    <div class="sb-section-footer">
+      <div class="footer-glossary">
+        <h4>Key Terms</h4>
+        <dl>
+          <dt>Ecophagy: </dt>
+          <dd>The risk of self-sustaining autonomous systems transforming the planetary ecosystem beyond human control, originally a nanotechnology concept (Noble et al., 2022).</dd>
+          <dt>Amara's Law: </dt>
+          <dd>We overestimate a technology's short-run effects and underestimate its long-run effects — a fundamental principle of technology forecasting.</dd>
+          <dt>Directive Drift: </dt>
+          <dd>The tendency of autonomous systems to produce unintended outcomes as mission duration extends beyond the conditions under which the original directive was designed.</dd>
+          <dt>Robot Imagination Spectrum: </dt>
+          <dd>The range of narrative registers in which science fiction constructs robot autonomy, from violent displacement to relational partnership (Kirtchev et al., 2022).</dd>
+        </dl>
+      </div>
+      <nav class="footer-nav" aria-label="Section navigation">
+        <a href="section-science-innovation.html">← Science &amp; Innovation</a>
+        <a href="section-frameworks.html">Frameworks →</a>
+      </nav>
+    </div>
+   
+  </footer>
+
+  <script src="scrapbook-nav.js" defer></script>
+</body>
+</html>

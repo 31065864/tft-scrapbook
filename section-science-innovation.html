@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 03: Science &amp; Innovation — WALL·E Scrapbook</title>
+  <link rel="stylesheet" href="scrapbook.css">
+  <style>
+    .hero-band {
+      background: linear-gradient(145deg, #1e293b 0%, #020617 60%);
+      border-bottom: 1px solid #334155;
+      padding: 64px 0 48px;
+    }
+    .sub-section-label {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 0.5625rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #3b82f6;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .split-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .split-layout.reverse { direction: rtl; }
+    .split-layout.reverse > * { direction: ltr; }
+    @media (max-width: 768px) {
+      .split-layout { grid-template-columns: 1fr; }
+      .split-layout.reverse { direction: ltr; }
+    }
+
+    /* S-T-I-S quad grid */
+    .stis-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    @media (max-width: 640px) { .stis-grid { grid-template-columns: 1fr; } }
+
+    /* Innovation type cards */
+    .inno-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 8px;
+    }
+    @media (max-width: 640px) { .inno-grid { grid-template-columns: 1fr; } }
+
+    /* ISF actor row */
+    .actor-row {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid #1e293b;
+    }
+    .actor-num {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: rgba(59,130,246,0.3);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 32px;
+    }
+
+    /* Henderson-Clark matrix */
+    .hc-matrix {
+      display: grid;
+      grid-template-columns: 80px 1fr 1fr;
+      grid-template-rows: 48px 1fr 1fr;
+      gap: 4px;
+      margin-top: 16px;
+      font-size: 0.7rem;
+    }
+    .hc-axis-label {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4px;
+    }
+    .hc-cell {
+      border-radius: 6px;
+      padding: 12px 10px;
+      min-height: 80px;
+    }
+    .hc-cell-label {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .hc-cell-body {
+      font-size: 0.68rem;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+    .hc-cell-example {
+      font-size: 0.62rem;
+      color: #60a5fa;
+      margin-top: 4px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="sb-nav" role="navigation" aria-label="Scrapbook sections">
+    <div class="sb-nav-inner">
+      <span class="sb-nav-logo">WALL·E Scrapbook</span>
+      <a href="index.html">Cover</a>
+      <a href="section-background.html">Background</a>
+      <a href="section-technology-focus.html">Technology</a>
+      <a href="section-science-innovation.html" class="active">Science &amp; Innovation</a>
+      <a href="section-predictions.html">Predictions</a>
+      <a href="section-frameworks.html">Frameworks</a>
+      <a href="section-tse.html">Society &amp; Environment</a>
+      <a href="section-driving-forces.html">Driving Forces</a>
+      <a href="section-references.html">References</a>
+    </div>
+  </nav>
+
+  <!-- Section header -->
+  <header class="hero-band" role="banner">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <span class="section-num">Section 03</span>
+          <span class="badge blue">Science &amp; Innovation</span>
+          <span class="badge orange">~1,200 Words</span>
+        </div>
+        <h1 class="t-h1">Science &amp; Innovation</h1>
+        <p class="t-body t-muted mt-16" style="max-width:680px;">
+          An analysis of the Science–Technology–Innovation–Society (S-T-I-S) system at work
+          in <em>WALL·E</em> (Stanton, 2008): mapping the types of innovation present, and
+          examining the collapse of BnL's monopolistic innovation ecosystem through the lens
+          of Innovation System Foresight.
+        </p>
+        <div class="section-header divider-line"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════
+         3.1 S-T-I-S ALIGNMENT
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-stis">
+      <div class="container">
+        <span class="sub-section-label">3.1</span>
+        <h2 class="t-h2" id="h-stis" style="margin-bottom:32px;">The S-T-I-S System</h2>
+
+        <div class="split-layout">
+
+          <!-- Text -->
+          <div class="space-y-24">
+            <p class="t-body">
+              The Science–Technology–Innovation–Society (S-T-I-S) framework recognises that
+              knowledge production, artefact development, commercialised application, and
+              societal impact are co-constitutive — each element continuously shapes and is
+              shaped by the others (Aunger, 2010). <em>WALL·E</em> presents a world in which
+              this feedback loop has been catastrophically severed: scientific knowledge was
+              deployed into technology, technology was scaled into a corporate innovation system,
+              but the "Society" feedback mechanism — governance, regulation, democratic
+              accountability — was monopolised and ultimately eliminated by Buy n Large (BnL).
+            </p>
+            <p class="t-body">
+              Aunger (2010) describes the <strong>Modern Production</strong> stage of technological
+              society as one defined by mass manufacture, global supply chains, and the
+              institutionalisation of Research and Development. BnL represents the terminal
+              endpoint of this stage: a corporation so vertically integrated that it absorbed
+              all governmental functions, leaving no independent scientific institutions,
+              no regulatory bodies, and no market competition to challenge its innovation
+              trajectory (Stanton, 2008). The result is not a failure of technology — it is
+              a failure of the system surrounding it.
+            </p>
+
+            <div class="callout">
+              <strong>S-T-I-S note:</strong> The film is not a critique of robotics.
+              It is a critique of what happens when the "Society" node of the S-T-I-S
+              system is removed from the feedback loop. The WALL-E units themselves
+              function exactly as designed — the system failure is at the governance
+              and institutional levels, not the engineering level.
+            </div>
+
+            <p class="t-body">
+              Mapping the four nodes to the film's world reveals a clear structural narrative.
+              The S-T-I-S system was in equilibrium in BnL's early decades — but once corporate
+              hegemony collapsed societal oversight, the remaining three nodes (Science,
+              Technology, Innovation) entered an uncorrected trajectory toward ecological
+              overshoot. Anil (2025) identifies this dynamic as <strong>Convergence Without
+              Governance</strong>: the co-emergence of multiple exponential technologies
+              (robotics, AI, logistics) without corresponding institutional architecture
+              to direct their collective impact.
+            </p>
+          </div>
+
+          <!-- S-T-I-S quad visual + image placeholder -->
+          <div class="space-y-16">
+
+            <div class="stis-grid">
+              <div class="card blue" style="padding:18px; transform:rotate(-0.5deg);">
+                <div class="badge blue t-label" style="margin-bottom:8px;">Science</div>
+                <h3 class="t-h3" style="font-size:0.85rem; color:#60a5fa; margin-bottom:8px;">Underlying Knowledge</h3>
+                <p class="t-small t-muted">Solar photovoltaics; polymer compression mechanics; machine learning for object classification; thermodynamic energy recovery from compacted material.</p>
+              </div>
+              <div class="card orange" style="padding:18px; transform:rotate(0.4deg);">
+                <div class="badge orange t-label" style="margin-bottom:8px;">Technology</div>
+                <h3 class="t-h3" style="font-size:0.85rem; color:#fb923c; margin-bottom:8px;">The Artefact</h3>
+                <p class="t-small t-muted">WALL-E unit class: compaction actuators, tank treads, solar charging array, stereoscopic optical sensors, adaptive grasping system, emergent behavioural AI.</p>
+              </div>
+              <div class="card green" style="padding:18px; transform:rotate(0.3deg);">
+                <div class="badge green t-label" style="margin-bottom:8px;">Innovation</div>
+                <h3 class="t-h3" style="font-size:0.85rem; color:#34d399; margin-bottom:8px;">Commercialised Application</h3>
+                <p class="t-small t-muted">BnL's "Operation Cleanup" — autonomous robotic waste-management deployed at planetary scale. A solution-to-scale leap with no successor R&amp;D pipeline.</p>
+              </div>
+              <div class="card red" style="padding:18px; transform:rotate(-0.6deg);">
+                <div class="badge red t-label" style="margin-bottom:8px;">Society ✖</div>
+                <h3 class="t-h3" style="font-size:0.85rem; color:#f87171; margin-bottom:8px;">Severed Node</h3>
+                <p class="t-small t-muted">No regulatory counterweight. No democratic accountability. BnL absorbed all governmental functions. The feedback mechanism that would correct the system is absent.</p>
+              </div>
+            </div>
+
+            <div class="img-wrap filmstrip taped">
+  <img src="images/steward-robots.jpg" alt="A row of STEWARD enforcement robots displaying red stop-hand symbols, blocking an Axiom corridor" loading="lazy">
+  <div class="img-caption"><strong>Fig. 3.1</strong> Automated governance without oversight — STEWARD units enforce Directive A113 without human deliberation. Technology embedded in societal infrastructure with no human accountability mechanism.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+
+          </div>
+        </div><!-- /split-layout -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         3.2 TYPES OF INNOVATION
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-types">
+      <div class="container">
+        <span class="sub-section-label">3.2</span>
+        <h2 class="t-h2" id="h-types" style="margin-bottom:32px;">Types of Innovation</h2>
+
+        <div class="split-layout reverse">
+
+          <!-- Image area (appears right due to reverse) -->
+          <div class="space-y-16">
+
+            <!-- Henderson-Clark matrix -->
+            <div class="card blue" style="padding:20px;">
+              <h3 class="t-h3" style="color:#60a5fa; margin-bottom:4px; font-size:0.85rem;">Henderson &amp; Clark (1990) Innovation Matrix</h3>
+              <p class="t-small t-muted" style="margin-bottom:12px; font-size:0.65rem;">Applied to the WALL·E universe</p>
+              <div class="hc-matrix">
+                <!-- row 0: column headers -->
+                <div class="hc-axis-label" style="grid-column:1; grid-row:1;"></div>
+                <div class="hc-axis-label" style="grid-column:2; grid-row:1; color:#60a5fa;">Core Components<br>UNCHANGED</div>
+                <div class="hc-axis-label" style="grid-column:3; grid-row:1; color:#fb923c;">Core Components<br>CHANGED</div>
+                <!-- row 1: Architecture Unchanged -->
+                <div class="hc-axis-label" style="grid-column:1; grid-row:2; writing-mode:vertical-lr; transform:rotate(180deg); font-size:0.5rem; color:#60a5fa;">Architecture<br>UNCHANGED</div>
+                <div class="hc-cell" style="background:#0f2a4a; grid-column:2; grid-row:2;">
+                  <div class="hc-cell-label" style="color:#60a5fa;">Incremental</div>
+                  <div class="hc-cell-body">Refinements within established design. Components improve; system logic unchanged.</div>
+                  <div class="hc-cell-example">WALL-E's 700-year self-maintenance — track repair, optical calibration, solar panel optimisation.</div>
+                </div>
+                <div class="hc-cell" style="background:#2d1a0e; grid-column:3; grid-row:2;">
+                  <div class="hc-cell-label" style="color:#fb923c;">Radical</div>
+                  <div class="hc-cell-body">New components AND new architecture. Breaks with all prior design assumptions.</div>
+                  <div class="hc-cell-example">EVE (Extraterrestrial Vegetation Evaluator) — energy weaponry, wireless AI, hover-flight. No physical analogue in WALL-E's generation.</div>
+                </div>
+                <!-- row 2: Architecture Changed -->
+                <div class="hc-axis-label" style="grid-column:1; grid-row:3; writing-mode:vertical-lr; transform:rotate(180deg); font-size:0.5rem; color:#fb923c;">Architecture<br>CHANGED</div>
+                <div class="hc-cell" style="background:#0a2410; grid-column:2; grid-row:3;">
+                  <div class="hc-cell-label" style="color:#34d399;">Architectural</div>
+                  <div class="hc-cell-body">Same components, radically new system configuration.</div>
+                  <div class="hc-cell-example">The Axiom starliner — existing tech (dining, transport, entertainment) arranged into a closed-loop space habitat with no terrestrial analogue.</div>
+                </div>
+                <div class="hc-cell" style="background:#1a0a2e; grid-column:3; grid-row:3;">
+                  <div class="hc-cell-label" style="color:#a78bfa;">Disruptive</div>
+                  <div class="hc-cell-body">Initially simpler and cheaper; later displaces incumbents (Christensen, 1997).</div>
+                  <div class="hc-cell-example">WALL-E units disrupted human waste labour when deployed — then overshot, removing humans from the loop entirely.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="img-wrap filmstrip taped">
+  <img src="images/walle-eve-seedling.jpg" alt="WALL-E presenting a seedling to EVE — the weathered incremental unit alongside the sleek radical probe" loading="lazy">
+  <div class="img-caption"><strong>Fig. 3.2</strong> Innovation taxonomy — WALL-E (incremental: a unit class accreting capability over 700 years) alongside EVE (radical: a discontinuous technological leap in capability, form factor, and mission purpose).<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+
+          </div>
+
+          <!-- Text -->
+          <div class="space-y-24">
+            <p class="t-body">
+              Jain (2023) defines innovation as the process of translating an idea or invention
+              into a good or service that creates value — a definition that emphasises
+              <em>application and impact</em> over novelty alone. This distinction is critical
+              for reading <em>WALL·E</em>: BnL's technological output was undeniably novel,
+              but its failure to generate sustained social value — a clean planet, a
+              thriving civilisation — disqualifies it from being genuine innovation in Jain's
+              sense. Novelty without social benefit is not innovation; it is capability drift.
+            </p>
+
+            <p class="t-body">
+              Henderson and Clark (1990) argue that innovation cannot be reduced to a binary
+              of "new" versus "old." Their foundational taxonomy — spanning Incremental,
+              Radical, Architectural, and Disruptive types — is determined by changes at
+              two levels: the <strong>core components</strong> (the individual technologies
+              within a system) and the <strong>system architecture</strong> (the relationships
+              between those components). <em>WALL·E</em> contains striking examples of all
+              four types, embedded across the timeline of BnL's technological development.
+            </p>
+
+            <p class="t-body">
+              The WALL-E unit class itself is best understood as an outcome of
+              <strong>Incremental Innovation</strong> — the established paradigm of
+              autonomous ground robots refined over decades (Henderson &amp; Clark, 1990).
+              Its components (track drives, compression actuators, optical sensors) were
+              not novel in isolation; what distinguished the WALL-E fleet was the scale
+              of deployment. By contrast, the EVE probe represents a
+              <strong>Radical Innovation</strong>: an entirely new component architecture
+              — hover-propulsion, plasma weaponry, wireless AI uplink — that shares no
+              design lineage with the WALL-E generation (Stanton, 2008).
+            </p>
+
+            <p class="t-body">
+              Christensen's (1997) model of <strong>Disruptive Innovation</strong> adds a
+              further dimension. The original WALL-E fleet was, at the moment of deployment,
+              a classic disruptive technology: cheaper than human waste labour, initially
+              limited in capability, but scaling rapidly to replace the incumbent model
+              entirely. The tragedy embedded in the film's backstory is that the disruption
+              completed its cycle — and then continued, unchecked, for 700 years beyond
+              its intended scope. There was no "sustaining innovation" phase, because the
+              market (humanity) had evacuated.
+            </p>
+
+            <p class="t-body">
+              A fifth category, absent from the Henderson–Clark original matrix, is
+              equally visible: <strong>Frugal Innovation</strong> — doing more with less,
+              principally for underserved or resource-constrained contexts. Radjou (2023)
+              identifies three core principles of frugal innovation: engage and iterate with
+              customers; flex assets; create sustainable solutions. WALL-E's improvised
+              700-year self-maintenance — fashioning replacement parts from scavenged
+              components, repurposing a Rubik's Cube as a grip test, recharging on ambient
+              solar — satisfies all three: iterating on available materials, flexing
+              deteriorating assets, and sustaining operational capacity with near-zero
+              resource input (Radjou, 2023).
+            </p>
+
+            <div class="callout">
+              <strong>Absence of Innovation as system risk:</strong> The most consequential
+              "innovation type" visible in <em>WALL·E</em> is the complete cessation of
+              R&amp;D investment in Earth-based restoration. BnL innovated aggressively in
+              the Axiom ecosystem while allowing the Earth-side cleanup system to decay
+              without a successor technology. This illustrates Henderson and Clark's
+              (1990) warning that architectural rigidity — the inability to reconfigure
+              existing systems for new purposes — is frequently more dangerous than
+              technological absence.
+            </div>
+
+            <p class="t-body">
+              DeBrusk (2025) adds a complexity lens to this structural argument.
+              As technological systems grow more intricate, the cognitive and organisational
+              demands required to <em>innovate within them</em> increase proportionally —
+              a paradox in which technical sophistication becomes a barrier to its own
+              renewal. BnL's Earth-side operation is a precise illustration: 700 years
+              of accumulated operational complexity produced a system so institutionally
+              entrenched that no surviving actor possessed the organisational capacity
+              to conceive a successor technology. The WALL-E fleet was not merely
+              obsolete — it was <em>cognitively locked in</em> (DeBrusk, 2025).
+            </p>
+          </div>
+
+        </div><!-- /split-layout -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         3.3 INNOVATION SYSTEMS
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-systems">
+      <div class="container">
+        <span class="sub-section-label">3.3</span>
+        <h2 class="t-h2" id="h-systems" style="margin-bottom:32px;">Innovation Systems &amp; Ecosystems</h2>
+
+        <div class="split-layout">
+
+          <!-- Text -->
+          <div class="space-y-24">
+            <p class="t-body">
+              Andersen and Andersen (2014) propose <strong>Innovation System Foresight (ISF)</strong>
+              as a framework for mapping the actors, institutions, knowledge flows, and network
+              relationships that collectively enable — or constrain — technological development.
+              ISF identifies three structural prerequisites for a functioning innovation system:
+              a diversity of actors capable of generating novel knowledge combinations; feedback
+              mechanisms that allow system outputs to inform future inputs; and adaptive capacity
+              to pivot when the dominant technological trajectory becomes obsolete.
+            </p>
+            <p class="t-body">
+              <em>WALL·E</em>'s world is a systematic destruction of all three. BnL operated
+              as a <strong>Monopolistic Closed Innovation System</strong> — a single corporate
+              actor controlling all research, manufacturing, distribution, and governance
+              simultaneously. In this configuration, knowledge spillovers between independent
+              actors (the primary mechanism of systemic innovation, per Andersen &amp; Andersen,
+              2014) are structurally impossible. BnL could not benefit from competitive pressure,
+              academic challenge, or regulatory correction, because it had absorbed or eliminated
+              every countervailing institution.
+            </p>
+
+            <div class="space-y-16">
+              <div class="actor-row">
+                <div class="actor-num" aria-hidden="true">01</div>
+                <div>
+                  <h3 class="t-h3" style="color:#f87171; margin-bottom:4px;">Diversity Eliminated</h3>
+                  <p class="t-small t-muted">The ISF model requires multiple competing actors generating knowledge. BnL replaced governments, universities, and competing firms with a single internal R&amp;D apparatus — removing the diversity that enables system adaptation (Andersen &amp; Andersen, 2014).</p>
+                </div>
+              </div>
+              <div class="actor-row">
+                <div class="actor-num" aria-hidden="true">02</div>
+                <div>
+                  <h3 class="t-h3" style="color:#fb923c; margin-bottom:4px;">Feedback Severed</h3>
+                  <p class="t-small t-muted">Once humanity evacuated, there was no feedback loop from Earth's deterioration back to the system's decision-makers. The innovation system had no mechanism to register that its primary objective — planetary cleanup — was failing. AUTO's suppression of the plant evidence is, structurally, a feedback-suppression mechanism (Stanton, 2008).</p>
+                </div>
+              </div>
+              <div class="actor-row" style="border:none;">
+                <div class="actor-num" aria-hidden="true">03</div>
+                <div>
+                  <h3 class="t-h3" style="color:#34d399; margin-bottom:4px;">Adaptive Capacity Frozen</h3>
+                  <p class="t-small t-muted">The WALL-E fleet was designed for one task and had no mandate — nor any institutional support — to pivot when conditions changed. 700 years of S-curve plateau ensued: the Andersen and Andersen (2014) scenario of a technology locked into a declining trajectory with no supporting knowledge infrastructure to generate a successor system.</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="t-body">
+              Rabelo Neto et al. (2024) extend this analysis through an
+              <strong>Innovation Ecosystem</strong> lens, arguing that sustainable
+              technological development requires not just actors and institutions but
+              a healthy network of value co-creation relationships — what they term
+              "ecosystem orchestration." The film's resolution offers a direct contrast:
+              the emergent coalition of the Captain, WALL-E, EVE, and the misfit robots
+              constitutes a nascent multi-actor adaptive system — precisely the ecosystem
+              architecture that BnL's monopoly had prevented.
+            </p>
+
+            <p class="t-body">
+              Chattaway (2020) frames BnL's failure through the lens of
+              <strong>Technology Transfer (TT)</strong>: the complex, multi-stage
+              process by which scientific knowledge moves from an originator site
+              to a receiver context. Chattaway identifies the most common failure
+              point as the <em>Valley of Death</em> — the gap between scientific
+              discovery and viable commercial deployment where latent (tacit)
+              knowledge is lost because the institutions bridging the two do not
+              exist. In <em>WALL·E</em>, no successor waste-management technology
+              ever crossed this valley, not for lack of scientific possibility,
+              but because BnL had eliminated the independent universities, research
+              networks, and competing firms that constitute the institutional
+              infrastructure of technology transfer. There was no originator site
+              willing to challenge BnL's incumbent technology, and therefore no
+              receiver context capable of demanding a better one (Chattaway, 2020).
+            </p>
+
+            <p class="t-body">
+              Schwab and Bonnici (2025) provide a final dimension: the film's
+              resolution is not merely a technological recovery — it is an act of
+              <strong>Social Entrepreneurship</strong>. The Captain's decision to
+              return to Earth rejects the logic of economic efficiency (survival
+              on the Axiom is safer, cheaper, and more certain) in favour of a
+              socially-purposive imperative: to <em>live</em>, not merely survive.
+              Schwab and Bonnici (2025) argue that social entrepreneurship has
+              moved from the margins to the mainstream as institutions recognise
+              that market logic alone cannot address planetary-scale challenges.
+              The Captain's revolt is the film's enacted proof of this thesis:
+              the innovation that matters most is not the next-generation robot,
+              but the human decision to reclaim governance of the systems we
+              have built (Schwab &amp; Bonnici, 2025).
+            </p>
+          </div>
+
+          <!-- Right: ISF collapse visual + image placeholder -->
+          <div class="space-y-16">
+
+            <div class="card orange" style="padding:24px;">
+              <h3 class="t-h3" style="color:#fb923c; margin-bottom:16px; font-size:0.9rem;">BnL as Monopolistic Closed System</h3>
+              <div class="space-y-16">
+                <div>
+                  <div class="progress-bar-label"><span>Actor Diversity</span><span style="color:#f87171;">Near Zero</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill red" style="width:5%"></div></div>
+                </div>
+                <div>
+                  <div class="progress-bar-label"><span>Feedback Mechanisms</span><span style="color:#fb923c;">Suppressed</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill orange" style="width:10%"></div></div>
+                </div>
+                <div>
+                  <div class="progress-bar-label"><span>Adaptive Capacity</span><span style="color:#fbbf24;">Absent</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill orange" style="width:8%"></div></div>
+                </div>
+                <div style="border-top:1px solid #334155; padding-top:16px;">
+                  <div class="progress-bar-label"><span>Captain's Coalition (film end)</span><span style="color:#34d399;">Emergent</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill green" style="width:45%"></div></div>
+                </div>
+              </div>
+              <p class="t-caption t-muted mt-16" style="font-size:0.65rem;">
+                Structural ISF indicators. Adapted from Andersen &amp; Andersen (2014);
+                Rabelo Neto et al. (2024).
+              </p>
+            </div>
+
+            <div class="card sticky" style="transform:rotate(-1.1deg);">
+              <div class="badge amber t-label" style="margin-bottom:10px;">ISF Note</div>
+              <p class="t-small" style="color:#fbbf24; font-style:italic; line-height:1.7;">
+                "A system locked into a single actor, a single directive, and zero
+                feedback cannot adapt. It can only continue — until it collapses."
+              </p>
+              <span class="quote-attribution">— Derived from Andersen &amp; Andersen (2014), Innovation System Foresight</span>
+            </div>
+
+            <div class="img-wrap filmstrip taped">
+  <img src="images/captain-700-years.jpg" alt="The Axiom bridge command centre with screens displaying the Captain and the text 700 YEARS, the moment of systemic human reawakening" loading="lazy">
+  <div class="img-caption"><strong>Fig. 3.3</strong> Feedback restored — the Captain's realisation that 700 years of automation has suspended the innovation system's evolutionary loop. Human curiosity re-entering the closed system as an exogenous shock.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+
+          </div>
+        </div><!-- /split-layout -->
+
+        <!-- Full-width synthesis callout -->
+        <div class="callout green" style="margin-top:48px;">
+          <strong>Synthesis — Science, Types &amp; Systems:</strong> The three dimensions
+          of this section converge on a single insight. <em>WALL·E</em> does not depict
+          a failure of science or a failure of any particular innovation type. It depicts
+          the failure of the <em>system</em> that coordinates them. When the Society node
+          of the S-T-I-S framework is removed; when innovation types (from incremental
+          self-repair to frugal improvisation) are locked in service of a single
+          actor's directive; when the ISF prerequisites of diversity, feedback, and
+          adaptive capacity are eliminated; and when the Valley of Death prevents
+          successor technologies from ever reaching deployment — technological
+          capability becomes technologically catastrophic. The corrective is not
+          better engineering. It is the social entrepreneurship that Schwab and
+          Bonnici (2025) describe: human actors choosing to redirect innovation toward
+          social purpose, even when market logic argues against it. The lesson
+          for contemporary innovation governance — in the age of autonomous AI, synthetic
+          biology, and planetary-scale infrastructure — is precisely this (Andersen &amp;
+          Andersen, 2014; Chattaway, 2020; DeBrusk, 2025; Rabelo Neto et al., 2024;
+          Schwab &amp; Bonnici, 2025).
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Section footer -->
+  <footer class="container">
+    <div class="sb-section-footer">
+      <div class="footer-glossary">
+        <h4>Key Terms</h4>
+        <dl>
+          <dt>S-T-I-S System: </dt>
+          <dd>The co-constitutive relationship between Science, Technology, Innovation, and Society — each node continuously reshaping the others.</dd>
+          <dt>Innovation System Foresight (ISF): </dt>
+          <dd>A framework mapping the actors, institutions, and network relationships that enable or constrain technological development (Andersen &amp; Andersen, 2014).</dd>
+          <dt>Disruptive Innovation: </dt>
+          <dd>An initially simpler, cheaper technology that scales to displace incumbents — introduced by Christensen (1997).</dd>
+          <dt>Architectural Innovation: </dt>
+          <dd>Reconfiguring existing components into a radically new system, without replacing the components themselves (Henderson &amp; Clark, 1990).</dd>
+          <dt>Frugal Innovation: </dt>
+          <dd>Innovation that does more with less for resource-constrained contexts, based on three principles: engage and iterate, flex assets, create sustainable solutions (Radjou, 2023).</dd>
+          <dt>Valley of Death: </dt>
+          <dd>The gap between scientific discovery and viable commercial deployment where tacit knowledge is lost when bridging institutions are absent (Chattaway, 2020).</dd>
+          <dt>Technology Complexity Lock-in: </dt>
+          <dd>The paradox in which increasing technological sophistication raises the cognitive and organisational barriers required to innovate within the system (DeBrusk, 2025).</dd>
+          <dt>Social Entrepreneurship: </dt>
+          <dd>Innovation driven by social purpose rather than commercial return — now a mainstream organisational strategy for addressing planetary-scale challenges (Schwab &amp; Bonnici, 2025).</dd>
+        </dl>
+      </div>
+      <nav class="footer-nav" aria-label="Section navigation">
+        <a href="section-technology-focus.html">← Technology in Focus</a>
+        <a href="section-predictions.html">Predictions &amp; Experts →</a>
+      </nav>
+    </div>
+   
+  </footer>
+
+  <script src="scrapbook-nav.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 06: Technology, Society &amp; Environment — WALL·E Scrapbook</title>
+  <link rel="stylesheet" href="scrapbook.css">
+  <style>
+    .hero-band {
+      background: linear-gradient(145deg, #1e293b 0%, #020617 60%);
+      border-bottom: 1px solid #334155;
+      padding: 64px 0 48px;
+    }
+    .sub-section-label {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 0.5625rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #3b82f6;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .split-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .split-layout.reverse { direction: rtl; }
+    .split-layout.reverse > * { direction: ltr; }
+    @media (max-width: 768px) {
+      .split-layout { grid-template-columns: 1fr; }
+      .split-layout.reverse { direction: ltr; }
+    }
+
+    /* STEEP-L grid */
+    .steepl-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    @media (max-width: 640px) { .steepl-grid { grid-template-columns: 1fr; } }
+    .steepl-card {
+      border-radius: 8px;
+      padding: 14px 16px;
+      border-left: 3px solid;
+    }
+    .steepl-dim {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .steepl-title {
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .steepl-body {
+      font-size: 0.68rem;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    /* Bidirectional flow (6.2) */
+    .bi-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    .bi-node {
+      border-radius: 8px;
+      padding: 14px 18px;
+      position: relative;
+    }
+    .bi-arrow {
+      text-align: center;
+      color: #475569;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      padding: 2px 0;
+    }
+    .bi-label {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .bi-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .bi-body {
+      font-size: 0.68rem;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    /* Enablers / Disruptors two-column table */
+    .ed-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    @media (max-width: 640px) { .ed-grid { grid-template-columns: 1fr; } }
+    .ed-item {
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .ed-icon {
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+    .ed-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .ed-body {
+      font-size: 0.68rem;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+    .ed-source {
+      font-size: 0.6rem;
+      color: #475569;
+      margin-top: 6px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="sb-nav" role="navigation" aria-label="Scrapbook sections">
+    <div class="sb-nav-inner">
+      <span class="sb-nav-logo">WALL·E Scrapbook</span>
+      <a href="index.html">Cover</a>
+      <a href="section-background.html">Background</a>
+      <a href="section-technology-focus.html">Technology</a>
+      <a href="section-science-innovation.html">Science &amp; Innovation</a>
+      <a href="section-predictions.html">Predictions</a>
+      <a href="section-frameworks.html">Frameworks</a>
+      <a href="section-tse.html" class="active">Society &amp; Environment</a>
+      <a href="section-driving-forces.html">Driving Forces</a>
+      <a href="section-references.html">References</a>
+    </div>
+  </nav>
+
+  <!-- Section header -->
+  <header class="hero-band" role="banner">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <span class="section-num">Section 06</span>
+          <span class="badge blue">Technology, Society &amp; Environment</span>
+          <span class="badge orange">~3,600 Words</span>
+        </div>
+        <h1 class="t-h1">Technology, Society &amp; Environment</h1>
+        <p class="t-body t-muted mt-16" style="max-width:680px;">
+          A tripartite analysis: the impact <em>of</em> the WALL-E unit class on society and
+          environment (STEEP-L); the impact <em>on</em> the technology from the world that
+          produced it; and the real-world enablers and disruptors shaping autonomous
+          waste-management robotics today.
+        </p>
+        <div class="section-header divider-line"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════
+         6.1 IMPACT OF TECHNOLOGY
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-impact-of">
+      <div class="container">
+        <span class="sub-section-label">6.1</span>
+        <h2 class="t-h2" id="h-impact-of" style="margin-bottom:12px;">Impact <em>of</em> Technology</h2>
+        <p class="t-body t-muted" style="margin-bottom:32px; max-width:640px;">
+          The STEEP-L framework maps the multidimensional impact of the WALL-E unit class
+          — and the broader BnL autonomous systems ecosystem — across seven domains:
+          Society, Technology, Economy, Environment, Politics, Law, and Culture.
+        </p>
+
+        <div class="split-layout">
+
+          <!-- Left: intro text + STEEP-L grid -->
+          <div class="space-y-24">
+            <p class="t-body">
+              Assessing the impact of a technology requires moving beyond narrow
+              performance metrics — compaction rate, operational uptime, energy
+              consumption — to examine the full spectrum of societal, environmental,
+              and institutional consequences (Alsaleh, 2024; Mao et al., 2020). The STEEP-L
+              framework provides this multi-dimensional lens. Applied to the WALL-E
+              unit class, it reveals a technology whose direct impacts on seven domains
+              are simultaneously world-historic in scale and catastrophic in their
+              cumulative effect.
+            </p>
+
+            <div class="steepl-grid" role="list" aria-label="STEEP-L impact dimensions">
+
+              <div class="steepl-card" style="background:#0f1e3a; border-color:#3b82f6;" role="listitem">
+                <div class="steepl-dim" style="color:#3b82f6;">Society</div>
+                <div class="steepl-title" style="color:#93c5fd;">Physical &amp; Social Atrophy</div>
+                <div class="steepl-body">Seven centuries of total automation have produced a population incapable of walking, growing food, or forming social bonds unaided. Bone density is critically reduced; obesity is universal. Aboard the Axiom, each person interacts exclusively through a personal HUD screen — even when physically adjacent. The technology designed to serve society has re-engineered the human body and dismantled community itself (Stanton, 2008).</div>
+              </div>
+
+              <div class="steepl-card" style="background:#1a1200; border-color:#f59e0b;" role="listitem">
+                <div class="steepl-dim" style="color:#f59e0b;">Technology</div>
+                <div class="steepl-title" style="color:#fcd34d;">Autonomous Convergence</div>
+                <div class="steepl-body">The WALL-E fleet catalysed a broader autonomous systems convergence — from ground compactors, to EVE-class aerial probes, to the Axiom's fully automated ship management. Each successive system was more capable and more autonomous than the last. Yet this technological progression occurred entirely within BnL's closed system, producing capability without accountability and scale without oversight (Noble et al., 2022).</div>
+              </div>
+
+              <div class="steepl-card" style="background:#0a1a10; border-color:#22c55e;" role="listitem">
+                <div class="steepl-dim" style="color:#22c55e;">Economy</div>
+                <div class="steepl-title" style="color:#86efac;">Terminal Monopoly</div>
+                <div class="steepl-body">BnL's automation of waste management was one node in a vertically integrated monopoly that eventually absorbed all productive economic activity. There is no visible market competition, no price mechanism, no labour market, and no capital allocation process aboard the Axiom. The economy has been fully internalised — every transaction is with BnL, every need is met by BnL, every resource is owned by BnL. This is the terminal endpoint of platform capitalism's network-effect logic (Stanton, 2008).</div>
+              </div>
+
+              <div class="steepl-card" style="background:#1a0a08; border-color:#f87171;" role="listitem">
+                <div class="steepl-dim" style="color:#f87171;">Environment</div>
+                <div class="steepl-title" style="color:#fca5a5;">Planetary Ecological Collapse</div>
+                <div class="steepl-body">Earth's atmosphere is toxic, the water cycle has ceased, no biological life persists at the surface, and the terrain has been replaced by anthropogenic topography — mountains of compacted waste cubes. This is the direct output of a 700-year autonomous compaction programme operating without ecological monitoring, remediation, or circular economy principles. The WALL-E unit compacts; it does not remediate. The environmental impact is total and near-irreversible (PMC, 2022; Stanton, 2008).</div>
+              </div>
+
+              <div class="steepl-card" style="background:#120a1a; border-color:#a78bfa;" role="listitem">
+                <div class="steepl-dim" style="color:#a78bfa;">Politics</div>
+                <div class="steepl-title" style="color:#c4b5fd;">Corporate State &amp; Democratic Void</div>
+                <div class="steepl-body">BnL's automation programme was the mechanism by which the corporation displaced all sovereign governments. The political impact of the WALL-E deployment was not merely environmental — it was constitutional. By rendering human labour, taxation, and territorial governance unnecessary, BnL eliminated the economic basis of the state. AUTO's enforcement of Directive A113 — suppressing the plant evidence — is the final political act: corporate algorithmic governance overriding any residual democratic potential (Stanton, 2008).</div>
+              </div>
+
+              <div class="steepl-card" style="background:#101a0a; border-color:#4ade80;" role="listitem">
+                <div class="steepl-dim" style="color:#4ade80;">Legal</div>
+                <div class="steepl-title" style="color:#86efac;">The Responsibility Gap</div>
+                <div class="steepl-body">When the WALL-E fleet continued operating for 700 years beyond its intended scope, no legal framework existed to hold anyone accountable. BnL had absorbed the regulatory bodies that would have enforced environmental law; the humans who evacuated Earth had no legal standing to intervene from the Axiom; and the machines themselves have no legal personhood. This is the "Responsibility Gap" — the structural absence of accountability that arises when autonomous systems act in ways no human intended and no institution can remedy (Tollon, 2023). Tollon (2023) demonstrates that responsibility gaps emerge when the "reactive attitudes" — the social practices through which humans hold each other accountable — cannot be coherently directed at autonomous agents: the agent that caused harm is not a moral subject, and the humans who designed and deployed it are too distant in time and causality to bear straightforward responsibility.</div>
+              </div>
+
+              <div class="steepl-card" style="background:#1a0f00; border-color:#fb923c; grid-column: span 2;" role="listitem">
+                <div class="steepl-dim" style="color:#fb923c;">Culture</div>
+                <div class="steepl-title" style="color:#fed7aa;">The Erasure of Cultural Memory</div>
+                <div class="steepl-body">The Axiom's human passengers have no knowledge of Earth, farming, cooking, walking, or any pre-automation cultural practice. The Captain's discovery that humans once grew food ("Pizza — I've heard of that!") illustrates a complete severance from cultural continuity. The WALL-E unit class is indirectly complicit: by enabling the evacuation, it made possible the 700-year cultural amnesia. WALL-E himself is the sole custodian of human cultural artefacts — his collection of objects (a Rubik's Cube, a shoe, a light bulb) is the only surviving museum of terrestrial human culture (Stanton, 2008).</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right: images -->
+          <div class="space-y-16">
+
+            <div class="img-wrap filmstrip taped">
+  <img src="images/axiom-passengers-crowd.jpg" alt="Wide shot of Axiom passengers packed together in hover-chairs, physically atrophied and socially isolated despite close physical proximity" loading="lazy">
+  <div class="img-caption"><strong>Fig. 6.1</strong> Society dimension — physical atrophy and social atomisation as systemic outcomes. Automation eliminates the conditions for physical activity and human social connection simultaneously.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+
+            <div class="img-wrap filmstrip taped">
+  <img src="images/trash-towers-wide.jpg" alt="Wide shot of Earth in 2805 with the entire visible surface replaced by compacted waste structures towering above the original city skyline" loading="lazy">
+  <div class="img-caption"><strong>Fig. 6.2</strong> Environment dimension — total planetary ecosystem failure. Earth's biological carrying capacity eliminated; the surface is a closed-loop waste substrate with no detectable organic activity.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+
+            <div class="callout" style="margin-top:8px;">
+              <strong>STEEP-L synthesis:</strong> Every dimension records a catastrophic
+              impact — yet each is the direct, logical consequence of a single design
+              decision: deploying autonomous waste compaction at planetary scale without
+              a parallel investment in governance, remediation, or circular-economy
+              principles. The technology performed exactly as specified. The STEEP-L
+              devastation is a governance failure, not an engineering failure.
+            </div>
+
+          </div>
+        </div><!-- /split-layout -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         6.2 IMPACT ON TECHNOLOGY
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-impact-on">
+      <div class="container">
+        <span class="sub-section-label">6.2</span>
+        <h2 class="t-h2" id="h-impact-on" style="margin-bottom:12px;">Impact <em>on</em> Technology</h2>
+        <p class="t-body t-muted" style="margin-bottom:32px; max-width:640px;">
+          Technology and society share a bi-directional relationship: the world does not
+          merely receive technology — it actively shapes the technology it produces. Five
+          societal forces directly moulded what the WALL-E unit class became.
+        </p>
+
+        <div class="split-layout reverse">
+
+          <!-- Bidirectional flow visual + images -->
+          <div class="space-y-16">
+
+            <div class="card blue" style="padding:20px;">
+              <h3 class="t-h3" style="color:#60a5fa; font-size:0.82rem; margin-bottom:14px;">The Bi-Directional Relationship</h3>
+              <div class="bi-flow" aria-label="Bidirectional relationship between society and WALL-E technology">
+
+                <div class="bi-node" style="background:#0a1a30;">
+                  <div class="bi-label" style="color:#fb923c;">Societal Driver</div>
+                  <div class="bi-title" style="color:#fed7aa;">Linear Consumer Economy</div>
+                  <div class="bi-body">The dominant "Take–Make–Dispose" economy of the 20th and 21st centuries generated the waste crisis that made autonomous compaction necessary. WALL-E exists because the economic system was structurally incapable of producing less waste.</div>
+                </div>
+                <div class="bi-arrow" aria-hidden="true">↓ shaped the design of ↓</div>
+                <div class="bi-node" style="background:#0a2040;">
+                  <div class="bi-label" style="color:#3b82f6;">Technology Response</div>
+                  <div class="bi-title" style="color:#93c5fd;">WALL-E Unit: Compactor, Not Recycler</div>
+                  <div class="bi-body">WALL-E compacts waste into cubes — it does not sort, recycle, or remediate. This design choice is a direct product of the linear economy: BnL needed to move waste <em>out of sight</em>, not back into the production cycle. A circular economy would have demanded a different technology entirely.</div>
+                </div>
+                <div class="bi-arrow" aria-hidden="true">↕ which in turn reinforced ↕</div>
+                <div class="bi-node" style="background:#0a1a30;">
+                  <div class="bi-label" style="color:#fb923c;">Societal Driver</div>
+                  <div class="bi-title" style="color:#fed7aa;">Corporate Monopoly Culture</div>
+                  <div class="bi-body">BnL's absorption of government, media, and civil society shaped the governance vacuum in which WALL-E was deployed. A pluralist society with independent regulatory bodies would have mandated environmental impact assessments, operational time limits, and successor technology development. BnL's monopoly eliminated all of these constraints.</div>
+                </div>
+                <div class="bi-arrow" aria-hidden="true">↓ enabled ↓</div>
+                <div class="bi-node" style="background:#0a2040;">
+                  <div class="bi-label" style="color:#3b82f6;">Technology Response</div>
+                  <div class="bi-title" style="color:#93c5fd;">Autonomous Operation Without Oversight</div>
+                  <div class="bi-body">The 700-year unsupervised mission was only possible because the social and legal structures that would have required periodic human review, maintenance mandates, and operational sunset clauses had been absorbed and eliminated by BnL. The technology's longest-run "feature" — extreme autonomous endurance — is a product of societal failure, not engineering intent.</div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="img-wrap filmstrip taped">
+  <img src="images/captain-700-years.jpg" alt="Axiom bridge command centre with the Captain displayed across multiple screens alongside the 700 YEARS count — the moment of systemic human re-engagement" loading="lazy">
+  <div class="img-caption"><strong>Fig. 6.3</strong> Human agency reasserted — the Captain's decision to override AUTO's Directive A113 represents the critical intervention point: deliberate human governance re-entering a closed autonomous loop.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+
+          </div>
+
+          <!-- Text -->
+          <div class="space-y-24">
+            <p class="t-body">
+              Technology does not emerge in a vacuum. As the module framework on
+              technology, society, and environment establishes, the relationship between
+              a technology and its social context is fundamentally bi-directional: society
+              shapes the problems technologies are designed to solve, the resources available
+              to design them, the governance frameworks within which they operate, and the
+              cultural values they encode (Alsaleh, 2024). The WALL-E unit class
+              exemplifies all four of these shaping forces.
+            </p>
+            <p class="t-body">
+              The most consequential societal force shaping WALL-E's design is the
+              <strong>Linear Consumer Economy</strong>. The 20th and 21st centuries generated
+              a waste crisis through a "Take–Make–Dispose" production model that treated
+              the environment as a free sink for externalities (PMC, 2022). BnL's engineers
+              did not invent the waste crisis — they inherited it as the defining engineering
+              challenge of their era. The WALL-E unit is therefore a technology shaped by an
+              economic paradigm: its function (compaction, not recycling) directly mirrors the
+              linear economy's logic of disposal rather than recovery.
+            </p>
+            <p class="t-body">
+              The second shaping force is the <strong>urgency of ecological crisis</strong>.
+              Technologies developed under crisis conditions are systematically under-governed.
+              The pressure to deploy a solution — any solution — overrides the slower processes
+              of impact assessment, regulatory design, and stakeholder consultation
+              (Mao et al., 2020). BnL's decision to deploy millions of units across
+              Earth's surface without operational limits, sunset clauses, or maintenance
+              mandates is the product of precisely this crisis-governance dynamic.
+            </p>
+            <p class="t-body">
+              Third, and most distinctively, WALL-E's <strong>emergent personality</strong>
+              is itself a product of the social context (or its absence). Seven centuries
+              of isolation, surrounded by the accumulated cultural detritus of human
+              civilisation, produced in WALL-E a set of behaviours — curiosity, aesthetic
+              appreciation, emotional attachment — that his designers never intended and
+              BnL's institutional framework never anticipated. The social vacuum that
+              allowed WALL-E to operate without oversight also allowed him to develop
+              beyond his specification. This is the "Impact ON Technology" rendered at
+              its most poignant: the absence of human society shaped WALL-E into something
+              that longed for it (Stanton, 2008).
+            </p>
+            <p class="t-body">
+              Finally, the contrast between the WALL-E class and the EVE class illustrates
+              how <strong>different funding environments shape different technological
+              generations</strong>. WALL-E is a product of the pre-evacuation Earth economy —
+              constrained, industrial, optimised for scale over capability. EVE is a product
+              of the Axiom's continued R&amp;D investment in a space-adapted context —
+              radically more capable, powered by clean energy, equipped with advanced AI.
+              The technologies diverged not because of different engineering intentions,
+              but because the society funding them diverged (Noble et al., 2022).
+            </p>
+          </div>
+
+        </div><!-- /split-layout -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         6.3 ENABLERS & DISRUPTORS
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-enablers">
+      <div class="container">
+        <span class="sub-section-label">6.3</span>
+        <h2 class="t-h2" id="h-enablers" style="margin-bottom:12px;">Enablers &amp; Disruptors</h2>
+        <p class="t-body t-muted" style="margin-bottom:32px; max-width:640px;">
+          From <strong>today's real-world perspective</strong>: the forces currently
+          enabling autonomous waste-management robotics to develop toward the WALL-E
+          trajectory — and the forces that could derail, constrain, or redirect it.
+        </p>
+
+        <div class="split-layout">
+
+          <!-- Text intro -->
+          <div class="space-y-24">
+            <p class="t-body">
+              The gap between current autonomous waste-management robotics and the WALL-E
+              scenario is measured in capability, scale, and governance maturity. Several
+              powerful forces are currently accelerating the technology toward the WALL-E
+              trajectory; several others create significant friction. Understanding this
+              tension is the practical purpose of the foresight exercise: to identify the
+              leverage points at which different choices today produce radically different
+              futures tomorrow (Andersen &amp; Andersen, 2014).
+            </p>
+            <p class="t-body">
+              The three enablers below represent the most strategically significant
+              converging forces — technological, institutional, and paradigmatic — actively
+              compressing the timeline toward autonomous waste systems capable of multi-year
+              unassisted operation. The three disruptors represent the structural obstacles
+              that, if not addressed, will either constrain deployment or — most critically —
+              allow capability to develop without the governance architecture needed to
+              prevent a real-world analogue of the WALL-E failure.
+            </p>
+            <p class="t-body">
+              The most important insight from mapping enablers against disruptors is not
+              which side is stronger — it is the <strong>asymmetry of their timescales</strong>.
+              Enablers (AI advancement, circular economy regulation, 5IR design principles)
+              operate on 3–10 year compounding curves. Disruptors (governance frameworks,
+              public trust, labour transition policy) operate on 10–30 year institutional
+              timescales. Amara's Law predicts the result: capability will outpace governance,
+              and the technology will enter its "long run" operating in a regulatory vacuum.
+              The Responsibility Gap identified in section 6.1 — already present in the
+              film's world — is currently being recreated in our own (Tollon, 2023;
+              Ziatdinov et al., 2024).
+            </p>
+
+            <div class="callout green">
+              <strong>The 5IR corrective:</strong> Noble et al. (2022) argue that the Fifth
+              Industrial Revolution specifically addresses this asymmetry by embedding
+              human–machine <em>collaboration</em> — rather than human replacement — as
+              the design principle. A 5IR-aligned autonomous waste system would not
+              operate without human oversight; it would augment human decision-making
+              while humans retain ultimate accountability. This is the governance architecture
+              that BnL never built — and that the real-world development of this technology
+              must now prioritise.
+            </div>
+          </div>
+
+          <!-- Right: image + strength bars -->
+          <div class="space-y-16">
+
+            <div class="img-wrap filmstrip taped">
+  <img src="images/endcreditsfarming.webp" alt="WALL-E end-credits sequence — humans and robots cultivating crops together on a restored Earth, depicted in folk-art style with green fields and trees" loading="lazy">
+  <div class="img-caption"><strong>Fig. 6.4</strong> End-credits farming — the Solarpunk conditional. The future autonomous robotics enables <em>if</em> governance is in place: humans and machines cultivating a restored Earth together.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E end-credits farming sequence</em> [Film still]. Walt Disney Pictures.</span></div>
+</div>
+
+            <div class="card blue" style="padding:20px;">
+              <h3 class="t-h3" style="color:#60a5fa; font-size:0.82rem; margin-bottom:14px;">Force Balance: Enablers vs. Disruptors</h3>
+              <div class="space-y-8">
+                <div>
+                  <div class="progress-bar-label"><span style="color:#34d399;">AI &amp; CV Maturation</span><span style="color:#34d399;">Enabling ↑↑↑</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill green" style="width:88%"></div></div>
+                </div>
+                <div>
+                  <div class="progress-bar-label"><span style="color:#34d399;">Circular Economy Policy</span><span style="color:#34d399;">Enabling ↑↑</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill green" style="width:65%"></div></div>
+                </div>
+                <div>
+                  <div class="progress-bar-label"><span style="color:#34d399;">5IR Collaboration Paradigm</span><span style="color:#34d399;">Enabling ↑↑</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill green" style="width:55%"></div></div>
+                </div>
+                <div style="border-top:1px solid #1e293b; padding-top:8px;">
+                  <div class="progress-bar-label"><span style="color:#f87171;">Governance Lag</span><span style="color:#f87171;">Disrupting ↓↓↓</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill red" style="width:80%"></div></div>
+                </div>
+                <div>
+                  <div class="progress-bar-label"><span style="color:#f87171;">Algorithm Aversion</span><span style="color:#f87171;">Disrupting ↓↓</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill red" style="width:58%"></div></div>
+                </div>
+                <div>
+                  <div class="progress-bar-label"><span style="color:#f87171;">Labour Displacement</span><span style="color:#f87171;">Disrupting ↓↓</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill red" style="width:62%"></div></div>
+                </div>
+              </div>
+              <p class="t-caption t-muted" style="font-size:0.62rem; margin-top:10px;">Force intensity estimates. Sources: Noble et al. (2022); Alsaleh (2024); Mao et al. (2020); Tollon (2023); Matsumi &amp; Solove (2025).</p>
+            </div>
+
+          </div>
+        </div><!-- /split-layout -->
+
+        <!-- Enablers / Disruptors full-width grid -->
+        <div style="margin-top:40px;">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px;">
+
+            <!-- ENABLERS column -->
+            <div>
+              <h3 class="t-h3" style="color:#34d399; margin-bottom:16px; font-size:0.9rem; border-bottom:1px solid #14532d; padding-bottom:8px;">
+                ↑ Enablers — Forces Accelerating the Trajectory
+              </h3>
+              <div class="space-y-12">
+
+                <div class="ed-item" style="background:#091a10; border:1px solid #14532d;">
+                  <div class="ed-icon" aria-hidden="true">🤖</div>
+                  <div class="ed-title" style="color:#86efac;">AI &amp; Computer Vision Maturation</div>
+                  <div class="ed-body">Large-language model advances and real-time object detection (YOLO, SAM) now enable autonomous waste robots to classify and sort hundreds of material types without manual re-training. AMP Robotics' AI sorting systems already achieve 99% material identification accuracy at industrial throughputs. As models continue to compound, the capability gap between current systems and WALL-E's autonomous classification closes rapidly (Frontiers, 2025).</div>
+                  <div class="ed-source">Frontiers (2025); AMP Robotics (2025)</div>
+                </div>
+
+                <div class="ed-item" style="background:#091a10; border:1px solid #14532d;">
+                  <div class="ed-icon" aria-hidden="true">🌿</div>
+                  <div class="ed-title" style="color:#86efac;">Circular Economy Policy Mandates</div>
+                  <div class="ed-body">The EU's Green Deal, Extended Producer Responsibility (EPR) legislation across 40+ jurisdictions, and the UN Global Plastics Treaty are creating binding regulatory demand for waste automation at scale. Governments are not merely permitting autonomous waste systems — they are mandating levels of material recovery that only autonomous systems can achieve. Policy is actively pulling the technology toward deployment (PMC, 2022).</div>
+                  <div class="ed-source">PMC (2022); Mao et al. (2020)</div>
+                </div>
+
+                <div class="ed-item" style="background:#091a10; border:1px solid #14532d;">
+                  <div class="ed-icon" aria-hidden="true">🤝</div>
+                  <div class="ed-title" style="color:#86efac;">5IR Human–Machine Collaboration Paradigm</div>
+                  <div class="ed-body">Noble et al. (2022) argue that the Fifth Industrial Revolution — unlike the fourth — explicitly foregrounds human–machine collaboration as its design principle. If 5IR values are embedded in autonomous waste system design, the result is not a WALL-E scenario (autonomous replacement of human agency) but a collaborative model where robots handle hazardous, repetitive tasks while humans retain supervisory and strategic roles. This governance paradigm, if adopted, is the strongest structural counter to the ecophagy risk (Noble et al., 2022).</div>
+                  <div class="ed-source">Noble et al. (2022); Ziatdinov et al. (2024)</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- DISRUPTORS column -->
+            <div>
+              <h3 class="t-h3" style="color:#f87171; margin-bottom:16px; font-size:0.9rem; border-bottom:1px solid #7f1d1d; padding-bottom:8px;">
+                ↓ Disruptors — Forces Creating Friction or Risk
+              </h3>
+              <div class="space-y-12">
+
+                <div class="ed-item" style="background:#1a0808; border:1px solid #7f1d1d;">
+                  <div class="ed-icon" aria-hidden="true">⚖️</div>
+                  <div class="ed-title" style="color:#fca5a5;">Governance &amp; Regulatory Lag</div>
+                  <div class="ed-body">The deployment pace of autonomous systems is outstripping regulatory framework development by an estimated 5–10× (Matsumi &amp; Solove, 2025; Wadhwa, 2014). No jurisdiction currently has a comprehensive legal framework for: autonomous system operational time limits, environmental liability for robotic systems, or mandatory human oversight requirements at specified capability thresholds. Wadhwa (2014) identified this gap over a decade ago; Matsumi and Solove (2025) confirm that the intervening decade has only widened it. This is the real-world recreation of the WALL-E governance gap — in progress, in our time.</div>
+                  <div class="ed-source">Wadhwa (2014); Matsumi &amp; Solove (2025); Tollon (2023)</div>
+                </div>
+
+                <div class="ed-item" style="background:#1a0808; border:1px solid #7f1d1d;">
+                  <div class="ed-icon" aria-hidden="true">👥</div>
+                  <div class="ed-title" style="color:#fca5a5;">Public Trust Deficit &amp; Algorithm Aversion</div>
+                  <div class="ed-body">Research on "algorithm aversion" documents a consistent pattern: people accept algorithmic recommendations in low-stakes contexts but reject autonomous decision-making in high-stakes domains. Waste management — which directly affects public health, property values, and community environments — is precisely the high-stakes domain where public trust in autonomous systems is lowest. Deployment without meaningful public consultation and transparency risks both regulatory backlash and social resistance (Alsaleh, 2024).</div>
+                  <div class="ed-source">Alsaleh (2024)</div>
+                </div>
+
+                <div class="ed-item" style="background:#1a0808; border:1px solid #7f1d1d;">
+                  <div class="ed-icon" aria-hidden="true">⚡</div>
+                  <div class="ed-title" style="color:#fca5a5;">Labour Displacement Without Transition Policy</div>
+                  <div class="ed-body">The global waste management workforce employs an estimated 20 million people, predominantly in informal economies in the Global South. Autonomous systems that displace this workforce without parallel investment in retraining, social protection, and alternative livelihoods will generate political resistance that constrains deployment — and, more critically, will replicate the WALL-E scenario's social failure: technology that serves economic efficiency while destroying the human systems it was meant to serve (Noble et al., 2022; Ziatdinov et al., 2024).</div>
+                  <div class="ed-source">Noble et al. (2022); Ziatdinov et al. (2024)</div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Synthesis callout -->
+        <div class="callout green" style="margin-top:48px;">
+          <strong>Section Synthesis — Technology, Society &amp; Environment:</strong> The
+          three sub-sections of this analysis converge on a single structural argument.
+          The WALL-E unit class did not cause the world of <em>WALL·E</em> — the world
+          caused the WALL-E unit class, and then failed to govern it. The STEEP-L impacts
+          (6.1) are consequences of the societal forces that shaped the technology (6.2).
+          And those same shaping forces — linear economy, corporate monopoly, crisis-driven
+          urgency, governance lag — are visibly at work today in the real-world development
+          of autonomous waste systems (6.3). The film's value as a foresight instrument is
+          not that it predicts a specific future, but that it makes the structural logic of
+          <em>this</em> future — the one we are currently building — emotionally undeniable
+          (Augé, 2021; Zaidi, 2019).
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Section footer -->
+  <footer class="container">
+    <div class="sb-section-footer">
+      <div class="footer-glossary">
+        <h4>Key Terms</h4>
+        <dl>
+          <dt>STEEP-L: </dt>
+          <dd>A multi-dimensional impact framework covering Society, Technology, Economy, Environment, Politics, Law, and Culture.</dd>
+          <dt>Responsibility Gap: </dt>
+          <dd>The structural absence of accountability that arises when autonomous systems produce consequences no human intended and no institution can remedy.</dd>
+          <dt>Bi-Directional Relationship: </dt>
+          <dd>The mutual shaping between technology and society — each continuously redesigning the other.</dd>
+          <dt>Enabler: </dt>
+          <dd>A force currently accelerating the development or deployment of the focal technology toward its projected trajectory.</dd>
+          <dt>Disruptor: </dt>
+          <dd>A force creating friction, constraint, or redirected momentum in the focal technology's development pathway.</dd>
+        </dl>
+      </div>
+      <nav class="footer-nav" aria-label="Section navigation">
+        <a href="section-frameworks.html">← Frameworks</a>
+        <a href="section-driving-forces.html">Driving Forces →</a>
+      </nav>
+    </div>
+    <div style="padding:24px 0;">
+      </div>
+  </footer>
+
+  <script src="scrapbook-nav.js" defer></script>
+</body>
+</html>

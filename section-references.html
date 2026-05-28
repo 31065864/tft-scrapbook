@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>References — WALL·E Scrapbook</title>
+  <link rel="stylesheet" href="scrapbook.css">
+  <style>
+    .hero-band {
+      background: linear-gradient(145deg, #1e293b 0%, #020617 60%);
+      border-bottom: 1px solid #334155;
+      padding: 64px 0 48px;
+    }
+    /* Hanging-indent APA style */
+    .ref-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .ref-item {
+      padding: 14px 0 14px 32px;
+      text-indent: -32px;
+      border-bottom: 1px solid #1e293b;
+      font-size: 0.82rem;
+      color: #94a3b8;
+      line-height: 1.75;
+    }
+    .ref-item:last-child { border-bottom: none; }
+    .ref-item em { color: #e2e8f0; font-style: italic; }
+    .ref-item a  { color: #3b82f6; word-break: break-all; }
+    .ref-item a:hover { color: #60a5fa; }
+    .ref-pending { color: #f97316; font-style: italic; font-size: 0.75rem; }
+
+    /* Category headings */
+    .ref-category {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 0.5625rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #3b82f6;
+      margin: 48px 0 4px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #1e3a5f;
+    }
+    .ref-category-count {
+      font-family: 'Lato', system-ui, sans-serif;
+      font-size: 0.6rem;
+      color: #475569;
+      letter-spacing: 0;
+      text-transform: none;
+      margin-left: 8px;
+    }
+
+    /* Jump nav */
+    .ref-jumpnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .ref-jumpnav a {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #64748b;
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 4px;
+      padding: 6px 12px;
+      text-decoration: none;
+    }
+    .ref-jumpnav a:hover { color: #3b82f6; border-color: #3b82f6; }
+
+    /* Section count summary */
+    .ref-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 640px) { .ref-summary-grid { grid-template-columns: 1fr 1fr; } }
+    .ref-summary-cell {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      padding: 14px;
+      text-align: center;
+    }
+    .ref-summary-num {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #3b82f6;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .ref-summary-label {
+      font-size: 0.65rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="sb-nav" role="navigation" aria-label="Scrapbook sections">
+    <div class="sb-nav-inner">
+      <span class="sb-nav-logo">WALL·E Scrapbook</span>
+      <a href="index.html">Cover</a>
+      <a href="section-background.html">Background</a>
+      <a href="section-technology-focus.html">Technology</a>
+      <a href="section-science-innovation.html">Science &amp; Innovation</a>
+      <a href="section-predictions.html">Predictions</a>
+      <a href="section-frameworks.html">Frameworks</a>
+      <a href="section-tse.html">Society &amp; Environment</a>
+      <a href="section-driving-forces.html">Driving Forces</a>
+      <a href="section-references.html" class="active">References</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="hero-band" role="banner">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <span class="section-num">References</span>
+          <span class="badge blue">APA 7th Edition</span>
+          <span class="badge orange">All Sections</span>
+        </div>
+        <h1 class="t-h1">Reference List</h1>
+        <p class="t-body t-muted mt-16" style="max-width:680px;">
+          All sources cited throughout the scrapbook, formatted in APA 7th Edition.
+          Organised by source type; alphabetical within each category.
+          In-text citations follow the (Author, Year) format throughout.
+        </p>
+        <div class="section-header divider-line"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-block">
+      <div class="container" style="max-width:860px;">
+
+        <!-- Summary counts -->
+        <div class="ref-summary-grid" aria-label="Reference summary statistics">
+          <div class="ref-summary-cell">
+            <div class="ref-summary-num">1</div>
+            <div class="ref-summary-label">Primary Source</div>
+          </div>
+          <div class="ref-summary-cell">
+            <div class="ref-summary-num">19</div>
+            <div class="ref-summary-label">Peer-Reviewed</div>
+          </div>
+          <div class="ref-summary-cell">
+            <div class="ref-summary-num">6</div>
+            <div class="ref-summary-label">Books</div>
+          </div>
+          <div class="ref-summary-cell">
+            <div class="ref-summary-num">16</div>
+            <div class="ref-summary-label">Online &amp; Press</div>
+          </div>
+        </div>
+
+        <!-- Jump navigation -->
+        <nav class="ref-jumpnav" aria-label="Jump to reference category">
+          <a href="#ref-film">Film</a>
+          <a href="#ref-journals">Journal Articles</a>
+          <a href="#ref-books">Books</a>
+          <a href="#ref-online">Online &amp; Press</a>
+          <a href="#ref-module">Module Resources</a>
+          <a href="#ref-images">Image Sources</a>
+        </nav>
+
+        <!-- ─────────────────────────────────────────
+             PRIMARY SOURCE — FILM
+             ───────────────────────────────────────── -->
+        <p class="ref-category" id="ref-film">Primary Source — Film</p>
+        <ul class="ref-list" aria-label="Film references">
+          <li class="ref-item">
+            Stanton, A. (Director). (2008). <em>WALL-E</em> [Film]. Pixar Animation Studios; Walt Disney Pictures.
+          </li>
+        </ul>
+
+        <!-- ─────────────────────────────────────────
+             PEER-REVIEWED JOURNAL ARTICLES
+             ───────────────────────────────────────── -->
+        <p class="ref-category" id="ref-journals">Peer-Reviewed Journal Articles <span class="ref-category-count">(alphabetical by first author)</span></p>
+        <ul class="ref-list" aria-label="Journal article references">
+
+          <li class="ref-item">
+            Alsaleh, A. (2024). The impact of technological advancement on culture and society. <em>Scientific Reports, 14</em>, Article 32140. <a href="https://doi.org/10.1038/s41598-024-83995-z" target="_blank" rel="noopener">https://doi.org/10.1038/s41598-024-83995-z</a>
+          </li>
+
+          <li class="ref-item">
+            Andersen, A. D., &amp; Andersen, P. D. (2014). Innovation system foresight. <em>Technological Forecasting and Social Change, 88</em>, 276–286. <a href="https://doi.org/10.1016/j.techfore.2014.06.016" target="_blank" rel="noopener">https://doi.org/10.1016/j.techfore.2014.06.016</a>
+          </li>
+
+          <li class="ref-item">
+            Cave, S. (2021). AI: Worrying about the wrong thing? <em>AI &amp; Society, 38</em>, 1187–1200. <a href="https://doi.org/10.1007/s00146-021-01273-2" target="_blank" rel="noopener">https://doi.org/10.1007/s00146-021-01273-2</a>
+          </li>
+
+          <li class="ref-item">
+            Frontiers in Energy Research. (2025). AI-powered municipal solid waste management: A comprehensive review from generation to utilization. <em>Frontiers in Energy Research, 13</em>. <a href="https://doi.org/10.3389/fenrg.2025.1670679" target="_blank" rel="noopener">https://doi.org/10.3389/fenrg.2025.1670679</a>
+          </li>
+
+          <li class="ref-item">
+            Frontiers in Robotics and AI. (2025). The future of robotic disassembly: A systematic review of techniques and applications in the age of AI. <em>Frontiers in Robotics and AI.</em> <a href="https://doi.org/10.3389/frobt.2025.1584657" target="_blank" rel="noopener">https://doi.org/10.3389/frobt.2025.1584657</a>
+          </li>
+
+          <li class="ref-item">
+            Fye, S. R., Charbonneau, S. M., Hay, J. W., &amp; Mullins, C. A. (2013). An examination of factors affecting accuracy in technology forecasts. <em>Technological Forecasting and Social Change, 80</em>(6), 1222–1231. <a href="https://doi.org/10.1016/j.techfore.2012.10.026" target="_blank" rel="noopener">https://doi.org/10.1016/j.techfore.2012.10.026</a>
+          </li>
+
+          <li class="ref-item">
+            Geels, F. W., &amp; Smit, W. A. (2000). Failed technology futures: Pitfalls and lessons from a historical survey. <em>Futures, 32</em>(9/10), 867–885. <a href="https://doi.org/10.1016/S0016-3287(00)00036-7" target="_blank" rel="noopener">https://doi.org/10.1016/S0016-3287(00)00036-7</a>
+          </li>
+
+          <li class="ref-item">
+            Henderson, R. M., &amp; Clark, K. B. (1990). Architectural innovation: The reconfiguration of existing product technologies and the failure of established firms. <em>Administrative Science Quarterly, 35</em>(1), 9–30. <a href="https://doi.org/10.2307/2393549" target="_blank" rel="noopener">https://doi.org/10.2307/2393549</a>
+          </li>
+
+          <li class="ref-item">
+            Kirtchev, N., Zlatev, Z., &amp; Atanasova, I. (2022). Visions of artificial intelligence in science fiction: A systematic review. <em>International Journal of Social Robotics, 14</em>, 1789–1804. <a href="https://doi.org/10.1007/s12369-022-00279-4" target="_blank" rel="noopener">https://doi.org/10.1007/s12369-022-00279-4</a>
+          </li>
+
+          <li class="ref-item">
+            Kondratiev, N. D. (1935). The long waves in economic life. <em>Review of Economics and Statistics, 17</em>(6), 105–115.
+          </li>
+
+          <li class="ref-item">
+            Maslow, A. H. (1943). A theory of human motivation. <em>Psychological Review, 50</em>(4), 370–396. <a href="https://doi.org/10.1037/h0054346" target="_blank" rel="noopener">https://doi.org/10.1037/h0054346</a>
+          </li>
+
+          <li class="ref-item">
+            Noble, S. M., Mende, M., Grewal, D., &amp; Parasuraman, A. (2022). The fifth industrial revolution: How harmonious human–machine collaboration is triggering a retail and service [r]evolution. <em>Journal of Retailing, 98</em>(2), 199–209. <a href="https://doi.org/10.1016/j.jretai.2022.04.002" target="_blank" rel="noopener">https://doi.org/10.1016/j.jretai.2022.04.002</a>
+          </li>
+
+          <li class="ref-item">
+            Mao, C., Koide, R., Brem, A., &amp; Akenji, L. (2020). Technology foresight for social good: Social implications of technological innovation by 2050 from a global expert survey. <em>Technological Forecasting and Social Change, 153</em>, Article 119914. <a href="https://doi.org/10.1016/j.techfore.2020.119914" target="_blank" rel="noopener">https://doi.org/10.1016/j.techfore.2020.119914</a>
+          </li>
+
+          <li class="ref-item">
+            Matsumi, H., &amp; Solove, D. J. (2025). The prediction society: AI and the problems of forecasting the future. <em>University of Illinois Law Review, 2025</em>(1), 1–72. <a href="https://scholarship.law.gwu.edu/faculty_publications/1708/" target="_blank" rel="noopener">https://scholarship.law.gwu.edu/faculty_publications/1708/</a>
+          </li>
+
+          <li class="ref-item">
+            PMC / National Library of Medicine. (2022). Waste management and green technology: Future trends in circular economy leading towards environmental sustainability. <em>PMC.</em> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9532236/" target="_blank" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC9532236/</a>
+          </li>
+
+          <li class="ref-item">
+            Rabelo Neto, J., Figueiredo, C., Gabriel, B. C., &amp; Valente, R. (2024). Factors for innovation ecosystem frameworks: Comprehensive organizational aspects for evolution. <em>Technological Forecasting and Social Change, 203</em>, 123383. <a href="https://doi.org/10.1016/j.techfore.2024.123383" target="_blank" rel="noopener">https://doi.org/10.1016/j.techfore.2024.123383</a>
+          </li>
+
+          <li class="ref-item">
+            Tollon, F. (2023). Responsibility gaps and the reactive attitudes. <em>AI and Ethics, 3</em>, 295–302. <a href="https://doi.org/10.1007/s43681-022-00172-6" target="_blank" rel="noopener">https://doi.org/10.1007/s43681-022-00172-6</a>
+          </li>
+
+          <li class="ref-item">
+            Zaidi, L. (2019). Worldbuilding in science fiction, foresight and design. <em>Journal of Futures Studies, 23</em>(4), 15–26. <a href="https://doi.org/10.6531/JFS.201906_23(4).0003" target="_blank" rel="noopener">https://doi.org/10.6531/JFS.201906_23(4).0003</a>
+          </li>
+
+          <li class="ref-item">
+            Ziatdinov, R., Ali, A. M., &amp; Nosta, J. (2024). The fifth industrial revolution as a transformative step towards Society 5.0. <em>Societies, 14</em>(2), 19. <a href="https://doi.org/10.3390/soc14020019" target="_blank" rel="noopener">https://doi.org/10.3390/soc14020019</a>
+          </li>
+
+        </ul>
+
+        <!-- ─────────────────────────────────────────
+             BOOKS & FOUNDATIONAL WORKS
+             ───────────────────────────────────────── -->
+        <p class="ref-category" id="ref-books">Books &amp; Foundational Works <span class="ref-category-count">(alphabetical by first author)</span></p>
+        <ul class="ref-list" aria-label="Book references">
+
+          <li class="ref-item">
+            Aunger, R. (2010). What's special about human technology? <em>Cambridge Journal of Economics, 34</em>(1), 115–123. <a href="https://doi.org/10.1093/cje/bep024" target="_blank" rel="noopener">https://doi.org/10.1093/cje/bep024</a>
+          </li>
+
+          <li class="ref-item">
+            Christensen, C. M. (1997). <em>The innovator's dilemma: When new technologies cause great firms to fail.</em> Harvard Business School Press.
+          </li>
+
+          <li class="ref-item">
+            Perez, C. (2002). <em>Technological revolutions and financial capital: The dynamics of bubbles and golden ages.</em> Edward Elgar.
+          </li>
+
+
+          <li class="ref-item">
+            Rogers, E. M. (2003). <em>Diffusion of innovations</em> (5th ed.). Free Press.
+          </li>
+
+          <li class="ref-item">
+            Schumpeter, J. A. (1939). <em>Business cycles: A theoretical, historical, and statistical analysis of the capitalist process.</em> McGraw-Hill.
+          </li>
+
+          <li class="ref-item">
+            Utterback, J. M. (1994). <em>Mastering the dynamics of innovation.</em> Harvard Business School Press.
+          </li>
+
+        </ul>
+
+        <!-- ─────────────────────────────────────────
+             ONLINE & PRESS SOURCES
+             ───────────────────────────────────────── -->
+        <p class="ref-category" id="ref-online">Online &amp; Press Sources <span class="ref-category-count">(alphabetical by first author / organisation)</span></p>
+        <ul class="ref-list" aria-label="Online and press references">
+
+          <li class="ref-item">
+            Augé, E.F. (2021, November 10). Why science fiction films help us study the future. <em>Clingendael Spectator.</em> <a href="https://spectator.clingendael.org/en/publication/why-science-fiction-films-help-us-study-future" target="_blank" rel="noopener">https://spectator.clingendael.org/en/publication/why-science-fiction-films-help-us-study-future</a>
+          </li>
+
+          <li class="ref-item">
+            Chattaway, T. (2020). Unraveling the complexities of technology transfer. <em>BioProcess International.</em> <a href="https://bioprocessintl.com/analytical/upstream-processing/unraveling-the-complexities-of-technology-transfer/" target="_blank" rel="noopener">https://bioprocessintl.com/analytical/upstream-processing/unraveling-the-complexities-of-technology-transfer/</a>
+          </li>
+
+          <li class="ref-item">
+            DeBrusk, C. (2025). <em>Technology complexity and its impact on innovation.</em> Oliver Wyman. <a href="https://www.oliverwyman.com/our-expertise/insights/2025/jan/technology-complexity-and-innovation.html" target="_blank" rel="noopener">https://www.oliverwyman.com/our-expertise/insights/2025/jan/technology-complexity-and-innovation.html</a>
+          </li>
+
+          <li class="ref-item">
+            Deloitte Insights. (2026). <em>DI tech trends 2026.</em> Deloitte. <a href="https://www2.deloitte.com/us/en/insights/focus/tech-trends.html" target="_blank" rel="noopener">https://www2.deloitte.com/us/en/insights/focus/tech-trends.html</a>
+          </li>
+
+          <li class="ref-item">
+            Gartner. (2024). <em>Gartner hype cycle research methodology.</em> Gartner, Inc. <a href="https://www.gartner.com/en/research/methodologies/gartner-hype-cycle" target="_blank" rel="noopener">https://www.gartner.com/en/research/methodologies/gartner-hype-cycle</a>
+          </li>
+
+
+          <li class="ref-item">
+            Jain, N. (2023). What is innovation? Definitions, types, examples and process. <em>IdeaScale.</em> <a href="https://ideascale.com/blog/what-is-innovation/" target="_blank" rel="noopener">https://ideascale.com/blog/what-is-innovation/</a>
+          </li>
+
+          <li class="ref-item">
+            Nosta, J. (2023). The 5th industrial revolution: The dawn of the cognitive age. <em>Psychology Today.</em> <a href="https://www.psychologytoday.com/us/blog/the-digital-self/202306/the-5th-industrial-revolution-the-dawn-of-the-cognitive-age" target="_blank" rel="noopener">https://www.psychologytoday.com/us/blog/the-digital-self/202306/the-5th-industrial-revolution</a>
+          </li>
+
+
+          <li class="ref-item">
+            Radjou, N. (2023). Frugal innovation: 3 principles to help improve food production. <em>World Economic Forum.</em> <a href="https://www.weforum.org/stories/2023/01/frugal-innovation-principles/" target="_blank" rel="noopener">https://www.weforum.org/stories/2023/01/frugal-innovation-principles/</a>
+          </li>
+
+          <li class="ref-item">
+            Schwab, H., &amp; Bonnici, F. (2025). Social entrepreneurship and innovation has moved from the margins to the mainstream. <em>World Economic Forum.</em> <a href="https://www.weforum.org/stories/2025/01/social-entrepreneurship-mainstream/" target="_blank" rel="noopener">https://www.weforum.org/stories/2025/01/social-entrepreneurship-mainstream/</a>
+          </li>
+
+
+          <li class="ref-item">
+            Systems Innovation. (n.d.). <em>Network Society Documentary</em> [Video]. YouTube. <a href="https://www.youtube.com/@SystemsInnovation" target="_blank" rel="noopener">https://www.youtube.com/@SystemsInnovation</a>
+          </li>
+
+          <li class="ref-item">
+            Tandfonline. (2025). Systematic literature review on Industry 5.0: Current status and future research directions. <em>International Journal of Production Research.</em> <a href="https://doi.org/10.1080/13602381.2025.2452877" target="_blank" rel="noopener">https://doi.org/10.1080/13602381.2025.2452877</a>
+          </li>
+
+          <li class="ref-item">
+            Thompson, N. (2021, October 19). Laws and ethics can't keep pace with technology. <em>MIT Technology Review.</em> <a href="https://www.technologyreview.com/2021/10/19/1038092/laws-ethics-technology" target="_blank" rel="noopener">https://www.technologyreview.com/2021/10/19/1038092/laws-ethics-technology</a>
+          </li>
+
+          <li class="ref-item">
+            Quirke, S. (2023). We are spectacularly bad at predicting the future: Ignore AI hype and fear. <em>Big Think.</em> <a href="https://bigthink.com/thinking/bad-predicting-future-ai-hype-fear/" target="_blank" rel="noopener">https://bigthink.com/thinking/bad-predicting-future-ai-hype-fear/</a>
+          </li>
+
+          <li class="ref-item">
+            Wadhwa, V. (2014, April 15). Laws and ethics can't keep pace with technology. <em>MIT Technology Review.</em> <a href="https://www.technologyreview.com/2014/04/15/172377/laws-and-ethics-cant-keep-pace-with-technology/" target="_blank" rel="noopener">https://www.technologyreview.com/2014/04/15/172377/laws-and-ethics-cant-keep-pace-with-technology/</a>
+          </li>
+
+          <li class="ref-item">
+            Zaman, R. (2022, March 13). Innovation S-curve — episodic evolution. <em>The Waves: Technology, Society and Policy.</em> <a href="https://www.the-waves.org/2022/03/13/innovation-s-curve-episodic-innovation-evolution/" target="_blank" rel="noopener">https://www.the-waves.org/2022/03/13/innovation-s-curve-episodic-innovation-evolution/</a>
+          </li>
+
+          <li class="ref-item">
+            Zaman, R. (2023, October 29). S-curve — defining and classifying. <em>The Waves: Technology, Society and Policy.</em> <a href="https://www.the-waves.org/2023/10/29/s-curve-defining-and-classifying/" target="_blank" rel="noopener">https://www.the-waves.org/2023/10/29/s-curve-defining-and-classifying/</a>
+          </li>
+
+        </ul>
+
+        <!-- ─────────────────────────────────────────
+             MODULE PRESCRIBED MATERIAL — grouped by session (per module outline §6.3)
+             ───────────────────────────────────────── -->
+        <p class="ref-category" id="ref-module">Module Prescribed Material — TFT 2026 <span class="ref-category-count">(grouped by session, per module outline §6.3)</span></p>
+
+        <p style="font-family:'Syncopate',Georgia,serif;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:#64748b;margin:24px 0 4px;">Sessions 1 &amp; 2 &mdash; Technology in Context</p>
+        <ul class="ref-list">
+          <li class="ref-item">Agar, J. (2020). What is technology? <em>Annals of Science, 77</em>(3), 377&ndash;382.</li>
+          <li class="ref-item">Ali, S., Al-Sultan, H., &amp; Rubaie, M. (2022). Fifth industrial revolution: (New perspectives). <em>International Journal of Business, Management and Economics, 3</em>, 196&ndash;212.</li>
+          <li class="ref-item">Anil, A. M. (2025, January 13). Technology convergence is leading the way for the fifth industrial revolution. <em>World Economic Forum.</em> <a href="https://www.weforum.org/stories/2025/01/technology-convergence-is-leading-the-way-for-accelerated-innovation-in-emerging-technology-areas/" target="_blank" rel="noopener">https://www.weforum.org/stories/2025/01/technology-convergence-is-leading-the-way-for-accelerated-innovation-in-emerging-technology-areas/</a></li>
+          <li class="ref-item">Aunger, R. (2010). Types of technology. <em>Technological Forecasting &amp; Social Change, 77</em>(5), 762&ndash;782.</li>
+          <li class="ref-item">Noble, S. M., Mende, M., Grewal, D., &amp; Parasuraman, A. (2022). The fifth industrial revolution: How harmonious human&ndash;machine collaboration is triggering a retail and service [r]evolution. <em>Journal of Retailing, 98</em>(2), 199&ndash;208.</li>
+          <li class="ref-item">Nosta, J. (2023, October 6). The 5th industrial revolution: The dawn of the cognitive age. <em>Psychology Today.</em> <a href="https://www.psychologytoday.com/za/blog/the-digital-self/202310/the-5th-industrial-revolution-the-dawn-of-the-cognitive-age" target="_blank" rel="noopener">https://www.psychologytoday.com/za/blog/the-digital-self/202310/the-5th-industrial-revolution-the-dawn-of-the-cognitive-age</a></li>
+          <li class="ref-item">Ziatdinov, R., Atteraya, M. S., &amp; Nabiyev, R. (2024). The fifth industrial revolution as a transformative step towards Society 5.0. <em>Societies, 14</em>, 19.</li>
+        </ul>
+
+        <p style="font-family:'Syncopate',Georgia,serif;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:#64748b;margin:24px 0 4px;">Sessions 3 &amp; 4 &mdash; Science and Innovation</p>
+        <ul class="ref-list">
+          <li class="ref-item">Andersen, A. D., &amp; Andersen, P. D. (2014). Innovation system foresight. <em>Technological Forecasting and Social Change, 88</em>, 276&ndash;286.</li>
+          <li class="ref-item">Chattaway, T. (2020). Unraveling the complexities of technology transfer. <em>BioProcess International.</em> <a href="https://www.bioprocessintl.com/contract-services/unraveling-the-complexities-of-technology-transfer" target="_blank" rel="noopener">https://www.bioprocessintl.com/contract-services/unraveling-the-complexities-of-technology-transfer</a></li>
+          <li class="ref-item">DeBrusk, C. (2025). <em>Technology complexity and its impact on innovation.</em> Oliver Wyman. <a href="https://www.oliverwyman.com/our-expertise/insights/2022/jan/technology-complexity-and-its-impact-on-innovation.html" target="_blank" rel="noopener">https://www.oliverwyman.com/our-expertise/insights/2022/jan/technology-complexity-and-its-impact-on-innovation.html</a></li>
+          <li class="ref-item">Jain, N. (2023). <em>What is innovation? Definitions, types, examples and process.</em> IdeaScale. <a href="https://ideascale.com/blog/what-is-innovation/" target="_blank" rel="noopener">https://ideascale.com/blog/what-is-innovation/</a></li>
+          <li class="ref-item">Neto, J. R., Figueiredo, C., Gabriel, B. C., &amp; Valente, R. (2024). Factors for innovation ecosystem frameworks: Comprehensive organizational aspects for evolution. <em>Technological Forecasting and Social Change, 203</em>, 123383.</li>
+          <li class="ref-item">Radjou, N. (2023). Frugal innovation: 3 principles to help improve food production. <em>World Economic Forum.</em> <a href="https://www.weforum.org/stories/2024/05/frugal-innovation-3-principles-to-help-improve-food-production/" target="_blank" rel="noopener">https://www.weforum.org/stories/2024/05/frugal-innovation-3-principles-to-help-improve-food-production/</a></li>
+          <li class="ref-item">Schwab, H., &amp; Bonnici, F. (2025, January 28). Social entrepreneurship and innovation has moved from the margins to the mainstream. <em>World Economic Forum.</em> <a href="https://www.weforum.org/stories/2025/01/social-innovation-has-moved-from-the-margins-to-the-mainstream/" target="_blank" rel="noopener">https://www.weforum.org/stories/2025/01/social-innovation-has-moved-from-the-margins-to-the-mainstream/</a></li>
+          <li class="ref-item">Systems Innovation. (n.d.). <em>Network Society documentary</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=7OwjgxkuypI" target="_blank" rel="noopener">https://www.youtube.com/watch?v=7OwjgxkuypI</a></li>
+        </ul>
+
+        <p style="font-family:'Syncopate',Georgia,serif;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:#64748b;margin:24px 0 4px;">Session 5 &mdash; Predictions, Experts and Science Fiction</p>
+        <ul class="ref-list">
+          <li class="ref-item">Aug&eacute;, E. F. (2021, November 10). Why science fiction films help us study the future. <em>Clingendael Spectator.</em> <a href="https://spectator.clingendael.org/en/publication/why-science-fiction-films-help-us-study-future" target="_blank" rel="noopener">https://spectator.clingendael.org/en/publication/why-science-fiction-films-help-us-study-future</a></li>
+          <li class="ref-item">Fye, S. R., Charbonneau, S. M., Hay, J. W., &amp; Mullins, C. A. (2013). An examination of factors affecting accuracy in technology forecasts. <em>Technological Forecasting and Social Change, 80</em>(6), 1222&ndash;1231.</li>
+          <li class="ref-item">Geels, F. W., &amp; Smit, W. A. (2000). Failed technology futures: Pitfalls and lessons from a historical survey. <em>Futures, 32</em>(9/10), 867&ndash;885.</li>
+          <li class="ref-item">Matsumi, H., &amp; Solove, D. J. (2025). The prediction society: AI and the problems of forecasting the future. <em>University of Illinois Law Review, 2025</em>(1), 1.</li>
+          <li class="ref-item">Quirke, S. (2023). <em>We are spectacularly bad at predicting the future.</em> Big Think. <a href="https://bigthink.com/thinking/bad-predicting-future-ai-hype-fear/" target="_blank" rel="noopener">https://bigthink.com/thinking/bad-predicting-future-ai-hype-fear/</a></li>
+          <li class="ref-item">Zaidi, L. (2019). Worldbuilding in science fiction, foresight, and design. <em>Journal of Futures Studies, 23</em>(4).</li>
+        </ul>
+
+        <p style="font-family:'Syncopate',Georgia,serif;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:#64748b;margin:24px 0 4px;">Session 6 &mdash; Technology Futures Frameworks</p>
+        <ul class="ref-list">
+          <li class="ref-item">Zaman, R. (2022, March 13). Innovation S-curve &mdash; episodic evolution. <em>The Waves: Technology, Society and Policy.</em> <a href="https://www.the-waves.org/2022/03/13/innovation-s-curve-episodic-innovation-evolution/" target="_blank" rel="noopener">https://www.the-waves.org/2022/03/13/innovation-s-curve-episodic-innovation-evolution/</a></li>
+          <li class="ref-item">Zaman, R. (2023, October 29). S-curve &mdash; defining and classifying. <em>The Waves: Technology, Society and Policy.</em> <a href="https://www.the-waves.org/2023/10/29/s-curve-defining-and-classifying/" target="_blank" rel="noopener">https://www.the-waves.org/2023/10/29/s-curve-defining-and-classifying/</a></li>
+        </ul>
+
+        <p style="font-family:'Syncopate',Georgia,serif;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:#64748b;margin:24px 0 4px;">Sessions 7 &amp; 8 &mdash; Technology, Society and the Environment</p>
+        <ul class="ref-list">
+          <li class="ref-item">Alsaleh, A. (2024). The impact of technological advancement on culture and society. <em>Scientific Reports, 14</em>, 32140.</li>
+          <li class="ref-item">Mao, C., Koide, R., Brem, A., &amp; Akenji, L. (2020). Technology foresight for social good: Social implications of technological innovation by 2050 from a global expert survey. <em>Technological Forecasting &amp; Social Change, 153</em>, 119914.</li>
+          <li class="ref-item">Tollon, F. (2023). Responsibility gaps and the reactive attitudes. <em>AI and Ethics, 3</em>, 295&ndash;302.</li>
+          <li class="ref-item">Wadhwa, V. (2014, April 15). Laws and ethics can&rsquo;t keep pace with technology. <em>MIT Technology Review.</em> <a href="https://www.technologyreview.com/2014/04/15/172377/laws-and-ethics-cant-keep-pace-with-technology/" target="_blank" rel="noopener">https://www.technologyreview.com/2014/04/15/172377/laws-and-ethics-cant-keep-pace-with-technology/</a></li>
+        </ul>
+
+        <!-- ─────────────────────────────────────────
+             IMAGE SOURCES
+             ───────────────────────────────────────── -->
+        <p class="ref-category" id="ref-images">Image Sources <span class="ref-category-count">(scene-level APA appears beneath each figure in-section)</span></p>
+
+        <div class="card blue" style="margin-bottom:16px; padding:16px;">
+          <p class="t-small" style="color:#94a3b8; font-size:0.75rem;">
+            Every figure in this scrapbook carries its full APA citation directly beneath the image in
+            the section where it appears. The list below summarises the source bodies aggregated across
+            all figures.
+          </p>
+        </div>
+
+        <ul class="ref-list" aria-label="Image source references">
+
+          <li class="ref-item">
+            Pixar Animation Studios. (2008). <em>WALL&middot;E</em> [Film stills]. Walt Disney Pictures.
+            <span style="font-size:0.72rem;color:#64748b;">Source for all in-universe figures (WALL&middot;E unit, EVE, AUTO, M-O, BURN-E, the Axiom, hover-chairs, holographic displays, steward bots, food dispensers, BnL broadcast, end-credits restoration and farming sequences). Scene-level captions appear in-section.</span>
+          </li>
+
+          <li class="ref-item">
+            20th Century Studios. (2004). <em>I, Robot &mdash; NS-5 promotional poster</em> [Film still]. 20th Century Fox. Via IMDb.
+            <span style="font-size:0.72rem;color:#64748b;">Fig. 4.3 &mdash; comparative sci-fi register (controlling).</span>
+          </li>
+
+          <li class="ref-item">
+            The Robot Report. (n.d.). <em>AMP Robotics&rsquo; AI robots are sorting recycling.</em>
+            <a href="https://www.therobotreport.com/amp-robotics-ai-robots-recycling/" target="_blank" rel="noopener">https://www.therobotreport.com/amp-robotics-ai-robots-recycling/</a>
+            <span style="font-size:0.72rem;color:#64748b;">Fig. 2.7 (real-world AMP sorting system in operation); Fig. 4.1 (AMP Cortex Brain&ndash;Eyes&ndash;Hands diagram).</span>
+          </li>
+
+          <li class="ref-item">
+            Gemini. (2026). <em>Nano Banana</em> [Generative image model]. Google DeepMind. <a href="https://gemini.google.com/" target="_blank" rel="noopener">https://gemini.google.com/</a>
+            <span style="font-size:0.72rem;color:#64748b;">Fig. A.1 &mdash; AI-generated speculative BnL billboard illustration. Prompt-driven image, not a film still.</span>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="container">
+    <div class="sb-section-footer">
+      <div class="footer-glossary">
+        
+      </div>
+      <nav class="footer-nav" aria-label="Section navigation">
+        <a href="section-driving-forces.html">← Driving Forces</a>
+        <a href="index.html">↑ Cover</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="scrapbook-nav.js" defer></script>
+</body>
+</html>

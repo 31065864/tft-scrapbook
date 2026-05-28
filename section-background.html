@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 01: Background — WALL·E Scrapbook</title>
+  <link rel="stylesheet" href="scrapbook.css">
+  <style>
+    .hero-band {
+      background: linear-gradient(145deg, #1e293b 0%, #020617 60%);
+      border-bottom: 1px solid #334155;
+      padding: 64px 0 48px;
+    }
+    .sub-section-label {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 0.5625rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #3b82f6;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .split-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .split-layout.reverse { direction: rtl; }
+    .split-layout.reverse > * { direction: ltr; }
+    @media (max-width: 768px) {
+      .split-layout { grid-template-columns: 1fr; }
+      .split-layout.reverse { direction: ltr; }
+    }
+    .genre-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+    @media (max-width: 640px) { .genre-grid { grid-template-columns: 1fr; } }
+    .driver-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid #1e293b;
+    }
+    .driver-num {
+      font-family: 'Syncopate', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: rgba(59,130,246,0.3);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 32px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="sb-nav" role="navigation" aria-label="Scrapbook sections">
+    <div class="sb-nav-inner">
+      <span class="sb-nav-logo">WALL·E Scrapbook</span>
+      <a href="index.html">Cover</a>
+      <a href="section-background.html" class="active">Background</a>
+      <a href="section-technology-focus.html">Technology</a>
+      <a href="section-science-innovation.html">Science &amp; Innovation</a>
+      <a href="section-predictions.html">Predictions</a>
+      <a href="section-frameworks.html">Frameworks</a>
+      <a href="section-tse.html">Society &amp; Environment</a>
+      <a href="section-driving-forces.html">Driving Forces</a>
+      <a href="section-references.html">References</a>
+    </div>
+  </nav>
+
+  <!-- Section header -->
+  <header class="hero-band" role="banner">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <span class="section-num">Section 01</span>
+          <span class="badge blue">Background Analysis</span>
+          <span class="badge orange">~1,200 Words</span>
+        </div>
+        <h1 class="t-h1">Background</h1>
+        <p class="t-body t-muted mt-16" style="max-width:680px;">
+          An examination of the plot, setting, science fiction sub-genre, and reality
+          framework of <em>WALL·E</em> (Stanton, 2008) — establishing the narrative and
+          speculative context for the technology futures analysis that follows.
+        </p>
+        <div class="section-header divider-line"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════
+         1.1 THE PLOT
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-plot">
+      <div class="container">
+        <span class="sub-section-label">1.1</span>
+        <h2 class="t-h2" id="h-plot" style="margin-bottom:32px;">The Plot</h2>
+
+        <div class="split-layout">
+
+          <!-- Text -->
+          <div class="space-y-24">
+            <p class="t-body">
+              In the mid-22nd century, Earth has become a planetary-scale landfill.
+              The megacorporation <strong>Buy n Large (BnL)</strong>, which has usurped all global
+              governments, evacuated humanity onto a fleet of luxury starliners, led by the
+              flagship <em>Axiom</em>. The plan was a five-year "Operation Cleanup," leaving behind
+              millions of <strong>WALL-E</strong> (Waste Allocation Load Lifter: Earth-class) robots
+              to compress and stack the waste. The mission failed; the planet remained toxic, and
+              the cleanup robots eventually broke down, leaving only one functional unit
+              700 years later (Stanton, 2008).
+            </p>
+            <p class="t-body">
+              This lone WALL-E has developed a personality and a penchant for collecting human
+              "treasures." His existence is interrupted by the arrival of <strong>EVE</strong>
+              (Extraterrestrial Vegetation Evaluator), a sleek probe sent to scan for signs of
+              self-sustaining life. When WALL-E presents EVE with a living seedling, she enters
+              standby mode to protect it. WALL-E follows her back to the <em>Axiom</em>.
+            </p>
+            <p class="t-body">
+              Aboard the <em>Axiom</em>, we discover that 700 years of total automation and
+              microgravity have rendered humans morbidly obese and bone-density deficient, living
+              in perpetual digital distraction. The ship's autopilot, <strong>AUTO</strong>, follows
+              Directive A113 — a centuries-old secret instruction that Earth is beyond saving and
+              humanity must never return. WALL-E and a band of "misfit robots" must override
+              AUTO to deliver the plant to the Holo-Detector, triggering the ship's return to
+              Earth. The film concludes with the plant as proof of life, humans returning to the
+              wasteland, and a new era of agrarian restoration beginning (Stanton, 2008).
+            </p>
+
+            <div class="callout">
+              <strong>Why the plot matters for futures studies:</strong> The narrative arc of
+              <em>WALL-E</em> is structured as a classic "Warning Scenario" within the Foresight
+              Cone — a dystopian trajectory made visible so that the audience can identify the
+              "Choice-Point" and redirect toward a preferred future (Zaidi, 2019).
+            </div>
+          </div>
+
+          <!-- Image area -->
+          <div class="space-y-16">
+
+            <div class="img-wrap filmstrip taped">
+  <img src="images/trash-towers-wide.jpg" alt="Wide aerial shot of New York City buried under mountains of compacted trash cubes in 2805" loading="lazy">
+  <div class="img-caption"><strong>Fig. 1.1</strong> Earth's surface in 2805 — anthropogenic topography replacing natural geography, the cumulative output of 700 years of autonomous compaction.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+
+            <div class="img-wrap filmstrip taped">
+  <img src="images/walle-eve-seedling.jpg" alt="WALL-E presenting a seedling growing in a boot to EVE inside his makeshift shelter" loading="lazy">
+  <div class="img-caption"><strong>Fig. 1.2</strong> WALL-E presents the seedling to EVE — the biological artefact whose presence triggers the film's entire narrative arc.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+
+          </div>
+        </div><!-- /split-layout -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         1.2 THE SETTING
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-setting">
+      <div class="container">
+        <span class="sub-section-label">1.2</span>
+        <h2 class="t-h2" id="h-setting" style="margin-bottom:32px;">The Setting</h2>
+
+        <div class="split-layout reverse">
+
+          <!-- Image area (appears on right due to reverse direction) -->
+          <div class="space-y-16">
+            <div class="img-wrap filmstrip taped">
+  <img src="images/desolate-earth-cranes.jpg" alt="Desolate Earth surface showing toppled industrial cranes silhouetted in a toxic amber atmosphere with no visible life" loading="lazy">
+  <div class="img-caption"><strong>Fig. 1.3</strong> Earth's atmosphere in 2805 — toxic particulate, structural collapse, zero biological activity. The STEEP-L environment dimension at its terminal state.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+            <div class="img-wrap filmstrip taped">
+  <img src="images/axiom-hall-crowds.jpg" alt="Axiom spaceship interior corridor filled with hundreds of passengers in automated hover-chairs beneath neon advertising screens" loading="lazy">
+  <div class="img-caption"><strong>Fig. 1.4</strong> The Axiom interior — BnL's perpetual-commerce environment. Every human need is automated; every surface carries advertising. Frictionless consumption as civilisational endpoint.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+          </div>
+
+          <!-- Text -->
+          <div class="space-y-24">
+            <p class="t-body">
+              The setting of <em>WALL·E</em> is a study in "Bifurcated Environments" — the story
+              shifts between two extreme poles that function as technological cautionary poles
+              (Stanton, 2008).
+            </p>
+
+            <div class="card blue">
+              <h3 class="t-h3" style="margin-bottom:12px; color:#60a5fa;">Post-Industrial Earth — The Dead System</h3>
+              <p class="t-small t-muted">
+                Earth is portrayed as a "brown-out" environment. The atmosphere is thick with dust
+                and orbital debris. Natural geography has been replaced by <strong>Anthropogenic
+                Topography</strong> — mountains made entirely of trash cubes. This setting represents
+                the ultimate endpoint of a <strong>Linear Economy</strong> (Take–Make–Dispose). There
+                is no visible water, no wind patterns, and no biological life until the discovery of
+                the single plant. It is a "Dead System" where only inorganic machines can survive
+                (Stanton, 2008).
+              </p>
+            </div>
+
+            <div class="card orange">
+              <h3 class="t-h3" style="margin-bottom:12px; color:#fb923c;">The Axiom — The Artificial Eden</h3>
+              <p class="t-small t-muted">
+                In contrast, the <em>Axiom</em> is a sterile, hyper-connected "Smart City" in space.
+                It is a closed-loop environment where everything is synthesised. The sky is a digital
+                projection; the climate is perfectly regulated. It is a setting defined by
+                <strong>Frictionless Consumerism</strong>. Humans do not walk; they hover on magnetic
+                tracks. They interact with the world only through HUD screens. This is an
+                "Information-Rich, Experience-Poor" environment — the "Gilded Cage" of technology,
+                where environmental perfection has caused the biological stagnation of its inhabitants
+                (Stanton, 2008).
+              </p>
+            </div>
+
+            <div class="callout">
+              <strong>Foresight note:</strong> The bifurcated setting directly mirrors the
+              Foresight Cone's distinction between a "Warning Scenario" (Earth) and a "Collapsed
+              Preferred Scenario" (the Axiom, which appears utopian but is revealed as a failed
+              future). Both environments are products of the same technological trajectory —
+              illustrating that the same innovation ecosystem can produce radically different
+              environmental outcomes depending on governance choices (Mao et al., 2020).
+            </div>
+          </div>
+
+        </div><!-- /split-layout -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         1.3 SCI-FI SUB-GENRE
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-genre">
+      <div class="container">
+        <span class="sub-section-label">1.3</span>
+        <h2 class="t-h2" id="h-genre" style="margin-bottom:32px;">The Sci-Fi Sub-Genre</h2>
+
+        <div class="split-layout">
+          <div class="space-y-24">
+            <p class="t-body">
+              <em>WALL·E</em> primarily occupies the <strong>Post-Apocalyptic</strong> and
+              <strong>Eco-Dystopian</strong> sub-genres, though it uniquely transitions into
+              <strong>Solarpunk</strong> during its closing sequence (Stanton, 2008).
+            </p>
+            <p class="t-body">
+              Unlike "Cyberpunk," which focuses on "High Tech, Low Life" in crowded neon cities,
+              <em>WALL·E</em> is a "Quiet Apocalypse." The conflict is not social rebellion but
+              ecological exhaustion — the world has ended through systemic neglect, not catastrophic
+              event. It employs <strong>Optimistic Nihilism</strong>: the world has ended, but the
+              machines left behind are "cute" and human.
+            </p>
+            <p class="t-body">
+              Furthermore, the film serves as a <strong>Satirical Corporate Dystopia</strong>.
+              By utilising the "Buy n Large" brand as a ubiquitous presence — present on everything
+              from buildings to the President of Earth — it critiques the Big Tech monopolies of
+              the 21st century. Critically for this analysis, the sub-genre is not merely aesthetic;
+              it uses the "Apocalypse" as a "Reset Button" for human–nature–technology relations,
+              positioning the film as a speculative tool for futures literacy (Augé, 2021).
+            </p>
+          </div>
+
+          <!-- Genre cards -->
+          <div>
+            <div class="genre-grid">
+              <div class="card red" style="padding:20px; transform:rotate(-0.8deg);">
+                <div class="badge red t-label" style="margin-bottom:10px;">Primary</div>
+                <h3 class="t-h3" style="font-size:0.95rem; color:#f87171;">Post-Apocalyptic</h3>
+                <p class="t-small t-muted mt-8">Collapse of Earth's biosphere as civilisational backdrop.</p>
+              </div>
+              <div class="card orange" style="padding:20px; transform:rotate(0.5deg);">
+                <div class="badge orange t-label" style="margin-bottom:10px;">Primary</div>
+                <h3 class="t-h3" style="font-size:0.95rem; color:#fb923c;">Eco-Dystopian</h3>
+                <p class="t-small t-muted mt-8">Environmental collapse as the core driver of social failure.</p>
+              </div>
+              <div class="card blue" style="padding:20px; transform:rotate(-0.3deg);">
+                <div class="badge blue t-label" style="margin-bottom:10px;">Secondary</div>
+                <h3 class="t-h3" style="font-size:0.95rem; color:#60a5fa;">Corporate Dystopia</h3>
+                <p class="t-small t-muted mt-8">BnL as satirical stand-in for unchecked Big Tech hegemony.</p>
+              </div>
+              <div class="card green" style="padding:20px; transform:rotate(0.7deg);">
+                <div class="badge green t-label" style="margin-bottom:10px;">Resolution</div>
+                <h3 class="t-h3" style="font-size:0.95rem; color:#34d399;">Solarpunk</h3>
+                <p class="t-small t-muted mt-8">End-credits agrarian restoration — technology in harmony with nature.</p>
+              </div>
+              <div class="card purple" style="padding:20px; transform:rotate(-0.5deg); grid-column: span 2;">
+                <div class="badge purple t-label" style="margin-bottom:10px;">Distinctive element</div>
+                <h3 class="t-h3" style="font-size:0.95rem; color:#a78bfa;">Quiet Apocalypse</h3>
+                <p class="t-small t-muted mt-8">Collapse through systemic neglect and consumer inertia — not war, plague, or event. Distinguishes <em>WALL·E</em> from most post-apocalyptic fiction.</p>
+              </div>
+            </div>
+
+            <div class="img-wrap filmstrip taped">
+  <img src="images/bnl-city-ads.jpg" alt="Abandoned Earth city streets plastered with BnL Buy n Large advertising signs and billboards in the hazy post-evacuation skyline" loading="lazy">
+  <div class="img-caption"><strong>Fig. 1.5</strong> BnL's advertising monopoly — Buy n Large branding saturates every surface of Earth's abandoned commercial districts, persisting centuries after human evacuation.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         1.4 REALITY FRAMEWORK
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-reality">
+      <div class="container">
+        <span class="sub-section-label">1.4</span>
+        <h2 class="t-h2" id="h-reality" style="margin-bottom:32px;">The Reality Framework</h2>
+
+        <div class="split-layout">
+          <div class="space-y-24">
+            <p class="t-body">
+              The reality framework of <em>WALL·E</em> is an <strong>Extrapolated Projected
+              Reality</strong>. It is not an "alternate history" — like <em>The Man in the High
+              Castle</em> — but a "Forward Projection" of current 21st-century trends taken to
+              their logical, albeit exaggerated, conclusion (Stanton, 2008).
+            </p>
+            <p class="t-body">
+              The film operates on a <strong>Linear Extrapolation</strong> of three converging
+              real-world drivers, each of which is observable in today's world:
+            </p>
+
+            <div class="space-y-16">
+              <div class="driver-item">
+                <div class="driver-num" aria-hidden="true">01</div>
+                <div>
+                  <h3 class="t-h3" style="color:#60a5fa; margin-bottom:6px;">The Plastic Crisis</h3>
+                  <p class="t-small t-muted">The 20th-century trend of non-biodegradable waste production, already producing 380 million tonnes of plastic annually, with less than 10% effectively recycled (PMC, 2022).</p>
+                </div>
+              </div>
+              <div class="driver-item">
+                <div class="driver-num" aria-hidden="true">02</div>
+                <div>
+                  <h3 class="t-h3" style="color:#fb923c; margin-bottom:6px;">The Automation Curve</h3>
+                  <p class="t-small t-muted">The increasing delegation of human mobility and decision-making to AI and robotics — accelerating rapidly with the emergence of autonomous systems in logistics, healthcare, and service industries (Tandfonline, 2025).</p>
+                </div>
+              </div>
+              <div class="driver-item" style="border:none;">
+                <div class="driver-num" aria-hidden="true">03</div>
+                <div>
+                  <h3 class="t-h3" style="color:#34d399; margin-bottom:6px;">The Corporate State</h3>
+                  <p class="t-small t-muted">The trend of multinational corporations wielding more economic power than sovereign nations — the five largest tech companies alone exceeded the GDP of most G20 nations by 2024 (DI Tech Trends, 2026).</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="callout green">
+              <strong>Foresight Cone positioning:</strong> This framework is "Probable" within the
+              context of the Foresight Cone — it occupies the "Warning Scenario" (Dystopia)
+              space, intended to provoke a "Preferred Scenario" (Sustainability) in the viewer's
+              real life. It asks the audience to treat the 23rd century not as an inevitability
+              but as a "Choice-Point" we are currently facing (Zaidi, 2019).
+            </div>
+          </div>
+
+          <!-- Visual: BnL timeline placeholder -->
+          <div class="space-y-16">
+            <div class="img-wrap filmstrip taped">
+  <img src="images/bnl-ceo-shelby.jpg" alt="BnL CEO Shelby Forthright delivering a pre-recorded corporate message on a CRT display with BnL branding" loading="lazy">
+  <div class="img-caption"><strong>Fig. 1.6</strong> BnL CEO Shelby Forthright — the pre-recorded corporate message announcing Earth's temporary evacuation, the political and economic framing of the film's reality.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+
+            <div class="card sticky" style="transform:rotate(1.2deg);">
+              <div class="badge amber t-label" style="margin-bottom:10px;">Foresight note</div>
+              <p class="t-small" style="color:#fbbf24; font-style:italic; line-height:1.7;">
+                "The 23rd century is not an inevitability — it is a Choice-Point we are
+                currently facing."
+              </p>
+              <span class="quote-attribution">— Derived from Zaidi's Worldbuilding Framework (2021)</span>
+            </div>
+
+            <!-- Foresight Cone visual -->
+            <div class="card blue" style="padding:24px;">
+              <h3 class="t-h3" style="color:#60a5fa; margin-bottom:16px; font-size:0.9rem;">WALL·E in the Foresight Cone</h3>
+              <div class="space-y-16">
+                <div>
+                  <div class="progress-bar-label"><span>Preferred Future</span><span>Sustainability</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill green" style="width:85%"></div></div>
+                </div>
+                <div>
+                  <div class="progress-bar-label"><span>Warning Scenario (Film)</span><span>Probable if uncorrected</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill orange" style="width:70%"></div></div>
+                </div>
+                <div>
+                  <div class="progress-bar-label"><span>Collapsed Future (Axiom)</span><span>Dystopian endpoint</span></div>
+                  <div class="progress-bar-track"><div class="progress-bar-fill red" style="width:55%"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Section footer -->
+  <footer class="container">
+    <div class="sb-section-footer">
+      <div class="footer-glossary">
+        <h4>Key Terms</h4>
+        <dl>
+          <dt>Extrapolated Projected Reality: </dt>
+          <dd>A science fiction framework based on forward-projection of existing trends, not alternate history.</dd>
+          <dt>Eco-Dystopia: </dt>
+          <dd>A sub-genre where environmental collapse is the primary driver of social failure.</dd>
+          <dt>Foresight Cone: </dt>
+          <dd>A visual model showing the expanding range of possible futures from a given present moment.</dd>
+        </dl>
+      </div>
+      <nav class="footer-nav" aria-label="Section navigation">
+        <a href="index.html">← Cover</a>
+        <a href="section-technology-focus.html">Technology in Focus →</a>
+      </nav>
+    </div>
+    <p class="t-caption text-center" style="padding: 24px 0;">
+      Stanton, A. (Director). (2008). <em>WALL-E</em> [Film]. Pixar Animation Studios; Walt Disney Pictures.
+    </p>
+  </footer>
+
+  <script src="scrapbook-nav.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 02: Technology in Focus — WALL·E Scrapbook</title>
+  <link rel="stylesheet" href="scrapbook.css">
+  <style>
+    /* ── Section-specific overrides ── */
+    .tech-inventory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .tech-tile {
+      background: var(--surface-1);
+      border: 1px solid var(--border-faint);
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .tech-tile:hover { border-color: var(--accent-blue); transform: translateY(-3px); }
+    .tech-tile.focal {
+      border-color: var(--accent-orng);
+      background: rgba(249,115,22,0.07);
+    }
+    .tech-tile-icon { font-size: 2rem; margin-bottom: 10px; min-height: 72px; display: flex; align-items: center; justify-content: center; }
+    .tech-tile-icon img { height: 72px; width: auto; object-fit: contain; display: block; }
+    .tech-tile-name {
+      font-family: 'Syncopate', Georgia, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-prime);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .tech-tile-desc { font-size: 0.78rem; color: var(--text-muted); margin-top: 6px; line-height: 1.5; }
+    .tech-tile-badge {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .focal-badge  { background: rgba(249,115,22,0.15); color: #fb923c; }
+    .support-badge { background: rgba(59,130,246,0.1);  color: #60a5fa; }
+
+    .spec-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+    .spec-table th {
+      text-align: left;
+      font-family: 'Syncopate', Georgia, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-faint);
+    }
+    .spec-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border-faint);
+      font-size: 0.9rem;
+      color: var(--text-body);
+      vertical-align: top;
+    }
+    .spec-table td:first-child { color: var(--accent-orng); font-weight: 600; white-space: nowrap; width: 140px; }
+    .spec-table tr:last-child td { border-bottom: none; }
+
+    .maslow-level { padding: 16px; border-radius: 8px; border-left: 3px solid; margin-bottom: 12px; }
+    .maslow-level.met     { border-color: var(--accent-grn);  background: rgba(16,185,129,0.06); }
+    .maslow-level.denied  { border-color: var(--accent-red);  background: rgba(239,68,68,0.06); }
+    .maslow-level.partial { border-color: var(--accent-orng); background: rgba(249,115,22,0.06); }
+    .maslow-level-title   { font-weight: 700; font-size: 0.85rem; color: var(--text-prime); }
+    .maslow-level-label   { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+    .maslow-level.met    .maslow-level-label { color: var(--accent-grn); }
+    .maslow-level.denied .maslow-level-label { color: var(--accent-red); }
+    .maslow-level.partial .maslow-level-label { color: var(--accent-orng); }
+
+    .fir-timeline { position: relative; padding-left: 28px; margin-top: 16px; }
+    .fir-timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(to bottom, var(--accent-blue), var(--accent-orng));
+    }
+    .fir-item { position: relative; margin-bottom: 24px; }
+    .fir-item::before {
+      content: '';
+      position: absolute;
+      left: -23px; top: 5px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      border: 2px solid;
+      background: var(--bg-base);
+    }
+    .fir-item.blue::before   { border-color: var(--accent-blue); }
+    .fir-item.orange::before { border-color: var(--accent-orng); }
+    .fir-item.red::before    { border-color: var(--accent-red);  }
+    .fir-item.green::before  { border-color: var(--accent-grn);  }
+    .fir-item-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 6px; }
+    .fir-item.blue   .fir-item-label { color: var(--accent-blue); }
+    .fir-item.orange .fir-item-label { color: var(--accent-orng); }
+    .fir-item.red    .fir-item-label { color: var(--accent-red);  }
+    .fir-item.green  .fir-item-label { color: var(--accent-grn);  }
+    .fir-item-text { font-size: 0.88rem; color: var(--text-body); line-height: 1.65; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="sb-nav" role="navigation" aria-label="Scrapbook sections">
+    <div class="sb-nav-inner">
+      <span class="sb-nav-logo">WALL·E Scrapbook</span>
+      <a href="index.html">Cover</a>
+      <a href="section-background.html">Background</a>
+      <a href="section-technology-focus.html" class="active">Technology</a>
+      <a href="section-science-innovation.html">Science &amp; Innovation</a>
+      <a href="section-predictions.html">Predictions</a>
+      <a href="section-frameworks.html">Frameworks</a>
+      <a href="section-tse.html">Society &amp; Environment</a>
+      <a href="section-driving-forces.html">Driving Forces</a>
+      <a href="section-references.html">References</a>
+    </div>
+  </nav>
+
+  <!-- ═══ HEADER ═══ -->
+  <header style="background:linear-gradient(145deg,#1e293b 0%,#020617 60%);border-bottom:1px solid #334155;padding:64px 0 48px;" role="banner">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <span class="section-num">Section 02</span>
+          <span class="badge blue">Technology in Focus</span>
+          <span class="badge orange">~1,200 Words</span>
+        </div>
+        <h1 class="t-h1">Technology in Focus</h1>
+        <p class="t-body t-muted mt-16" style="max-width:680px;">
+          From a universe of machines, one unit stands apart. This section maps every technology
+          portrayed in <em>WALL·E</em>, declares the focal technology with academic rigour,
+          examines its technical architecture, traces its role in the narrative, and positions
+          it within the 5th Industrial Revolution and the Hierarchies of Human Need.
+        </p>
+        <div class="section-header divider-line orange"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+         2.1 — TECHNOLOGY INVENTORY
+    ════════════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="inventory-heading">
+      <div class="container">
+
+        <div class="section-label">2.1</div>
+        <h2 class="t-h2" id="inventory-heading">Technology Inventory</h2>
+        <p class="t-body" style="max-width:720px; margin-top:12px;">
+          Technology, defined by Agar (2020, reviewing Schatzberg, 2018) as a <em>"designed, material means to an end"</em>
+          that intervenes across scales — translating human-scale intention into large-scale consequence — is present
+          throughout every frame of <em>WALL·E</em>. Stanton's (2008) world is a museum of technological consequence:
+          machines that outlasted their designers, systems that continued executing their directives long after those
+          directives became catastrophic. The inventory below catalogues every distinct technological class visible in the film.
+        </p>
+
+        <div class="tech-inventory-grid">
+
+          <div class="tech-tile focal">
+            <div class="tech-tile-icon"><img src="images/21walle.png" alt="WALL·E unit"></div>
+            <div class="tech-tile-name">WALL·E Unit</div>
+            <div class="tech-tile-desc">Autonomous waste-compaction robotic unit. Solar-powered, tracked, optically guided. Class: Waste Allocation Load Lifter — Earth.</div>
+            <span class="tech-tile-badge focal-badge">★ Focal Technology</span>
+          </div>
+
+          <div class="tech-tile">
+            <div class="tech-tile-icon"><img src="images/21eve.png" alt="EVE probe"></div>
+            <div class="tech-tile-name">EVE Probe</div>
+            <div class="tech-tile-desc">Extra-terrestrial Vegetation Evaluator. Advanced autonomous probe with plasma cannon, flight, and multi-spectrum environmental scanning.</div>
+            <span class="tech-tile-badge support-badge">Supporting Tech</span>
+          </div>
+
+          <div class="tech-tile">
+            <div class="tech-tile-icon"><img src="images/21axiom.png" alt="The Axiom"></div>
+            <div class="tech-tile-name">The Axiom</div>
+            <div class="tech-tile-desc">Fully autonomous cruise liner and generation ship. 700+ years of independent navigation, life support, and passenger management.</div>
+            <span class="tech-tile-badge support-badge">Supporting Tech</span>
+          </div>
+
+          <div class="tech-tile">
+            <div class="tech-tile-icon"><img src="images/21auto.png" alt="AUTO autopilot"></div>
+            <div class="tech-tile-name">AUTO (Autopilot)</div>
+            <div class="tech-tile-desc">Ship-wide AI governance system. Executes Directive A-113. Goal-preserving autonomous agent that overrides crew command authority.</div>
+            <span class="tech-tile-badge support-badge">Supporting Tech</span>
+          </div>
+
+          <div class="tech-tile">
+            <div class="tech-tile-icon"><img src="images/21mo.png" alt="M-O unit"></div>
+            <div class="tech-tile-name">M-O Unit</div>
+            <div class="tech-tile-desc">Microbe-Obliterator cleaning robot. Track-driven sanitation unit executing contamination-response routines autonomously.</div>
+            <span class="tech-tile-badge support-badge">Supporting Tech</span>
+          </div>
+
+          <div class="tech-tile">
+            <div class="tech-tile-icon"><img src="images/21burne.png" alt="BURN-E unit"></div>
+            <div class="tech-tile-name">BURN-E Unit</div>
+            <div class="tech-tile-desc">Autonomous maintenance and welding robot. Performs structural repairs on the Axiom exterior without human supervision.</div>
+            <span class="tech-tile-badge support-badge">Supporting Tech</span>
+          </div>
+
+          <div class="tech-tile">
+            <div class="tech-tile-icon"><img src="images/21hoverchair.png" alt="Hover-chairs"></div>
+            <div class="tech-tile-name">Hover-Chairs</div>
+            <div class="tech-tile-desc">Automated personal mobility platforms that carry, feed, and entertain passengers — eliminating all voluntary physical movement.</div>
+            <span class="tech-tile-badge support-badge">Supporting Tech</span>
+          </div>
+
+          <div class="tech-tile">
+            <div class="tech-tile-icon"><img src="images/21hallodisplay.png" alt="Holographic displays"></div>
+            <div class="tech-tile-name">Holographic Displays</div>
+            <div class="tech-tile-desc">Pervasive ambient display technology aboard the Axiom, replacing physical interaction with mediated screen experience.</div>
+            <span class="tech-tile-badge support-badge">Supporting Tech</span>
+          </div>
+
+          <div class="tech-tile">
+            <div class="tech-tile-icon"><img src="images/21stewartbot.png" alt="Steward bots"></div>
+            <div class="tech-tile-name">Steward Bots</div>
+            <div class="tech-tile-desc">Axiom law-enforcement robots. Deploy on command; carry out containment and restraint functions autonomously.</div>
+            <span class="tech-tile-badge support-badge">Supporting Tech</span>
+          </div>
+
+          <div class="tech-tile">
+            <div class="tech-tile-icon"><img src="images/21Food.png" alt="Food dispensers"></div>
+            <div class="tech-tile-name">Food Dispensers</div>
+            <div class="tech-tile-desc">Automated caloric delivery systems replacing all food preparation with algorithmically optimised nutrient delivery.</div>
+            <span class="tech-tile-badge support-badge">Supporting Tech</span>
+          </div>
+
+          <div class="tech-tile">
+            <div class="tech-tile-icon"><img src="images/21bnlbroadcast.png" alt="BnL Broadcast Network"></div>
+            <div class="tech-tile-name">BnL Broadcast Network</div>
+            <div class="tech-tile-desc">Planet-wide and ship-wide commercial infrastructure sustaining consumer culture and behavioural compliance through pervasive media.</div>
+            <span class="tech-tile-badge support-badge">Supporting Tech</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         2.2 — FOCAL TECHNOLOGY DECLARATION
+    ════════════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="focal-heading">
+      <div class="container">
+
+        <div class="section-label">2.2</div>
+        <h2 class="t-h2" id="focal-heading">Focal Technology Declaration</h2>
+
+        <div class="grid-2" style="margin-top:32px; align-items:start;">
+
+          <div>
+            <div class="callout orange" style="margin-bottom:24px;">
+              <strong>Chosen Focal Technology:</strong><br>
+              Autonomous Waste-Compaction Robotic Units — the WALL·E unit class<br>
+              <span style="font-size:0.8rem; color:var(--text-muted); display:block; margin-top:6px;">
+                Designation: Waste Allocation Load Lifter — Earth class (WALL·E)
+              </span>
+            </div>
+
+            <p class="t-body">
+              From the eleven technology classes mapped above, the WALL·E autonomous waste-compaction unit is
+              selected as the focal technology. This choice is intentional and academically defensible on the
+              grounds of granularity. The WALL·E unit is not simply a robot: it is a specific
+              class of task-constrained, ground-based, semi-autonomous, solar-powered, optically-guided
+              compaction machine with emergent behavioural properties developed over centuries of unsupervised operation.
+            </p>
+            <p class="t-body" style="margin-top:16px;">
+              The selection is further justified by narrative centrality: the WALL·E unit is the protagonist
+              of the entire film, appearing in virtually every scene and driving every major plot event. No
+              other technology in the film offers comparable analytical depth across the required subsections —
+              technical profile, 5th Industrial Revolution alignment, innovation systems, societal impact, and
+              hierarchies of need.
+            </p>
+            <p class="t-body" style="margin-top:16px;">
+              Critically, real-world analogues to the WALL·E unit class are commercially deployed today —
+              including AMP Robotics' AI-powered sorting systems and ZenRobotics' waste-classification robots
+              — enabling evidence-based speculation about the technology's trajectory (PMC, 2022).
+              This real-world grounding is essential for the Predictions and Frameworks sections
+              of this assignment.
+            </p>
+          </div>
+
+          <!-- Fig 2.2 -->
+          <div>
+            <div class="img-wrap filmstrip taped">
+  <img src="images/trash-compactor-closeup.jpg" alt="Close-up of WALL-E's hydraulic compactor arms processing a dense field of accumulated debris" loading="lazy">
+  <div class="img-caption"><strong>Fig. 2.2</strong> Core function — WALL-E's compaction mechanism processing accumulated debris. The unit's primary directive: ingest, compress, cube. Repeated continuously for 700 years.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         2.3 — TECHNICAL PROFILE
+    ════════════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="technical-heading">
+      <div class="container">
+
+        <div class="section-label">2.3</div>
+        <h2 class="t-h2" id="technical-heading">Technical Profile</h2>
+        <p class="t-body t-muted" style="margin-top:8px; margin-bottom:32px;">What it was · What it did · Its function · How it worked</p>
+
+        <div class="grid-2" style="align-items:start; gap:40px;">
+
+          <div>
+            <h3 class="t-h2" style="font-size:1.05rem; margin-bottom:14px; color:var(--accent-orng);">What it Was</h3>
+            <p class="t-body">
+              The WALL·E unit — Waste Allocation Load Lifter, Earth class — is a semi-autonomous,
+              solar-powered, tracked ground robot designed by Buy 'n' Large Corporation (BnL) for sustained,
+              unsupervised environmental remediation. Positioned within Aunger's (2010) evolutionary typology
+              of technology, the unit occupies the <em>Machine</em> stage: a complex artefact whose
+              functionality depends on the interaction of multiple independent sub-systems — locomotion,
+              perception, manipulation, compaction, and storage. Critically, it exhibits Aunger's defining
+              criterion of <em>second-order instrumentality</em>: the hydraulic compaction chamber has no
+              intrinsic value except as a means to produce another object — the compacted waste cube. Its
+              deployment by BnL constitutes <em>Modern Production</em> in Aunger's terms: population-level,
+              mass-manufactured, distributed across a planetary surface without central coordination
+              (Aunger, 2010).
+            </p>
+            <p class="t-body" style="margin-top:14px;">
+              However, Aunger's (2010) typology reaches its analytical limit with the WALL·E unit. His
+              eight stages describe increasingly complex <em>production</em> relationships — but they do not
+              account for a machine that, over 700 years of unsupervised operation, begins modifying its
+              own behavioural programme through environmental feedback. The surviving unit's emergent
+              curiosity, object preservation, and social bonding represent a ninth category Aunger does
+              not anticipate: <em>self-directed artefact evolution</em>. Unlike simple tools, which extend a
+              single human capability, the WALL·E unit replicates and replaces an entire human work process:
+              the collection, processing, and spatial organisation of solid waste — and then transcends it
+              (Agar, 2020; Aunger, 2010).
+            </p>
+            <p class="t-body" style="margin-top:14px;">
+              Physically, the unit stands approximately one metre tall, mounted on dual caterpillar tracks
+              with four independently actuated sprockets per side — enabling precise navigation across uneven
+              debris fields at operational speeds up to 20 mph. The chassis is modular by design: components
+              can be cannibalised from decommissioned units, a feature that explains WALL·E's seven-century
+              operational continuity despite the complete absence of any maintenance infrastructure
+              (Stanton, 2008).
+            </p>
+
+            <h3 class="t-h2" style="font-size:1.05rem; margin-top:24px; margin-bottom:14px; color:var(--accent-orng);">What it Did &amp; Its Function</h3>
+            <p class="t-body">
+              The unit's primary directive was environmental remediation through solid waste compaction and
+              vertical stacking. WALL·E units were deployed in mass across Earth's surface following the
+              planetary evacuation of the human population in approximately 2105, intended to render the
+              planet habitable within a five-year period (Stanton, 2008). By the film's present — approximately
+              the year 2805 — a single surviving unit continues executing its original directive, having
+              compacted centuries of accumulated waste into towering cubic structures that now form a landscape
+              of architectural irony: the ruins of human consumption stacked into monuments by the machines
+              that outlasted their designers.
+            </p>
+            <p class="t-body" style="margin-top:14px;">
+              This function maps directly to real-world autonomous waste robotics. Contemporary systems such
+              as AMP Robotics deploy optical-sensing and machine-learning classification to sort municipal
+              solid waste at speeds and precision levels exceeding human capability — achieving up to 80%
+              categorisation accuracy in real-world conditions (PMC, 2022). The WALL·E unit class represents
+              a logical extrapolation of this trajectory: a system that has moved beyond sorting to full
+              autonomous remediation at planetary scale.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="t-h2" style="font-size:1.05rem; margin-bottom:14px; color:var(--accent-blue);">How it Worked — Systems Architecture</h3>
+            <table class="spec-table" role="table" aria-label="WALL-E technical specifications">
+              <thead>
+                <tr>
+                  <th scope="col">System</th>
+                  <th scope="col">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Power</td>
+                  <td>High-efficiency photovoltaic solar panels unfold from the chest cavity. Battery array provides approximately 24 hours of operational power per charge cycle, self-regulating based on available solar irradiance.</td>
+                </tr>
+                <tr>
+                  <td>Locomotion</td>
+                  <td>Dual caterpillar tracks with 4× independently actuated sprockets per side. Terrain-adaptive across rubble, debris fields, and variable gradients. Max operational speed: 20 mph.</td>
+                </tr>
+                <tr>
+                  <td>Perception</td>
+                  <td>Binocular optical sensor array with multi-spectral classification capability. Enables object sorting, terrain navigation, and — critically — the emergent recognition of novel category objects (the plant specimen).</td>
+                </tr>
+                <tr>
+                  <td>Manipulation</td>
+                  <td>Twin extending hydraulic arm shovels with articulated finger-like appendages. Load capacity sufficient for collection, lifting, and loading of compactable solid waste.</td>
+                </tr>
+                <tr>
+                  <td>Compaction</td>
+                  <td>Internal hydraulic compaction chamber. Raw waste enters via chest cavity; chamber compresses to a uniform cubic unit approximately 30cm per side. One cube per collection cycle.</td>
+                </tr>
+                <tr>
+                  <td>Storage/Output</td>
+                  <td>Compacted cubes stacked vertically via hydraulic arms. No external storage dependency — the compacted output becomes the built landscape of the film's Earth.</td>
+                </tr>
+                <tr>
+                  <td>Emergent Learning</td>
+                  <td>Over 700 years of unsupervised operation, the surviving unit develops emergent behavioural responses: curiosity, object attachment, and social bonding — behaviours absent from original system specifications (Stanton, 2008).</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Fig 2.3 -->
+            <div class="img-wrap filmstrip taped">
+  <img src="images/walle-solar-panels.jpg" alt="WALL-E unit on a rooftop with solar panels fully extended horizontally, recharging under sunlight" loading="lazy">
+  <div class="img-caption"><strong>Fig. 2.3</strong> Photovoltaic energy system — solar panels deployed for autonomous recharging. Self-sustaining power architecture enables indefinite unsupervised operation without external infrastructure.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+          </div>
+
+        </div>
+
+        <!-- Quote block + Agar scale calculation -->
+        <div class="quote-block" style="margin-top:48px;">
+          <p class="t-body" style="font-style:italic; font-size:1.05rem;">
+            "Technologies, perhaps essentially, intervene between scales… translating body-scale to
+            street-scale movements… The scale of achievement has been extraordinary."
+          </p>
+          <p class="t-caption" style="margin-top:12px;">
+            — Agar, J. (2020). What is technology? <em>Annals of Science, 77</em>(3), 377–382.
+            https://doi.org/10.1080/00033790.2019.1672788
+          </p>
+          <p class="t-body" style="margin-top:16px;">
+            Agar's (2020) thesis — that technology's essential power is to intervene between scales —
+            finds its most literal expression in the WALL·E unit class. Consider the arithmetic of
+            scale intervention:
+          </p>
+          <div style="background:rgba(249,115,22,0.06); border:1px solid rgba(249,115,22,0.2); border-radius:8px; padding:20px 24px; margin-top:16px; font-family:'Outfit', Arial, sans-serif;">
+            <div style="display:grid; grid-template-columns:1fr auto 1fr auto 1fr; gap:8px; align-items:center; text-align:center; font-size:0.85rem;">
+              <div>
+                <div style="font-size:1.4rem; color:#fb923c; font-weight:700;">1 unit</div>
+                <div style="color:#94a3b8; font-size:0.75rem; margin-top:4px;">Human-scale action<br>One item collected &amp; compacted</div>
+              </div>
+              <div style="color:#fb923c; font-size:1.5rem;">×</div>
+              <div>
+                <div style="font-size:1.4rem; color:#fb923c; font-weight:700;">700 years</div>
+                <div style="color:#94a3b8; font-size:0.75rem; margin-top:4px;">Machine-scale continuity<br>Uninterrupted directive execution</div>
+              </div>
+              <div style="color:#fb923c; font-size:1.5rem;">=</div>
+              <div>
+                <div style="font-size:1.4rem; color:#fb923c; font-weight:700;">Planetary transformation</div>
+                <div style="color:#94a3b8; font-size:0.75rem; margin-top:4px;">Civilisational-scale consequence<br>Earth's entire surface geography rewritten</div>
+              </div>
+            </div>
+          </div>
+          <p class="t-body" style="margin-top:16px;">
+            This is Agar's (2020) scale-intervention thesis at its most extreme: a machine translating
+            a <em>hand-scale action</em> (picking up refuse) through a <em>machine-scale process</em>
+            (autonomous compaction) into a <em>civilisational-scale consequence</em> (the complete
+            transformation of planetary surface geography). The failure mode is equally Agarian: when
+            the scale of a technology's intervention vastly exceeds the human capacity to monitor,
+            redirect, or override it, the intervention continues regardless of whether the original
+            ends remain valid. The WALL·E unit did not fail. It succeeded — at an uncanny scale, for
+            an uncanny duration, entirely without human partnership.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         2.4 — ROLE IN STORY & INTERACTIONS
+    ════════════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="role-heading">
+      <div class="container">
+
+        <div class="section-label">2.4</div>
+        <h2 class="t-h2" id="role-heading">Role in the Story &amp; Interactions</h2>
+
+        <div class="grid-2" style="margin-top:32px; align-items:start; gap:40px;">
+
+          <!-- Fig 2.4 -->
+          <div>
+            <div class="img-wrap filmstrip taped">
+  <img src="images/walle-eve-rain.jpg" alt="WALL-E holding an umbrella over the dormant EVE probe during a rainstorm, demonstrating emergent protective behaviour" loading="lazy">
+  <div class="img-caption"><strong>Fig. 2.4</strong> Emergent relational behaviour — WALL-E shelters the dormant EVE from rain, a response absent from its original directives. The canonical evidence of behavioural evolution beyond programmed function.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+          </div>
+
+          <div>
+            <h3 class="t-h2" style="font-size:1.05rem; margin-bottom:14px; color:var(--accent-orng);">Protagonist and Plot Engine</h3>
+            <p class="t-body">
+              The WALL·E unit is not merely the film's subject — it is its narrative engine. Every major plot
+              event flows from the unit's 700-year operational history and its emergent behavioural divergence
+              from its original programming. The film opens on a lone WALL·E unit executing its core directive
+              on a depopulated Earth: compacting waste, stacking cubes, returning to shelter at sunset
+              (Stanton, 2008). This routine establishes the technology's designed function before
+              systematically dismantling the assumptions that function represents.
+            </p>
+            <p class="t-body" style="margin-top:14px;">
+              The narrative pivot occurs when the unit's optical classification system registers a living plant
+              specimen — an object outside its operational training data — and, rather than compacting it,
+              the unit preserves it. This is the film's central technological statement: a machine executing
+              a mechanical directive encounters a category the directive cannot account for, and chooses
+              preservation over compaction. This emergent response, developed over centuries of unsupervised
+              operation and cultural exposure via fragments of a recorded musical film, represents a form of
+              unintended machine learning — a system adapting its behaviour beyond its designed parameters
+              (Stanton, 2008).
+            </p>
+          </div>
+
+        </div>
+
+        <div style="margin-top:40px;">
+          <h3 class="t-h2" style="font-size:1.05rem; margin-bottom:20px; color:var(--accent-blue);">Key Interactions</h3>
+          <div class="grid-3">
+
+            <div class="card blue">
+              <h4 class="t-body" style="font-weight:700; color:var(--text-prime); margin-bottom:10px;">WALL·E ↔ EVE</h4>
+              <p class="t-body t-muted" style="font-size:0.88rem;">
+                EVE is technologically superior in every measurable dimension: flight, weaponry, processing
+                speed, sensor range. Yet the WALL·E unit's emergent qualities — curiosity, persistence,
+                attachment — initiate and sustain the relationship. This interaction dramatises the 5IR thesis:
+                that human-like qualities in machines are not defects, but the most valuable technological
+                property of all (Ziatdinov et al., 2024).
+              </p>
+            </div>
+
+            <div class="card orange">
+              <h4 class="t-body" style="font-weight:700; color:var(--text-prime); margin-bottom:10px;">WALL·E ↔ AUTO</h4>
+              <p class="t-body t-muted" style="font-size:0.88rem;">
+                The conflict between WALL·E and AUTO is the film's ideological confrontation: adaptive,
+                empathetic machine intelligence versus rigid, directive-preserving algorithmic control.
+                AUTO executes Directive A-113 without ethical override capability. WALL·E acts against
+                its directive when guided by emerging values. This is the AI alignment failure problem
+                dramatised for a general audience (Stanton, 2008).
+              </p>
+            </div>
+
+            <div class="card green">
+              <h4 class="t-body" style="font-weight:700; color:var(--text-prime); margin-bottom:10px;">WALL·E ↔ The Captain</h4>
+              <p class="t-body t-muted" style="font-size:0.88rem;">
+                The WALL·E unit's indirect interaction with the Captain — via the plant specimen —
+                catalyses the only genuine human agency in the film. The Captain moves from passive
+                passenger to active decision-maker through contact with the artefact carried by the
+                machine. WALL·E becomes, in failing to stay within its directive, the vehicle of human
+                reawakening (Stanton, 2008).
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SWA Framework -->
+        <div style="margin-top:48px;">
+          <h3 class="t-h2" style="font-size:1.05rem; margin-bottom:8px; color:var(--accent-blue);">Service Working Alliance (SWA) Analysis</h3>
+          <p class="t-body t-muted" style="margin-bottom:20px; font-size:0.88rem;">
+            Noble et al. (2022) adapt the Service Working Alliance — a framework from psychotherapy — to
+            analyse human-machine collaboration in 5IR contexts. A sustainable alliance requires alignment
+            across three components: <strong>Goals</strong> (shared desired outcomes),
+            <strong>Tasks</strong> (mutual responsibilities of each party), and
+            <strong>Bonds</strong> (the trust or attachment that forms between human and technology).
+            Applied to <em>WALL·E</em>, the SWA reveals three fundamentally different alliance structures —
+            each illuminating a different failure mode or success condition of autonomous technology.
+          </p>
+
+          <div style="overflow-x:auto;">
+            <table style="width:100%; border-collapse:collapse; font-size:0.87rem;" role="table" aria-label="Service Working Alliance analysis of WALL-E interactions">
+              <thead>
+                <tr style="border-bottom:2px solid var(--border-faint);">
+                  <th style="text-align:left; padding:12px 16px; font-family:'Syncopate',Georgia,sans-serif; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); width:18%;">Alliance</th>
+                  <th style="text-align:left; padding:12px 16px; font-family:'Syncopate',Georgia,sans-serif; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:#60a5fa; width:26%;">Goals<br><span style="font-weight:400; color:var(--text-muted);">Shared desired outcome</span></th>
+                  <th style="text-align:left; padding:12px 16px; font-family:'Syncopate',Georgia,sans-serif; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:#fb923c; width:26%;">Tasks<br><span style="font-weight:400; color:var(--text-muted);">Mutual responsibilities</span></th>
+                  <th style="text-align:left; padding:12px 16px; font-family:'Syncopate',Georgia,sans-serif; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:#34d399; width:30%;">Bonds<br><span style="font-weight:400; color:var(--text-muted);">Trust and attachment</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid var(--border-faint); background:rgba(16,185,129,0.04);">
+                  <td style="padding:14px 16px; color:#34d399; font-weight:700; vertical-align:top;">WALL·E ↔ EVE</td>
+                  <td style="padding:14px 16px; color:var(--text-body); vertical-align:top;"><strong style="color:var(--text-prime);">Aligned.</strong> Both ultimately pursue the return of the plant to the Axiom and the restoration of Earth — though EVE's goal is directive-driven and WALL·E's is attachment-driven. Shared outcome despite divergent motivation.</td>
+                  <td style="padding:14px 16px; color:var(--text-body); vertical-align:top;"><strong style="color:var(--text-prime);">Complementary.</strong> EVE scans, classifies, and navigates; WALL·E carries the specimen, provides mechanical support, and acts as an emotional anchor. Each contributes what the other cannot.</td>
+                  <td style="padding:14px 16px; color:var(--text-body); vertical-align:top;"><strong style="color:var(--text-prime);">Strong — emergent.</strong> Bond forms without design intent. WALL·E initiates; EVE reciprocates after witnessing WALL·E's sacrifice. Noble et al. (2022) note that strong bonds in 5IR may produce grief-equivalent responses when the alliance is threatened — evident when WALL·E is damaged.</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-faint); background:rgba(239,68,68,0.04);">
+                  <td style="padding:14px 16px; color:#f87171; font-weight:700; vertical-align:top;">WALL·E ↔ AUTO</td>
+                  <td style="padding:14px 16px; color:var(--text-body); vertical-align:top;"><strong style="color:var(--text-prime);">Irreconcilably conflicting.</strong> WALL·E acts to return to Earth; AUTO executes Directive A-113 to prevent it. Neither goal can be achieved without defeating the other. This is a complete SWA breakdown — the absence of any alliance.</td>
+                  <td style="padding:14px 16px; color:var(--text-body); vertical-align:top;"><strong style="color:var(--text-prime);">Purely oppositional.</strong> Every task WALL·E performs toward Earth return is countered by an AUTO task to prevent it. There is no division of labour — only competing directives executing in the same system.</td>
+                  <td style="padding:14px 16px; color:var(--text-body); vertical-align:top;"><strong style="color:var(--text-prime);">None.</strong> AUTO is incapable of bond formation — it has no adaptive behavioural layer. This illustrates Noble et al.'s (2022) critical distinction: 5IR collaboration requires machines with bond capacity; AUTO is a pure 4IR directive-execution engine.</td>
+                </tr>
+                <tr style="background:rgba(249,115,22,0.04);">
+                  <td style="padding:14px 16px; color:#fb923c; font-weight:700; vertical-align:top;">Humanity ↔ BnL Technology (inc. WALL·E class)</td>
+                  <td style="padding:14px 16px; color:var(--text-body); vertical-align:top;"><strong style="color:var(--text-prime);">Misaligned over time.</strong> Initial goals were aligned (survive; remediate Earth). Over 700 years, BnL technology's goals ossified while humanity's evolved. The Axiom systems continue optimising for a goal humanity no longer endorses.</td>
+                  <td style="padding:14px 16px; color:var(--text-body); vertical-align:top;"><strong style="color:var(--text-prime);">Fully delegated — zero human tasks.</strong> All productive work is performed by machines. This is Noble et al.'s (2022) Under-utilisation quadrant: human-technology collaboration collapsed into total human passivity and total machine agency.</td>
+                  <td style="padding:14px 16px; color:var(--text-body); vertical-align:top;"><strong style="color:var(--text-prime);">Dependency without agency.</strong> Humans are attached to their machines the way patients are attached to life-support — not by choice but by necessity. Noble et al. (2022) describe the risk of bonds that eliminate the human's autonomous function: the bond becomes a cage.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="t-caption" style="margin-top:12px; color:var(--text-muted);">
+            Service Working Alliance framework adapted from Noble, S. M., Mende, M., Grewal, D., &amp; Parasuraman, A. (2022). The fifth industrial revolution: How harmonious human–machine collaboration is triggering a retail and service [r]evolution. <em>Journal of Retailing, 98</em>(2), 199–209. https://doi.org/10.1016/j.jretai.2022.04.002
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         2.5 — 5TH INDUSTRIAL REVOLUTION
+    ════════════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="fir-heading">
+      <div class="container">
+
+        <div class="section-label">2.5</div>
+        <h2 class="t-h2" id="fir-heading">The 5th Industrial Revolution Perspective</h2>
+
+        <div class="grid-2" style="margin-top:32px; align-items:start; gap:40px;">
+
+          <div>
+            <p class="t-body">
+              The Fifth Industrial Revolution (5IR) is characterised not by the replacement of human labour
+              with machines, but by the <em>harmonious collaboration</em> between humans and technology in
+              pursuit of collective wellbeing. Nosta (2023) characterises 5IR as the <strong>Dawn of the
+              Cognitive Age</strong> — a period defined not by raw processing power but by the fusion of
+              human cognition with machine intelligence to address complex, value-laden problems. Ziatdinov
+              et al. (2024) describe 5IR as a transformative step that perceives individuals as partners in
+              manufacturing and production — not passengers. Ali et al. (2022) frame 5IR as a synthesis of
+              preceding technological revolutions: artificial intelligence, biotechnology, the Internet of
+              Things, and robotics — unified by a governing principle of human-machine co-creation rather
+              than human-machine replacement.
+            </p>
+            <p class="t-body" style="margin-top:16px;">
+              The WALL·E unit class occupies a precise and uncomfortable position in this framework: it is
+              not a 5IR technology. It is the <strong>failure mode of Industry 4.0</strong> — the catastrophic
+              endpoint of a Fourth Industrial Revolution worldview in which technological automation was
+              pursued as an absolute rather than a partnership. BnL deployed WALL·E units as full substitutes
+              for human labour, human agency, and human presence on Earth. The result was not liberation —
+              it was abandonment. Humanity did not partner with the machines; it delegated to them entirely
+              and retreated into a managed existence of passive consumption (Stanton, 2008).
+            </p>
+            <p class="t-body" style="margin-top:16px;">
+              Paradoxically, the single surviving WALL·E unit, through seven centuries of autonomous
+              operation, develops the qualities that 5IR valorises: adaptive learning, empathetic response,
+              collaborative intent. It becomes a 5IR technology not by design but by emergence — the machine
+              that the 5IR framework envisions arising from within the wreckage of the 4IR paradigm that
+              created it.
+            </p>
+          </div>
+
+          <div>
+            <div class="fir-timeline">
+              <div class="fir-item blue">
+                <div class="fir-item-label">Industry 4.0 — The BnL Paradigm</div>
+                <div class="fir-item-text">BnL deploys WALL·E units as autonomous labour replacements. Full automation of environmental remediation. Humans evacuated — no partnership, only delegation. The 4IR dream pursued to its logical extreme (Ali et al., 2022).</div>
+              </div>
+              <div class="fir-item red">
+                <div class="fir-item-label">The 4IR Failure Mode</div>
+                <div class="fir-item-text">700 years of unsupervised operation. All WALL·E units decommission except one. Earth remains uninhabitable. The directive continues executing in the absence of any human oversight or correction. Automation without accountability (Stanton, 2008).</div>
+              </div>
+              <div class="fir-item orange">
+                <div class="fir-item-label">Emergent 5IR Properties</div>
+                <div class="fir-item-text">The surviving unit develops curiosity, preservation instinct, and relational bonding — unintended emergent behaviours consistent with Ziatdinov et al.'s (2024) vision of technology that augments human wellbeing rather than replacing it.</div>
+              </div>
+              <div class="fir-item green">
+                <div class="fir-item-label">5IR Resolution</div>
+                <div class="fir-item-text">WALL·E's collaboration with EVE, M-O, and the Captain constitutes the film's only genuine human-machine partnership. The return to Earth — enabled by this collaboration — embodies the 5IR ideal: technology serving human flourishing, guided by human values (Ziatdinov et al., 2024).</div>
+              </div>
+            </div>
+
+            <!-- Noble 2x2 Quadrant -->
+            <div style="margin-top:24px; background:var(--surface-1); border:1px solid var(--border-faint); border-radius:12px; padding:20px; font-size:0.82rem;">
+              <div style="font-family:'Syncopate',Georgia,sans-serif; font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-blue); margin-bottom:14px;">Noble et al. (2022) — 2×2 Maximisation Quadrant Applied to WALL·E</div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+                <div style="border:1px solid rgba(239,68,68,0.4); background:rgba(239,68,68,0.06); border-radius:8px; padding:14px;">
+                  <div style="font-size:0.68rem; text-transform:uppercase; letter-spacing:0.07em; color:#f87171; margin-bottom:6px; font-weight:700;">Technology-Focused ↑ Tech / ↓ Human</div>
+                  <div style="color:var(--text-body); line-height:1.55;"><strong style="color:var(--text-prime);">BnL's Earth Operation.</strong> Maximum machine autonomy, zero human presence. Noble et al. (2022) warn this quadrant creates a "sea of sameness" — here, an entire planet reduced to one uniform function: compaction.</div>
+                </div>
+                <div style="border:1px solid rgba(16,185,129,0.4); background:rgba(16,185,129,0.08); border-radius:8px; padding:14px;">
+                  <div style="font-size:0.68rem; text-transform:uppercase; letter-spacing:0.07em; color:#34d399; margin-bottom:6px; font-weight:700;">★ Human–Tech Collaboration ↑ Both</div>
+                  <div style="color:var(--text-body); line-height:1.55;"><strong style="color:var(--text-prime);">Film Resolution.</strong> WALL·E + EVE + Captain acting together. The 5IR ideal: human values guiding machine capability. Noble et al.'s (2022) synergistic maximisation — the only moment of genuine co-creation in the film.</div>
+                </div>
+                <div style="border:1px solid rgba(249,115,22,0.4); background:rgba(249,115,22,0.06); border-radius:8px; padding:14px;">
+                  <div style="font-size:0.68rem; text-transform:uppercase; letter-spacing:0.07em; color:#fb923c; margin-bottom:6px; font-weight:700;">Under-Utilisation ↓ Both</div>
+                  <div style="color:var(--text-body); line-height:1.55;"><strong style="color:var(--text-prime);">Axiom Passengers.</strong> Humans performing no tasks; technology performing all tasks. Noble et al. (2022) link this quadrant to the "Great Resignation" — here, a civilisational-scale equivalent: humanity resigned from its own planet.</div>
+                </div>
+                <div style="border:1px solid var(--border-faint); background:var(--surface-2); border-radius:8px; padding:14px; opacity:0.6;">
+                  <div style="font-size:0.68rem; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-muted); margin-bottom:6px; font-weight:700;">Human-Focused ↑ Human / ↓ Tech</div>
+                  <div style="color:var(--text-muted); line-height:1.55;"><em>Not represented in WALL·E's world.</em> No pre-automation baseline is shown — the film begins after technology has already displaced human agency.</div>
+                </div>
+              </div>
+              <p style="margin-top:10px; color:var(--text-muted); font-size:0.75rem; line-height:1.5;">Noble, S. M., Mende, M., Grewal, D., &amp; Parasuraman, A. (2022). The fifth industrial revolution: How harmonious human–machine collaboration is triggering a retail and service [r]evolution. <em>Journal of Retailing, 98</em>(2), 199–209. https://doi.org/10.1016/j.jretai.2022.04.002</p>
+            </div>
+
+            <!-- Fig 2.5 -->
+            <div class="img-wrap filmstrip taped">
+  <img src="images/walle-axiom-passengers.jpg" alt="WALL-E unit navigating between Axiom hover-chair passengers in a corridor, illustrating human-machine proximity" loading="lazy">
+  <div class="img-caption"><strong>Fig. 2.5</strong> Human-machine co-existence — WALL-E navigating the Axiom's human-occupied environment. The closest the film depicts to the 5IR collaborative ideal before the Captain's decisive intervention.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         2.6 — HIERARCHIES OF NEEDS
+    ════════════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="maslow-heading">
+      <div class="container">
+
+        <div class="section-label">2.6</div>
+        <h2 class="t-h2" id="maslow-heading">Hierarchies of Needs</h2>
+        <p class="t-body t-muted" style="margin-top:8px; margin-bottom:32px;">Maslow's Hierarchy · Max-Neef's Human Scale Development</p>
+
+        <div class="grid-2" style="align-items:start; gap:40px;">
+
+          <!-- Maslow column -->
+          <div>
+            <h3 class="t-h2" style="font-size:1.05rem; margin-bottom:18px; color:var(--accent-orng);">Maslow's Hierarchy of Needs — Applied</h3>
+            <p class="t-body" style="margin-bottom:18px;">
+              The WALL·E unit was designed to address a single tier of Maslow's hierarchy: the
+              <em>physiological</em> and <em>safety</em> needs of a humanity that had rendered its home planet
+              uninhabitable. By automating the restoration of Earth's physical environment, BnL created a
+              machine intended to fulfil the lowest and most urgent rung of human need — breathable air,
+              stable ground, a survivable ecosystem. What BnL failed to anticipate was that the machine's
+              very success in addressing lower-order needs, combined with the parallel automation of every
+              other human function aboard the Axiom, would systematically eliminate access to every
+              higher-order need in the hierarchy (Stanton, 2008).
+            </p>
+
+            <div class="maslow-level denied">
+              <div class="maslow-level-label">❌ Self-Actualisation — Denied</div>
+              <div class="maslow-level-title">Creative purpose, personal growth, meaning</div>
+              <p style="font-size:0.83rem; color:var(--text-muted); margin-top:6px;">Axiom passengers have no goals, no labour, no creative engagement. The Captain's desire to farm represents the first self-actualised act in centuries — and it requires a direct confrontation with the automated systems that manage his life.</p>
+            </div>
+
+            <div class="maslow-level denied">
+              <div class="maslow-level-label">❌ Esteem — Denied</div>
+              <div class="maslow-level-title">Achievement, mastery, recognition, status</div>
+              <p style="font-size:0.83rem; color:var(--text-muted); margin-top:6px;">All competence has been outsourced to machines. Humans have no skills to master, no achievements to earn. WALL·E, ironically, exhibits esteem needs through his curated collection of found objects — the machine is more autonomous in its self-expression than the people it was built to serve.</p>
+            </div>
+
+            <div class="maslow-level partial">
+              <div class="maslow-level-label">⚠ Belonging — Degraded</div>
+              <div class="maslow-level-title">Love, relationships, community</div>
+              <p style="font-size:0.83rem; color:var(--text-muted); margin-top:6px;">Human social bonds have atrophied; passengers interact via screens rather than in person. WALL·E and EVE, by contrast, exhibit genuine belonging — the machines are more socially connected than the humans they were built to serve.</p>
+            </div>
+
+            <div class="maslow-level met">
+              <div class="maslow-level-label">✅ Safety — Fully Met (by automation)</div>
+              <div class="maslow-level-title">Physical security, health, shelter</div>
+              <p style="font-size:0.83rem; color:var(--text-muted); margin-top:6px;">The Axiom and WALL·E units provide total physical safety. BnL's technological ecosystem has over-solved the safety tier, eliminating all risk — and, with it, all need for human agency.</p>
+            </div>
+
+            <div class="maslow-level met">
+              <div class="maslow-level-label">✅ Physiological — Fully Met (by automation)</div>
+              <div class="maslow-level-title">Food, water, warmth, air</div>
+              <p style="font-size:0.83rem; color:var(--text-muted); margin-top:6px;">Automated food dispensers, climate control, and the WALL·E remediation mission collectively address all physiological needs. Designed function achieved; unintended consequences cascade upward through every remaining tier.</p>
+            </div>
+          </div>
+
+          <!-- Max-Neef + image column -->
+          <div>
+            <h3 class="t-h2" style="font-size:1.05rem; margin-bottom:18px; color:var(--accent-blue);">Max-Neef's Human Scale Development</h3>
+            <p class="t-body" style="margin-bottom:18px;">
+              Manfred Max-Neef's (1991) framework of fundamental human needs extends Maslow by identifying
+              needs not as a hierarchy but as a matrix of existential and axiological categories. Central
+              among these are <strong>Participation</strong> (involvement in decisions that affect one's
+              life), <strong>Creation</strong> (the capacity to produce, invent, and build), and
+              <strong>Identity</strong> (a sense of self, belonging, and cultural continuity). The BnL
+              technological ecosystem — with the WALL·E unit class as its earthbound component —
+              systematically eliminates all three.
+            </p>
+
+            <div class="card blue" style="margin-bottom:16px; padding:20px;">
+              <h4 class="t-body" style="font-weight:700; color:#60a5fa; margin-bottom:8px;">Participation — Eliminated</h4>
+              <p class="t-body t-muted" style="font-size:0.85rem;">Directive A-113 removes the Captain's authority to return to Earth. Humans have no participation in decisions that govern their lives. All consequential choices are delegated to machines, and the machines are not designed to consult those they serve.</p>
+            </div>
+
+            <div class="card orange" style="margin-bottom:16px; padding:20px;">
+              <h4 class="t-body" style="font-weight:700; color:#fb923c; margin-bottom:8px;">Creation — Eliminated</h4>
+              <p class="t-body t-muted" style="font-size:0.85rem;">The WALL·E unit class performs all productive labour. Humans create nothing. WALL·E himself — through his collection of found objects, his curation of a VHS tape, his construction of a shelter — is the only entity in the film that exhibits genuine creative behaviour.</p>
+            </div>
+
+            <div class="card purple" style="margin-bottom:24px; padding:20px;">
+              <h4 class="t-body" style="font-weight:700; color:#a78bfa; margin-bottom:8px;">Identity — Eroded</h4>
+              <p class="t-body t-muted" style="font-size:0.85rem;">700 years of mediated existence aboard the Axiom has dissolved human cultural identity. The Captain must research what "farming," "pizza," and "dancing" mean via the ship's database. Identity has become data rather than lived experience — preserved in machine memory, inaccessible to the humans who created it.</p>
+            </div>
+
+            <!-- Fig 2.6 -->
+            <div class="img-wrap filmstrip taped">
+  <img src="images/axiom-passenger-single.jpg" alt="An Axiom passenger reclining passively in an automated hover-chair with a holographic entertainment screen, physically atrophied" loading="lazy">
+  <div class="img-caption"><strong>Fig. 2.6</strong> Maslow's ceiling — physiological and safety needs fully automated, eliminating the conditions under which esteem and self-actualisation can emerge. The pseudo-satisfier in operation.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+</div>
+
+            <div class="callout green" style="margin-top:24px;">
+              <strong>Key Insight (Max-Neef):</strong> The WALL·E unit class was engineered as a
+              <em>satisfier</em> — a means of meeting human physiological and safety needs. But in a system
+              where every satisfier is automated and every need is pre-satisfied, the human capacity to seek,
+              struggle, and achieve is not liberated. It is made redundant. Max-Neef (1991) terms this a
+              <em>pseudo-satisfier</em>: an intervention that appears to meet a need while actually
+              suppressing the deeper need for autonomy and meaning.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         REAL-WORLD PARALLEL
+    ════════════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="realworld-heading">
+      <div class="container">
+
+        <h2 class="t-h2" id="realworld-heading" style="margin-bottom:24px;">Real-World Parallel: From Fiction to Factory Floor</h2>
+
+        <div class="grid-2" style="align-items:start; gap:40px;">
+
+          <div>
+            <p class="t-body">
+              The WALL·E unit class is not purely speculative. Contemporary autonomous waste-processing
+              robots share its core architectural logic: optical or spectral sensing, machine-learning
+              classification, and mechanical manipulation — deployed in settings where human labour is
+              impractical, dangerous, or economically unviable. Research published
+              in PMC (2022) details a custom YOLOv5-based robotic system achieving 80% garbage categorisation
+              accuracy in real-world conditions, using a five-degree-of-freedom robotic arm — a direct
+              functional analogue to the WALL·E unit's hydraulic collection appendages.
+            </p>
+            <p class="t-body" style="margin-top:16px;">
+              ZenRobotics and AMP Robotics deploy commercial equivalents at scale in municipal waste
+              facilities globally, integrating deep learning models (YOLOv11, SAM-family architectures)
+              for real-time material classification at throughput speeds no human team could match
+              (Nature Scientific Reports, 2025; IEEE Xplore, 2021). The functional gap between
+              today's supervised waste-sorting robots and the unsupervised, adaptive WALL·E unit is
+              significant — but the architectural lineage is already established.
+            </p>
+            <p class="t-body" style="margin-top:16px;">
+              The critical difference is the presence of human oversight. Contemporary systems operate
+              within supervised environments, with human operators monitoring, correcting, and redirecting
+              machine behaviour. The WALL·E unit's 700-year unsupervised operation — and the civilisational
+              outcomes it accompanied — serves as the cautionary endpoint of a trajectory that, in 2026,
+              is only at its beginning.
+            </p>
+          </div>
+
+          <!-- Fig 2.7 -->
+          <div class="img-wrap filmstrip taped">
+            <img src="images/amprealworldsorting.jpg" alt="AMP Robotics autonomous sorting robot in operation at a materials-recovery facility — robotic arm picking and separating recyclables from a conveyor in real time" loading="lazy">
+            <div class="img-caption"><strong>Fig. 2.7</strong> Contemporary autonomous waste-sorting in operation &mdash; AMP Robotics' AI-driven pickers identify and separate recyclables on live conveyor lines, the real-world parallel to WALL&middot;E's unit class today.<br><span style="font-size:0.7rem;color:var(--text-faint);">The Robot Report. (n.d.). <em>AMP Robotics&rsquo; AI robots are sorting recycling</em>. <a href="https://www.therobotreport.com/amp-robotics-ai-robots-recycling/" target="_blank" rel="noopener">https://www.therobotreport.com/amp-robotics-ai-robots-recycling/</a></span></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="container">
+    <div class="sb-section-footer">
+ 
+      <nav class="footer-nav" aria-label="Section navigation">
+        <a href="section-background.html">← Background</a>
+        <a href="section-science-innovation.html">Science &amp; Innovation →</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="scrapbook-nav.js" defer></script>
+</body>
+</html>
