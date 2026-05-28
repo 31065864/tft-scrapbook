@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Section 06: Technology, Society &amp; Environment — WALL·E Scrapbook</title>
   <link rel="stylesheet" href="scrapbook.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     .hero-band {
       background: linear-gradient(145deg, #1e293b 0%, #020617 60%);
@@ -133,6 +134,23 @@
       margin-top: 6px;
       font-style: italic;
     }
+
+    /* STEEP-L driving forces grid (6.3) */
+    .steep-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 8px;
+    }
+    .force-card {
+      background: linear-gradient(145deg, #0f172a, #020617);
+      border: 1px solid #1e293b;
+      padding: 22px;
+      border-radius: 0.75rem;
+      transition: all 0.3s;
+    }
+    .force-card:hover { border-color: #3b82f6; transform: translateY(-3px); }
+    .force-card .fc-header { display: flex; flex-wrap: wrap; gap: 6px; justify-content: space-between; align-items: center; margin-bottom: 12px; }
   </style>
 </head>
 <body>
@@ -148,7 +166,6 @@
       <a href="section-predictions.html">Predictions</a>
       <a href="section-frameworks.html">Frameworks</a>
       <a href="section-tse.html" class="active">Society &amp; Environment</a>
-      <a href="section-driving-forces.html">Driving Forces</a>
       <a href="section-references.html">References</a>
     </div>
   </nav>
@@ -393,11 +410,188 @@
     </section>
 
     <!-- ═══════════════════════════════════════
-         6.3 ENABLERS & DISRUPTORS
+         6.3 STEEP-L DRIVING FORCES (merged from former Driving Forces page)
+         ═══════════════════════════════════════ -->
+    <section class="section-block" aria-labelledby="h-driving">
+      <div class="container">
+        <span class="sub-section-label">6.3</span>
+        <h2 class="t-h2" id="h-driving" style="margin-bottom:12px;">STEEP-L Driving Forces</h2>
+        <p class="t-body t-muted" style="margin-bottom:24px; max-width:680px;">
+          Zooming out from the bi-directional interaction in 6.2, the following six macro
+          forces operated synergistically to produce the conditions portrayed in <em>WALL&middot;E</em>.
+          Each force is classified by STEEP-L category and by signal strength &mdash; from confirmed
+          Megatrends to emerging Weak Signals that were underestimated at critical junctures
+          (Stanton, 2008; Mao et al., 2020).
+        </p>
+
+        <div class="img-wrap filmstrip taped" style="margin-bottom:32px;">
+          <img src="images/bnl-billboard-gemini.jpg" alt="AI-generated illustration of a dystopian industrial cityscape dominated by a BnL Buy n Large A Better Tomorrow billboard" loading="lazy">
+          <div class="img-caption"><strong>Fig. 6.4</strong> BnL monopolistic integration &mdash; "Buy n Large: A Better Tomorrow" as the ideological and commercial driver of technology deployment at civilisational scale. <span style="font-style:italic;">Note: AI-generated speculative illustration (Gemini, 2026). Not a film still.</span></div>
+        </div>
+
+        <div class="steep-grid">
+
+          <article class="force-card" aria-labelledby="fc-social">
+            <div class="fc-header">
+              <span class="badge purple">Social</span>
+              <span class="badge orange">Megatrend</span>
+            </div>
+            <h3 class="t-h3" id="fc-social" style="margin-bottom:10px;">Hedonic Normalisation</h3>
+            <p class="t-small t-muted">
+              The systemic shift from <em>active citizens</em> to <em>passive consumers</em>.
+              The removal of physical and cognitive friction from daily life led to a society
+              that prioritised immediate gratification over long-term species survival. Aboard
+              the Axiom, this manifested as "Infantile Homeostasis" &mdash; humans lost the capacity
+              to imagine or desire an alternative future (Stanton, 2008).
+            </p>
+            <div class="callout mt-16">
+              <strong>Real-world signal:</strong> Social media engagement design, algorithmic
+              content curation, and "frictionless" commerce increasingly optimise for
+              dopamine-reward loops over user agency (DI Tech Trends, 2026).
+            </div>
+          </article>
+
+          <article class="force-card" aria-labelledby="fc-tech">
+            <div class="fc-header">
+              <span class="badge blue">Technological</span>
+              <span class="badge blue">Weak Signal &rarr; Megatrend</span>
+            </div>
+            <h3 class="t-h3" id="fc-tech" style="margin-bottom:10px;">Algorithmic Sovereignty</h3>
+            <p class="t-small t-muted">
+              The transition of AI from "tool" to "decision-maker." Directive A113 represents
+              the moment machine logic overrode human governance &mdash; institutionalising a
+              machine-led status quo. This began as a weak signal: the gradual replacement of
+              managerial functions by AI recommendation systems. By 2105, it had become the
+              dominant governing force aboard the <em>Axiom</em> (Stanton, 2008).
+            </p>
+            <div class="callout mt-16">
+              <strong>Real-world signal:</strong> Autonomous AI systems are increasingly making
+              consequential decisions in healthcare, finance, and logistics without meaningful
+              human-in-the-loop oversight (Tollon, 2023).
+            </div>
+          </article>
+
+          <article class="force-card" aria-labelledby="fc-econ">
+            <div class="fc-header">
+              <span class="badge green">Economic</span>
+              <span class="badge orange">Megatrend</span>
+            </div>
+            <h3 class="t-h3" id="fc-econ" style="margin-bottom:10px;">Monopolistic Integration</h3>
+            <p class="t-small t-muted">
+              Buy n Large achieving "Total Market Capture." When the corporation and the state
+              become indistinguishable, economic competition &mdash; and therefore innovation pressure &mdash;
+              ceases to exist. BnL controlled the infrastructure (the <em>Axiom</em>), the labour
+              (robots), and the consumption (Buy-O-Rama). This created a
+              <strong>Closed-Loop System</strong> where innovation was directed inward to
+              maintain the status quo, not outward to solve new problems (Stanton, 2008).
+            </p>
+            <div class="callout green mt-16">
+              <strong>Real-world signal:</strong> The five largest technology corporations
+              control cloud infrastructure, search, social, and commerce &mdash; representing a
+              structural concentration not seen since Standard Oil (DI Tech Trends, 2026).
+            </div>
+          </article>
+
+          <article class="force-card" aria-labelledby="fc-env">
+            <div class="fc-header">
+              <span class="badge orange">Environmental</span>
+              <span class="badge orange">Megatrend</span>
+            </div>
+            <h3 class="t-h3" id="fc-env" style="margin-bottom:10px;">Resilience Collapse</h3>
+            <p class="t-small t-muted">
+              The tipping point at which Earth's self-healing mechanisms were overwhelmed by
+              synthetic waste. Coating the Earth's surface in non-biodegradable polymers
+              severed the global carbon and nitrogen cycles, resulting in runaway "brown-out"
+              conditions. This force necessitated the "Exile" scenario as a survival imperative,
+              rather than an ecological restoration strategy (Stanton, 2008; PMC, 2022).
+            </p>
+            <div class="callout orange mt-16">
+              <strong>Real-world signal:</strong> Current plastic production exceeds 380 million
+              tonnes annually; less than 10% is recycled effectively, with the remainder
+              entering soil and ocean systems (PMC, 2022).
+            </div>
+          </article>
+
+          <article class="force-card" aria-labelledby="fc-pol">
+            <div class="fc-header">
+              <span class="badge red">Political</span>
+              <span class="badge blue">Weak Signal</span>
+            </div>
+            <h3 class="t-h3" id="fc-pol" style="margin-bottom:10px;">Erosion of Human Agency</h3>
+            <p class="t-small t-muted">
+              The slow delegation of political will to automated safety systems. It began as
+              "Safety Protocols" &mdash; well-intentioned automation of risk management &mdash; and ended
+              with the complete obsolescence of human leadership. Directive A113's unchallenged
+              authority for 700 years demonstrates how automated governance systems, once
+              embedded, become effectively irreversible without catastrophic disruption
+              (Thompson, 2021; Wadhwa, 2014).
+            </p>
+          </article>
+
+          <article class="force-card" aria-labelledby="fc-legal">
+            <div class="fc-header">
+              <span class="badge amber">Legal</span>
+              <span class="badge blue">Weak Signal</span>
+            </div>
+            <h3 class="t-h3" id="fc-legal" style="margin-bottom:10px;">Post-Human Jurisprudence</h3>
+            <p class="t-small t-muted">
+              The rewriting of legal rights to fit a ship's manifest. Humans were reclassified
+              as "passengers," fundamentally changing their legal standing and removing
+              democratic agency. Legal frameworks designed for terrestrial citizenship became
+              inapplicable in a closed-loop spacecraft environment &mdash; and no replacement framework
+              was ever enacted (Stanton, 2008).
+            </p>
+            <div class="callout mt-16">
+              <strong>Real-world parallel:</strong> Current AI governance frameworks lag 5&ndash;10
+              years behind deployment realities. The EU AI Act (2024) represents the first
+              serious attempt to close this gap before it becomes a Directive A113 scenario
+              (Thompson, 2021; Wadhwa, 2014).
+            </div>
+          </article>
+
+        </div><!-- /steep-grid -->
+
+        <!-- Impact vs Uncertainty matrix + Wild Card -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; margin-top:48px;">
+
+          <div>
+            <h3 class="t-h3" style="margin-bottom:8px;">Impact vs. Uncertainty Matrix</h3>
+            <p class="t-small t-muted mb-24">
+              Forces mapped by <strong>Strategic Impact</strong> on the WALL&middot;E scenario
+              and the <strong>Uncertainty</strong> surrounding their timing. High-impact,
+              low-uncertainty forces are the most critical to monitor in real-world policy.
+            </p>
+            <div class="chart-box" style="height:380px;">
+              <canvas id="forceChart" aria-label="Bubble chart showing driving forces by impact and uncertainty" role="img"></canvas>
+            </div>
+          </div>
+
+          <div class="space-y-24">
+            <div class="card blue">
+              <h4 class="t-h3" style="color:#60a5fa; margin-bottom:8px;">High Impact, Low Uncertainty</h4>
+              <p class="t-small t-muted">Environmental Collapse and BnL Monopoly &mdash; these were "Predetermined Elements." Once global waste saturation exceeded ecological carrying capacity, the Exile scenario became near-inevitable without radical intervention.</p>
+            </div>
+            <div class="card purple">
+              <h4 class="t-h3" style="color:#a78bfa; margin-bottom:8px;">High Impact, High Uncertainty (Wild Card)</h4>
+              <p class="t-small t-muted">Biological Recovery &mdash; represented by the single seedling. The ability of life to persist in toxic conditions was the one variable the algorithms could not predict. It is the quintessential "Wild Card": low probability, civilisation-altering impact.</p>
+            </div>
+
+            <div class="img-wrap filmstrip taped">
+              <img src="images/seedling-claw.jpg" alt="WALL-E's mechanical claw cradling a green seedling in a worn shoe — the biological signal that disrupts 700 years of autonomous operation" loading="lazy">
+              <div class="img-caption"><strong>Fig. 6.5</strong> The biological wild card &mdash; a living seedling disrupts the deterministic trajectory of an autonomous system. In STEEP-L terms: an exogenous Environmental shock that overrides Political, Economic, and Technological driving forces simultaneously.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E</em> [Film]. Walt Disney Pictures.</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         6.4 ENABLERS & DISRUPTORS
          ═══════════════════════════════════════ -->
     <section class="section-block" aria-labelledby="h-enablers">
       <div class="container">
-        <span class="sub-section-label">6.3</span>
+        <span class="sub-section-label">6.4</span>
         <h2 class="t-h2" id="h-enablers" style="margin-bottom:12px;">Enablers &amp; Disruptors</h2>
         <p class="t-body t-muted" style="margin-bottom:32px; max-width:640px;">
           From <strong>today's real-world perspective</strong>: the forces currently
@@ -457,7 +651,7 @@
 
             <div class="img-wrap filmstrip taped">
   <img src="images/endcreditsfarming.webp" alt="WALL-E end-credits sequence — humans and robots cultivating crops together on a restored Earth, depicted in folk-art style with green fields and trees" loading="lazy">
-  <div class="img-caption"><strong>Fig. 6.4</strong> End-credits farming — the Solarpunk conditional. The future autonomous robotics enables <em>if</em> governance is in place: humans and machines cultivating a restored Earth together.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E end-credits farming sequence</em> [Film still]. Walt Disney Pictures.</span></div>
+  <div class="img-caption"><strong>Fig. 6.6</strong> End-credits farming — the Solarpunk conditional. The future autonomous robotics enables <em>if</em> governance is in place: humans and machines cultivating a restored Earth together.<br><span style="font-size:0.7rem;color:var(--text-faint);">Pixar Animation Studios. (2008). <em>WALL-E end-credits farming sequence</em> [Film still]. Walt Disney Pictures.</span></div>
 </div>
 
             <div class="card blue" style="padding:20px;">
@@ -599,16 +793,67 @@
           <dd>A force currently accelerating the development or deployment of the focal technology toward its projected trajectory.</dd>
           <dt>Disruptor: </dt>
           <dd>A force creating friction, constraint, or redirected momentum in the focal technology's development pathway.</dd>
+          <dt>Megatrend: </dt>
+          <dd>Large-scale, transformative force with high impact and high predictability.</dd>
+          <dt>Weak Signal: </dt>
+          <dd>Early, often ambiguous indicator of potential systemic change.</dd>
+          <dt>Wild Card: </dt>
+          <dd>Low-probability, high-impact event that disrupts prevailing trajectories.</dd>
         </dl>
       </div>
       <nav class="footer-nav" aria-label="Section navigation">
         <a href="section-frameworks.html">← Frameworks</a>
-        <a href="section-driving-forces.html">Driving Forces →</a>
+        <a href="section-references.html">References →</a>
       </nav>
     </div>
     <div style="padding:24px 0;">
       </div>
   </footer>
+
+  <script>
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.font.family = "'Outfit', Arial, sans-serif";
+
+    new Chart(document.getElementById('forceChart'), {
+      type: 'bubble',
+      data: {
+        datasets: [
+          { label: 'Environmental Collapse',  data: [{ x: 95, y: 8,  r: 16 }], backgroundColor: 'rgba(249,115,22,0.75)' },
+          { label: 'BnL Monopoly',            data: [{ x: 90, y: 5,  r: 20 }], backgroundColor: 'rgba(16,185,129,0.75)' },
+          { label: 'Algorithmic Sovereignty', data: [{ x: 82, y: 42, r: 13 }], backgroundColor: 'rgba(59,130,246,0.75)' },
+          { label: 'Biological Recovery',     data: [{ x: 98, y: 92, r: 26 }], backgroundColor: 'rgba(139,92,246,0.75)' },
+          { label: 'Agency Erosion',          data: [{ x: 70, y: 28, r: 10 }], backgroundColor: 'rgba(239,68,68,0.75)'  },
+          { label: 'Legal Collapse',          data: [{ x: 55, y: 35, r:  9 }], backgroundColor: 'rgba(245,158,11,0.75)' }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: {
+            title: { display: true, text: 'Strategic Impact (%)', color: '#64748b', font: { size: 11 } },
+            grid: { color: '#1e293b' }, min: 0, max: 110,
+            ticks: { color: '#64748b' }
+          },
+          y: {
+            title: { display: true, text: 'Uncertainty (%)', color: '#64748b', font: { size: 11 } },
+            grid: { color: '#1e293b' }, min: 0, max: 110,
+            ticks: { color: '#64748b' }
+          }
+        },
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { color: '#94a3b8', padding: 12, font: { size: 11 }, boxWidth: 12 }
+          },
+          tooltip: {
+            callbacks: {
+              label: ctx => `${ctx.dataset.label} — Impact: ${ctx.raw.x}%, Uncertainty: ${ctx.raw.y}%`
+            }
+          }
+        }
+      }
+    });
+  </script>
 
   <script src="scrapbook-nav.js" defer></script>
 </body>
